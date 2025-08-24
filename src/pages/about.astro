@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="About - Zero to Vibe Coder" 
+  description="The story of a designer-turned-PM learning to build products with AI"
+>
+  <div class="container">
+    <article class="about">
+      <header class="page-header">
+        <h1>About</h1>
+      </header>
+
+      <div class="content">
+        <p>
+          Hi, I'm Jess. I spent 12+ years as a Design Director watching developers say 
+          "technically not feasible" to perfectly reasonable ideas. Now I'm a Product Director 
+          who decided to stop waiting for dev resources.
+        </p>
+
+        <p>
+          This blog documents my journey from Figma to functional—learning to build 
+          actual products with AI assistance. No prior coding experience, just design 
+          thinking and a lot of curiosity.
+        </p>
+
+        <h2>What You'll Find Here</h2>
+        <p>
+          Honest takes on what it's really like to learn AI-assisted development as a designer. 
+          The struggles, the wins, and everything I wish someone had told me when I started.
+        </p>
+
+        <ul>
+          <li><strong>The Setup</strong> - What I was trying to build</li>
+          <li><strong>The Struggle</strong> - What went hilariously wrong</li>
+          <li><strong>The Solution</strong> - What actually worked</li>
+          <li><strong>The Designer Take</strong> - How my design brain processed it</li>
+          <li><strong>The PM Take</strong> - What this means for shipping products</li>
+          <li><strong>Reality Check</strong> - Time, cost, and sanity scores</li>
+        </ul>
+
+        <p>
+          If you're a designer, PM, or anyone who's ever wanted to build something 
+          but felt blocked by technical barriers, this journey might resonate.
+        </p>
+
+        <div class="cta">
+          <a href="/subscribe" class="subscribe-button">
+            Follow Along
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .about {
+    padding: var(--space-8) 0;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-neutral-20);
+  }
+
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .content h2 {
+    margin-top: var(--space-8);
+  }
+
+  .content ul {
+    margin: var(--space-5) 0;
+  }
+
+  .content li {
+    margin-bottom: var(--space-3);
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-neutral-20);
+  }
+
+  .subscribe-button {
+    background: var(--color-accent-primary);
+    color: white;
+    padding: var(--space-3) var(--space-6);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-large);
+  }
+
+  .subscribe-button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+</style>

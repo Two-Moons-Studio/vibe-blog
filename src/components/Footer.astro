@@ -1,0 +1,103 @@
+---
+// Simple footer with subscribe and copyright
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-main">
+        <p>Zero to Vibe Coder</p>
+        <p class="footer-description">
+          A designer-turned-PM documenting the journey from Figma to functional. 
+          No BS, just what actually works.
+        </p>
+      </div>
+      
+      <div class="footer-subscribe">
+        <a href="/subscribe" class="subscribe-button">
+          Get Updates
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">&copy; {new Date().getFullYear()} Jess Moon</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-10);
+    padding: var(--space-8) 0 var(--space-6);
+    border-top: 1px solid var(--color-neutral-20);
+    background: var(--color-bg-surface);
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-6);
+  }
+
+  .footer-main p:first-child {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-description {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    max-width: 400px;
+    margin-bottom: 0;
+  }
+
+  .subscribe-button {
+    background: var(--color-accent-primary);
+    color: white;
+    padding: var(--space-3) var(--space-5);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-normal);
+  }
+
+  .subscribe-button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-neutral-20);
+  }
+
+  .copyright {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+    
+    .footer-main {
+      text-align: center;
+    }
+    
+    .subscribe-button {
+      display: block;
+      text-align: center;
+    }
+  }
+</style>

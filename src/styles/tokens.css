@@ -1,0 +1,65 @@
+/* Vibe Blog Design Tokens - Simplified from Further Review */
+
+/* Import proven editorial fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Colors - Minimal Editorial Palette */
+  --color-neutral-0: #ffffff;
+  --color-neutral-5: #fdfcf8;        /* Page background - warm white */
+  --color-neutral-20: #f5f4f1;       /* Alt sections */
+  --color-neutral-80: #3a3a3a;       /* Secondary text */
+  --color-neutral-100: #0a0a0a;      /* Primary text */
+  
+  /* Accent Colors */
+  --color-sage-50: #5B7C5D;          /* Primary accent - calm, editorial */
+  --color-blue-50: #2C5AA0;          /* Links */
+  
+  /* Semantic Mappings */
+  --color-text-primary: var(--color-neutral-100);
+  --color-text-secondary: var(--color-neutral-80);
+  --color-bg-surface: var(--color-neutral-0);
+  --color-bg-page: var(--color-neutral-5);
+  --color-accent-primary: var(--color-sage-50);
+  --color-link: var(--color-blue-50);
+
+  /* Typography Scale */
+  --font-size-small: 0.875rem;       /* 14px - meta text */
+  --font-size-base: 1rem;            /* 16px - body */
+  --font-size-large: 1.125rem;       /* 18px - large body */
+  --font-size-xlarge: 1.5rem;        /* 24px - h3 */
+  --font-size-2xl: 2rem;             /* 32px - h2 */
+  --font-size-3xl: 2.5rem;           /* 40px - h1 */
+
+  /* Font Families */
+  --font-serif: 'Lora', Georgia, serif;      /* Headlines, body */
+  --font-sans: 'Inter', -apple-system, sans; /* UI, meta */
+
+  /* Font Weights & Line Heights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  /* Spacing Scale - Editorial Generous Spacing */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.5rem;     /* 24px */
+  --space-6: 2rem;       /* 32px */
+  --space-7: 3rem;       /* 48px */
+  --space-8: 4rem;       /* 64px */
+  --space-9: 6rem;       /* 96px */
+  --space-10: 8rem;      /* 128px */
+
+  /* Layout Constraints */
+  --content-max-width: 680px;        /* Single column reading */
+  --page-padding: var(--space-6);    /* Page sides */
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+}

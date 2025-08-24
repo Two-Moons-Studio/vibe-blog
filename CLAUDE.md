@@ -1,0 +1,124 @@
+# Vibe Blog - Zero to Vibe Coder
+
+Simple, elegant blog for documenting the designer-to-builder journey. Built with editorial sophistication, maintained with ease.
+
+## Commands (Slash Commands)
+
+### `/vibe-start`
+Check status, start dev server, show current work:
+1. Run `npm run dev` to start development
+2. Show recent posts and current status
+3. Check for any pending tasks
+
+### `/vibe-post` 
+Guided post creation workflow:
+1. ASK USER: "What's the post title?"
+2. ASK USER: "Brief excerpt (1-2 sentences)?"
+3. ASK USER: "Any tags for this post?"
+4. Generate slug from title (lowercase, dash-separated)
+5. Create markdown file in `/src/content/posts/`
+6. Use today's date automatically
+7. Set up frontmatter with 6-part structure template
+8. CONFIRM: "Post created at /posts/[slug] - ready to write!"
+
+### `/vibe-deploy`
+Build and deploy workflow:
+1. Run `npm run build` to verify everything works
+2. Git add, commit, and push to main
+3. Confirm deployment to Vercel
+
+## Stack
+- **Astro 5.x** - Static site generator
+- **Content Collections** - Markdown blog posts
+- **Vercel** - Hosting and auto-deploy
+- **Buttondown** - Newsletter (when ready)
+
+## Architecture
+```
+src/
+├── content/posts/     # Markdown blog posts
+├── components/        # Header, Footer, PostPreview
+├── layouts/           # Layout.astro (main wrapper)
+├── pages/             # Routes (index, archive, about, subscribe, posts/[slug])
+└── styles/           # tokens.css + global.css
+```
+
+## Post Structure (6-Part Format)
+Every post follows this template:
+1. **The Setup** - What you were trying to do
+2. **The Struggle** - What went wrong/was confusing
+3. **The Solution** - What actually worked
+4. **The Designer Take** - Design perspective
+5. **The PM Take** - Product/business perspective  
+6. **Reality Check** - Time, cost, sanity scores
+
+## Design System
+- **Colors**: Black text, cream background, sage accent
+- **Typography**: Lora (serif) + Inter (sans) 
+- **Layout**: Single column, max 680px width
+- **Spacing**: Generous editorial whitespace
+- **Components**: 4 total (Header, Footer, PostPreview, Layout)
+
+## Content Guidelines
+- **Bite-sized posts** (300-800 words initially)
+- **Honest documentation** - struggles and wins equally
+- **No BS tone** - direct, helpful, real
+- **Tags for organization** - will become guides later
+- **Markdown format** - simple and portable
+
+## Workflows
+
+### Adding New Posts
+1. Create markdown file in `/src/content/posts/[slug].md`
+2. Add frontmatter (title, date, excerpt, tags, draft: false)
+3. Write content using 6-part structure
+4. Commit and push to deploy
+
+### Future Features (Phase 2+)
+- Tag-based guide collections
+- "Buy me coffee" donation button  
+- Premium content for supporters
+- Search functionality (if needed)
+
+## Rules
+✅ Keep it simple - resist feature creep
+✅ Editorial design - extreme whitespace
+✅ Use design tokens only (no hardcoded values)
+✅ One column layout - no complex grids
+✅ Focus on content - minimal UI
+❌ No dark mode (not needed)
+❌ No complex features initially
+❌ No React/Vue (Astro only)
+❌ No database (markdown files only)
+
+## Branch Strategy
+- **main** - Production (auto-deploys to live site)
+- Simple single-branch workflow for solo maintenance
+
+## Key Files
+- `astro.config.mjs` - Site config, sitemap, domain
+- `src/content/config.ts` - Post schema definition
+- `src/styles/tokens.css` - All design values
+- `CLAUDE.md` - This file (instructions for AI)
+
+## Quick Reference
+```bash
+# Start development
+npm run dev
+
+# Build for production  
+npm run build
+
+# Preview build
+npm run preview
+```
+
+## Domain Setup (When Ready)
+1. Update `site` URL in `astro.config.mjs`
+2. Configure domain in Vercel dashboard
+3. Update robots.txt if needed
+4. Submit to Google Search Console
+
+---
+
+*Built for sustainable, long-term content creation. Simple enough to maintain forever, sophisticated enough to grow with your audience.*

@@ -1,0 +1,114 @@
+---
+export interface Props {
+  title: string;
+  date: Date;
+  excerpt?: string;
+  slug: string;
+  tags?: string[];
+}
+
+const { title, date, excerpt, slug, tags } = Astro.props;
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<article class="post-preview">
+  <div class="post-header">
+    <h2 class="post-title">
+      <a href={`/posts/${slug}`}>{title}</a>
+    </h2>
+    <time class="post-date" datetime={date.toISOString()}>
+      {formatDate(date)}
+    </time>
+  </div>
+  
+  {excerpt && (
+    <p class="post-excerpt">{excerpt}</p>
+  )}
+  
+  {tags && tags.length > 0 && (
+    <div class="post-tags">
+      {tags.map(tag => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+  )}
+  
+  <a href={`/posts/${slug}`} class="read-more">Read more →</a>
+</article>
+
+<style>
+  .post-preview {
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-neutral-20);
+  }
+
+  .post-preview:last-child {
+    border-bottom: none;
+  }
+
+  .post-header {
+    margin-bottom: var(--space-3);
+  }
+
+  .post-title {
+    margin: 0 0 var(--space-2);
+  }
+
+  .post-title a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+  }
+
+  .post-title a:hover {
+    color: var(--color-accent-primary);
+  }
+
+  .post-date {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+  }
+
+  .post-excerpt {
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .post-tags {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-small);
+    background: var(--color-neutral-20);
+    color: var(--color-text-secondary);
+    padding: var(--space-1) var(--space-2);
+    border-radius: 4px;
+  }
+
+  .read-more {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-accent-primary);
+  }
+
+  .read-more:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+</style>

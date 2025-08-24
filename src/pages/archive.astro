@@ -7,19 +7,18 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts');
 const sortedPosts = allPosts
   .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 10); // Latest 10 posts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout title="Vibe Blog - Zero to Vibe Coder">
+<Layout 
+  title="Archive - Vibe Blog" 
+  description="All posts from Zero to Vibe Coder - the complete journey from designer to AI builder"
+>
   <div class="container">
-    <section class="hero">
-      <h1>Zero to Vibe Coder</h1>
-      <p class="hero-description">
-        A designer-turned-PM documenting the journey from Figma to functional. 
-        12+ years of pixels, now playing with prompts.
-      </p>
-    </section>
+    <header class="page-header">
+      <h1>Archive</h1>
+      <p>Every post from the journey so far</p>
+    </header>
 
     <section class="posts">
       {sortedPosts.length > 0 ? (
@@ -34,7 +33,7 @@ const sortedPosts = allPosts
         ))
       ) : (
         <div class="no-posts">
-          <p>No posts yet. The journey begins soon...</p>
+          <p>No posts yet. Check back soon!</p>
         </div>
       )}
     </section>
@@ -42,23 +41,21 @@ const sortedPosts = allPosts
 </Layout>
 
 <style>
-  .hero {
+  .page-header {
     text-align: center;
-    padding: var(--space-8) 0 var(--space-10);
+    padding: var(--space-8) 0;
     border-bottom: 1px solid var(--color-neutral-20);
     margin-bottom: var(--space-8);
   }
 
-  .hero h1 {
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-4);
+  .page-header h1 {
+    margin-bottom: var(--space-3);
   }
 
-  .hero-description {
+  .page-header p {
     font-size: var(--font-size-large);
     color: var(--color-text-secondary);
-    max-width: 500px;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .posts {
@@ -69,16 +66,5 @@ const sortedPosts = allPosts
     text-align: center;
     padding: var(--space-8);
     color: var(--color-text-secondary);
-  }
-
-  /* Mobile */
-  @media (max-width: 768px) {
-    .hero {
-      padding: var(--space-6) 0 var(--space-8);
-    }
-    
-    .hero h1 {
-      font-size: var(--font-size-2xl);
-    }
   }
 </style>

@@ -1,0 +1,86 @@
+---
+// Simple header with logo and minimal nav
+---
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo">
+        <h1>Vibe Blog</h1>
+      </a>
+      
+      <div class="nav-links">
+        <a href="/archive">Archive</a>
+        <a href="/about">About</a>
+        <a href="/subscribe" class="subscribe-link">Subscribe</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-neutral-20);
+    background: var(--color-bg-surface);
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-family: var(--font-serif);
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .logo:hover {
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    transition: var(--transition-normal);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .subscribe-link {
+    background: var(--color-accent-primary);
+    color: white !important;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 4px;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .subscribe-link:hover {
+    opacity: 0.9;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: var(--space-4);
+    }
+    
+    .nav-links a {
+      font-size: var(--font-size-small);
+    }
+  }
+</style>

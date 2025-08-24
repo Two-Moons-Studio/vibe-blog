@@ -1,0 +1,112 @@
+/* Global Styles - Clean Editorial Base */
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background: var(--color-bg-page);
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-4);
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  margin: var(--space-7) 0 var(--space-4);
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xlarge);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+p {
+  margin-bottom: var(--space-4);
+  max-width: 65ch; /* Optimal reading width */
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-5);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+/* Code */
+code {
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  background: var(--color-neutral-20);
+  padding: var(--space-1) var(--space-2);
+  border-radius: 4px;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 0.9rem;
+  }
+  
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-xlarge);
+  }
+  
+  .container {
+    padding: 0 var(--space-4);
+  }
+}

@@ -1,0 +1,19 @@
+# Robots.txt for Vibe Blog
+User-agent: *
+Allow: /
+
+# Sitemap location (update domain when ready)
+Sitemap: https://your-domain.com/sitemap-index.xml
+
+# AI Crawlers (explicitly allow)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Crawl delay
+Crawl-delay: 1
