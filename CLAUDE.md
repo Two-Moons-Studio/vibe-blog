@@ -66,6 +66,18 @@ Every post follows this template:
 - **Tags for organization** - will become guides later
 - **Markdown format** - simple and portable
 
+## IMPORTANT: Todo Management
+- ALWAYS update TODO.md when completing tasks or finding new ones
+- TODO.md is the source of truth (not just in-memory todos)
+- Update the "Next Steps" section in TODO.md immediately when tasks change
+
+## Workflow Principles
+- Explain planned changes before making them
+- Wait for "go ahead" or similar confirmation before proceeding
+- Show options when multiple approaches exist
+- NEVER commit without explicit user request
+- Ask for feedback/approval on significant changes
+
 ## Workflows
 
 ### Adding New Posts
@@ -81,13 +93,18 @@ Every post follows this template:
 - Search functionality (if needed)
 
 ## Rules
-✅ Keep it simple - resist feature creep
+✅ Check existing first - always look before creating
+✅ Use tokens only - no hardcoded values ever
+✅ Update TODO.md - the source of truth for tasks
+✅ Ask for approval - explain planned changes, wait for "go ahead"
+✅ Show options when multiple approaches exist
 ✅ Editorial design - extreme whitespace
-✅ Use design tokens only (no hardcoded values)
 ✅ One column layout - no complex grids
-✅ Focus on content - minimal UI
 ❌ No dark mode (not needed)
-❌ No complex features initially
+❌ NEVER revert entire files - fix specific errors only
+❌ NEVER use git checkout on files with uncommitted work
+❌ NEVER include Claude attribution in commits (no "Generated with Claude Code" or Co-Authored-By)
+❌ No complex features initially - resist feature creep
 ❌ No React/Vue (Astro only)
 ❌ No database (markdown files only)
 
