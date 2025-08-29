@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Tag from '../../components/Tag.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -31,19 +32,22 @@ const formatDate = (date: Date) => {
 <Layout title={post.data.title} description={post.data.excerpt}>
   <article class="post-article">
     <header class="post-hero">
-      <div class="post-meta-top">
-        <time datetime={post.data.date.toISOString()}>
-          {formatDate(post.data.date).toUpperCase()}
-        </time>
-        {post.data.tags && post.data.tags[0] && (
-          <span class="post-category">{post.data.tags[0]}</span>
-        )}
-      </div>
+      <time class="post-date" datetime={post.data.date.toISOString()}>
+        {formatDate(post.data.date).toUpperCase()}
+      </time>
       
       <h1 class="post-title">{post.data.title}</h1>
       
       {post.data.excerpt && (
         <p class="post-excerpt">{post.data.excerpt}</p>
+      )}
+      
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="post-tags">
+          {post.data.tags.map(tag => (
+            <Tag tag={tag} size="small" />
+          ))}
+        </div>
       )}
     </header>
 
@@ -70,44 +74,40 @@ const formatDate = (date: Date) => {
 
 <style>
   .post-article {
-    padding: var(--space-8) 0 var(--space-10);
+    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-10);
   }
 
   /* Hero Section */
   .post-hero {
     text-align: center;
     padding: var(--space-8) var(--page-padding) var(--space-10);
-    max-width: 900px;
+    max-width: 860px;
     margin: 0 auto;
   }
 
-  .post-meta-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-4);
+  .post-date {
+    display: block;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
     margin-bottom: var(--space-5);
   }
 
-  .post-meta-top time {
-    font-family: var(--font-sans-geometric);
-    font-size: 0.65rem;
-    font-weight: var(--font-weight-medium);
-    letter-spacing: 0.2em;
-    color: var(--color-text-secondary);
+  .post-tags {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-8);
   }
 
-  .post-category {
-    font-family: var(--font-sans-geometric);
-    font-size: 0.65rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--color-accent);
-    padding: var(--space-1) var(--space-2);
-    border: 1px solid var(--color-accent);
-    border-radius: 6px;
+  .post-tags :global(.tag) {
+    font-size: 0.55rem !important;
+    padding: 2px 8px !important;
   }
+
 
   .post-title {
     font-family: var(--font-serif-display);

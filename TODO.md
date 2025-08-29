@@ -1,7 +1,22 @@
 # TODO - Vibe Blog
 
-## Next Steps
+## Next Steps - IMMEDIATE
 
+### Visual Refinements
+- [x] Add more vertical whitespace between articles on homepage (increase gap in posts-grid)
+- [x] Update design system page with new spacing changes
+
+### Tag System Implementation
+- [x] Create /tags page with dropdown filter or tag cloud system
+- [x] Make all tag pills clickable/interactive across the site
+- [x] Create dynamic [tag].astro page for filtered views (e.g., /tags/reality-checks)
+- [x] Add tag navigation component that can be reused (Tag.astro component)
+- [x] Update design system page with interactive tag component documentation
+
+### Process Updates
+- [x] Update CLAUDE.md to include reminder: "When making visual design changes, always update the design system reference page"
+
+### Original Next Steps
 - [ ] Set up Buttondown account and get embed code
 - [ ] Replace placeholder in subscribe.astro with actual Buttondown form
 - [x] Choose domain name for the blog (vibecodemoonlighter.com)

@@ -1,0 +1,226 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Tag from '../../components/Tag.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+  const publishedPosts = allPosts.filter(post => !post.data.draft);
+  
+  // Get all unique tags
+  const uniqueTags = new Set();
+  publishedPosts.forEach(post => {
+    post.data.tags?.forEach(tag => {
+      uniqueTags.add(tag);
+    });
+  });
+
+  // Create a path for each tag
+  return Array.from(uniqueTags).map(tag => {
+    const slug = tag.toLowerCase().replace(/\s+/g, '-');
+    const filteredPosts = publishedPosts
+      .filter(post => post.data.tags?.includes(tag))
+      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+    
+    return {
+      params: { tag: slug },
+      props: { tag, posts: filteredPosts }
+    };
+  });
+}
+
+const { tag, posts } = Astro.props;
+
+// Get all tags for the navigation
+const allPosts = await getCollection('posts');
+const allTags = new Set();
+allPosts
+  .filter(post => !post.data.draft)
+  .forEach(post => {
+    post.data.tags?.forEach(t => allTags.add(t));
+  });
+const sortedTags = Array.from(allTags).sort();
+---
+
+<Layout title={`${tag} - Vibe Code Moonlighter`}>
+  <div class="page-container">
+    <header class="page-header">
+      <h1 class="page-title">
+        Posts tagged with <span class="highlight">{tag}</span>
+      </h1>
+      <p class="post-count">
+        {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+      </p>
+    </header>
+
+    <nav class="tags-nav">
+      <div class="tags-list">
+        {sortedTags.map(t => (
+          <Tag tag={t} isActive={t === tag} size="small" />
+        ))}
+      </div>
+    </nav>
+
+    <section class="posts-section">
+      <div class="posts-list">
+        {posts.map(post => (
+          <article class="post-item">
+            <a href={`/posts/${post.slug}`} class="post-link">
+              <div class="post-header">
+                <time class="post-date">
+                  {post.data.date.toLocaleDateString('en-US', { 
+                    month: 'long', 
+                    day: 'numeric',
+                    year: 'numeric'
+                  })}
+                </time>
+              </div>
+              <h2 class="post-title">{post.data.title}</h2>
+              {post.data.excerpt && (
+                <p class="post-excerpt">{post.data.excerpt}</p>
+              )}
+              <div class="post-tags">
+                {post.data.tags?.map(t => (
+                  <Tag tag={t} size="small" />
+                ))}
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--page-padding);
+  }
+
+  .page-header {
+    text-align: center;
+    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-8);
+    border-bottom: 1px solid var(--color-neutral-20);
+    margin-bottom: var(--space-8);
+  }
+
+  .page-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    margin: 0 0 var(--space-3);
+  }
+
+  .highlight {
+    color: var(--color-accent);
+  }
+
+  .post-count {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-secondary);
+  }
+
+  .tags-nav {
+    padding: var(--space-6) 0;
+    margin-bottom: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+  }
+
+  .posts-section {
+    margin-bottom: var(--space-10);
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .post-item {
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .post-item:last-child {
+    border-bottom: none;
+  }
+
+  .post-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-link:hover .post-title {
+    color: var(--color-accent);
+  }
+
+  .post-header {
+    margin-bottom: var(--space-3);
+  }
+
+  .post-date {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-secondary);
+  }
+
+  .post-title {
+    font-family: var(--font-sans-geometric);
+    font-size: var(--font-size-small);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    line-height: var(--line-height-normal);
+    margin: 0 0 var(--space-3);
+    transition: color var(--transition-normal);
+  }
+
+  .post-excerpt {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-4);
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: var(--font-size-xlarge);
+    }
+
+    .post-title {
+      font-size: var(--font-size-large);
+    }
+
+    .post-excerpt {
+      font-size: var(--font-size-base);
+    }
+  }
+</style>

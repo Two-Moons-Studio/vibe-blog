@@ -100,6 +100,7 @@ Every post follows this template:
 ✅ Show options when multiple approaches exist
 ✅ Editorial design - extreme whitespace
 ✅ One column layout - no complex grids
+✅ **Update design system page** - When making any visual design changes, ALWAYS update /design-system page to reflect the changes
 ❌ No dark mode (not needed)
 ❌ NEVER revert entire files - fix specific errors only
 ❌ NEVER use git checkout on files with uncommitted work

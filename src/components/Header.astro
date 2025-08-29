@@ -8,60 +8,47 @@ const season = getCurrentSeason();
 ---
 
 <!-- Fixed Navigation -->
-<nav class="nav-fixed">
-  <div class="nav-left">
-    <a href="/">Index</a>
-    <a href="/archive">Archive</a>
-    <a href="/zero-to-ship">Zero to Ship</a>
-  </div>
-  <div class="nav-right">
-    <a href="/about">About</a>
-    <a href="/subscribe">Subscribe</a>
-  </div>
-</nav>
+<div class="nav-left">
+  <a href="/">Index</a>
+  <a href="/archive">Archive</a>
+  <a href="/tags/reality-checks">Tags</a>
+  <a href="/zero-to-ship">Zero to Ship</a>
+</div>
+<div class="nav-right">
+  <a href="/about">About</a>
+  <a href="/subscribe">Subscribe</a>
+</div>
 
 <!-- Static Header -->
 <header class="site-header">
-  <div class="header-container">
-    <a href="/" class="logo">
-      <span class="logo-text">Moonlighter</span>
-    </a>
-  </div>
+  <a href="/" class="logo-box">
+    <div class="logo-line">VIBE CODE</div>
+    <div class="logo-line">MOONLIGHTER</div>
+  </a>
 </header>
 
 <style>
   /* Fixed Navigation */
-  .nav-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 0;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
   .nav-left {
+    position: fixed;
+    top: var(--space-8);
+    left: var(--space-8);
+    z-index: 100;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
     align-items: flex-start;
-    padding-top: var(--space-8);
-    padding-left: var(--space-8);
   }
 
   .nav-right {
+    position: fixed;
+    top: var(--space-8);
+    right: var(--space-8);
+    z-index: 100;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
     align-items: flex-end;
-    padding-top: var(--space-8);
-    padding-right: var(--space-8);
   }
 
   .nav-left a,
@@ -83,41 +70,59 @@ const season = getCurrentSeason();
 
   /* Static Header */
   .site-header {
-    padding: var(--space-8) 0 var(--space-5);
-    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
   }
 
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--page-padding);
+  .logo-box {
+    display: block;
+    background: var(--color-text-primary);
+    color: var(--color-neutral-0);
+    padding: var(--space-5) var(--space-4);
+    text-decoration: none;
+    transition: all var(--transition-normal);
     text-align: center;
   }
 
-  .logo-text {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-xlarge);
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text-primary);
-    letter-spacing: var(--letter-spacing-tight);
+  .logo-line {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.5rem;
+    font-weight: 900;
+    letter-spacing: 0.8em;
+    line-height: 1.8;
+    white-space: nowrap;
+    text-align: center;
+    padding-left: 0.8em; /* Compensate for letter-spacing on the right */
   }
 
-  .logo:hover {
-    text-decoration: none;
-    opacity: 0.8;
+  .logo-box:hover {
+    background: var(--color-neutral-80);
+    transform: translateY(-1px);
   }
 
   /* Mobile */
   @media (max-width: 768px) {
-    .nav-fixed {
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-4);
+    .nav-left {
+      left: var(--space-4);
+      top: var(--space-4);
+    }
+
+    .nav-right {
+      right: var(--space-4);
+      top: var(--space-4);
     }
 
     .nav-left,
     .nav-right {
-      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .nav-left a,
+    .nav-right a {
+      font-size: 0.6rem;
     }
   }
 </style>

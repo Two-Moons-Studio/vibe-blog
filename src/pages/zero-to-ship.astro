@@ -533,22 +533,23 @@ import Layout from '../layouts/Layout.astro'
   .learning-path {
     max-width: var(--content-max-width);
     margin: 0 auto;
-    padding: var(--space-6) var(--page-padding);
+    padding: 0 var(--page-padding);
   }
 
   /* Hero Section */
   .hero {
     text-align: center;
-    margin-bottom: var(--space-9);
-    padding: var(--space-8) 0;
+    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-8);
+    border-bottom: 1px solid var(--color-neutral-20);
+    margin-bottom: var(--space-8);
   }
 
   .hero h1 {
     font-family: var(--font-serif-display);
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-tight);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
     color: var(--color-text-primary);
   }
 
