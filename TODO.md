@@ -4,8 +4,8 @@
 
 - [ ] Set up Buttondown account and get embed code
 - [ ] Replace placeholder in subscribe.astro with actual Buttondown form
-- [ ] Choose domain name for the blog
-- [ ] Update astro.config.mjs with chosen domain
+- [x] Choose domain name for the blog (vibecodemoonlighter.com)
+- [x] Update astro.config.mjs with chosen domain
 - [ ] Deploy to Vercel (connect GitHub repo)
 - [ ] Set up Google Search Console for new domain
 - [ ] Write first real blog post
@@ -13,6 +13,7 @@
 
 ## Content & Design Improvements
 
+- [x] Created comprehensive "Zero to Ship" learning path (/zero-to-ship page)
 - [ ] Determine actual content structure/types (move away from rigid 6-part format)
 - [ ] Figure out article types/categories that make sense for the journey
 - [ ] Automate content organization and guide creation from tags
@@ -26,6 +27,10 @@
 - [ ] RSS feed for posts
 - [ ] Simple analytics (Vercel Analytics)
 - [ ] Premium content for supporters (when audience grows)
+- [ ] GitHub template for learner progress tracking
+- [ ] Community features (GitHub Discussions integration)
+- [ ] Progress badges/gamification system
+- [ ] Interactive chapter completion tracking
 
 ## Completed
 
@@ -38,6 +43,7 @@
 - [x] Local development environment working
 - [x] CLAUDE.md with workflows and user preferences
 - [x] Robots.txt for SEO
+- [x] Zero to Ship learning path page with 5-chapter progression system
 
 ## Notes
 

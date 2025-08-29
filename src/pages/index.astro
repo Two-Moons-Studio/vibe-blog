@@ -11,74 +11,236 @@ const sortedPosts = allPosts
   .slice(0, 10); // Latest 10 posts
 ---
 
-<Layout title="Vibe Blog - Zero to Vibe Coder">
-  <div class="container">
+<Layout title="Vibe Code Moonlighter - Designer to Builder Journey">
+  <div class="page-container">
     <section class="hero">
-      <h1>Zero to Vibe Coder</h1>
-      <p class="hero-description">
-        A designer-turned-PM documenting the journey from Figma to functional. 
-        12+ years of pixels, now playing with prompts.
-      </p>
+      <div class="hero-content">
+        <span class="hero-label">Learning by building, sharing the stumbles</span>
+        <h1 class="hero-title">
+          Ship real things without the traditional coding path
+        </h1>
+        <p class="hero-description">
+          A humble set of bite-sized tips for product people who want to build<br />
+          and design folks who want to ship.
+        </p>
+      </div>
     </section>
 
-    <section class="posts">
-      {sortedPosts.length > 0 ? (
-        sortedPosts.map((post) => (
-          <PostPreview
-            title={post.data.title}
-            date={post.data.date}
-            excerpt={post.data.excerpt}
-            slug={post.slug}
-            tags={post.data.tags}
-          />
-        ))
-      ) : (
-        <div class="no-posts">
-          <p>No posts yet. The journey begins soon...</p>
-        </div>
-      )}
+    <section class="posts-section">
+      <div class="posts-header">
+        <span class="section-label">Latest Posts</span>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="posts-grid">
+        {sortedPosts.length > 0 ? (
+          sortedPosts.map((post, index) => (
+            <article class={`post-item ${index === 0 ? 'featured' : ''}`}>
+              <a href={`/posts/${post.slug}`} class="post-link">
+                <div class="post-meta">
+                  <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</time>
+                  {post.data.tags && post.data.tags.map((tag) => (
+                    <span class="post-category">{tag}</span>
+                  ))}
+                </div>
+                <h2 class="post-title">{post.data.title}</h2>
+                {post.data.excerpt && (
+                  <p class="post-excerpt">{post.data.excerpt}</p>
+                )}
+              </a>
+            </article>
+          ))
+        ) : (
+          <div class="no-posts">
+            <p>The journey begins soon...</p>
+          </div>
+        )}
+      </div>
     </section>
   </div>
 </Layout>
 
 <style>
+  .page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--page-padding);
+  }
+
+  /* Hero Section */
   .hero {
+    padding: var(--space-10) 0;
     text-align: center;
-    padding: var(--space-8) 0 var(--space-10);
-    border-bottom: 1px solid var(--color-neutral-20);
-    margin-bottom: var(--space-8);
   }
 
-  .hero h1 {
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-4);
-  }
-
-  .hero-description {
-    font-size: var(--font-size-large);
-    color: var(--color-text-secondary);
-    max-width: 500px;
+  .hero-content {
+    max-width: 720px;
     margin: 0 auto;
   }
 
-  .posts {
+  .hero-label {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+  }
+
+  .hero-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    margin: var(--space-4) 0 var(--space-5);
+  }
+
+  .hero-description {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  /* Posts Section */
+  .posts-section {
+    padding: var(--space-8) 0 var(--space-10);
+  }
+
+  .posts-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
     margin-bottom: var(--space-8);
   }
 
+  .section-label {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  /* Posts Grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8) var(--space-6);
+  }
+
+  .post-item {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-5);
+  }
+
+  .post-item.featured {
+    grid-column: 1 / -1;
+  }
+
+  .post-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-link:hover .post-title {
+    color: var(--color-accent);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
+  .post-meta time {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-secondary);
+  }
+
+  .post-category {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+  }
+
+  .post-title {
+    font-family: var(--font-sans-geometric);
+    font-size: var(--font-size-small);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    line-height: var(--line-height-normal);
+    margin: 0 0 var(--space-2);
+    transition: color var(--transition-normal);
+  }
+
+  .featured .post-title {
+    font-size: var(--font-size-small);
+  }
+
+  .post-excerpt {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
   .no-posts {
+    grid-column: 1 / -1;
     text-align: center;
     padding: var(--space-8);
     color: var(--color-text-secondary);
+    font-style: italic;
   }
 
   /* Mobile */
   @media (max-width: 768px) {
     .hero {
-      padding: var(--space-6) 0 var(--space-8);
+      padding: var(--space-8) 0;
     }
-    
-    .hero h1 {
+
+    .hero-title {
       font-size: var(--font-size-2xl);
+    }
+
+    .hero-description {
+      font-size: var(--font-size-base);
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .featured .post-title {
+      font-size: var(--font-size-xlarge);
     }
   }
 </style>

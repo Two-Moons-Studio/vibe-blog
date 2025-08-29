@@ -1,86 +1,123 @@
 ---
-// Simple header with logo and minimal nav
+// Elegant minimal header inspired by editorial design
+import { getCurrentSeason } from '../utils/season';
+
+const currentDate = new Date();
+const monthYear = currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+const season = getCurrentSeason();
 ---
 
+<!-- Fixed Navigation -->
+<nav class="nav-fixed">
+  <div class="nav-left">
+    <a href="/">Index</a>
+    <a href="/archive">Archive</a>
+    <a href="/zero-to-ship">Zero to Ship</a>
+  </div>
+  <div class="nav-right">
+    <a href="/about">About</a>
+    <a href="/subscribe">Subscribe</a>
+  </div>
+</nav>
+
+<!-- Static Header -->
 <header class="site-header">
-  <div class="container">
-    <nav class="nav">
-      <a href="/" class="logo">
-        <h1>Vibe Blog</h1>
-      </a>
-      
-      <div class="nav-links">
-        <a href="/archive">Archive</a>
-        <a href="/about">About</a>
-        <a href="/subscribe" class="subscribe-link">Subscribe</a>
-      </div>
-    </nav>
+  <div class="header-container">
+    <a href="/" class="logo">
+      <span class="logo-text">Moonlighter</span>
+    </a>
   </div>
 </header>
 
 <style>
-  .site-header {
-    padding: var(--space-6) 0;
-    border-bottom: 1px solid var(--color-neutral-20);
-    background: var(--color-bg-surface);
-  }
-
-  .nav {
+  /* Fixed Navigation */
+  .nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0;
+    background: transparent;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .logo h1 {
-    font-family: var(--font-serif);
+  .nav-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding-top: var(--space-8);
+    padding-left: var(--space-8);
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: flex-end;
+    padding-top: var(--space-8);
+    padding-right: var(--space-8);
+  }
+
+  .nav-left a,
+  .nav-right a {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    transition: var(--transition-normal);
+  }
+
+  .nav-left a:hover,
+  .nav-right a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  /* Static Header */
+  .site-header {
+    padding: var(--space-8) 0 var(--space-5);
+    background: transparent;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--page-padding);
+    text-align: center;
+  }
+
+  .logo-text {
+    font-family: var(--font-serif-display);
     font-size: var(--font-size-xlarge);
     font-weight: var(--font-weight-medium);
     color: var(--color-text-primary);
-    margin: 0;
+    letter-spacing: var(--letter-spacing-tight);
   }
 
   .logo:hover {
     text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: var(--space-6);
-    align-items: center;
-  }
-
-  .nav-links a {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-base);
-    color: var(--color-text-secondary);
-    transition: var(--transition-normal);
-  }
-
-  .nav-links a:hover {
-    color: var(--color-text-primary);
-    text-decoration: none;
-  }
-
-  .subscribe-link {
-    background: var(--color-accent-primary);
-    color: white !important;
-    padding: var(--space-2) var(--space-4);
-    border-radius: 4px;
-    font-weight: var(--font-weight-medium);
-  }
-
-  .subscribe-link:hover {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
   /* Mobile */
   @media (max-width: 768px) {
-    .nav-links {
+    .nav-fixed {
+      flex-direction: column;
+      align-items: center;
       gap: var(--space-4);
     }
-    
-    .nav-links a {
-      font-size: var(--font-size-small);
+
+    .nav-left,
+    .nav-right {
+      align-items: center;
     }
   }
 </style>

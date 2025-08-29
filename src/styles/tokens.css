@@ -1,47 +1,67 @@
-/* Vibe Blog Design Tokens - Simplified from Further Review */
+/* Vibe Blog Design Tokens - Elegant Editorial System */
 
-/* Import proven editorial fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+/* Import refined typography - 3 font system */
+@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:wght@400;500;600&display=swap');
 
 :root {
-  /* Colors - Minimal Editorial Palette */
+  /* Base Neutrals - Soft & Elegant */
   --color-neutral-0: #ffffff;
-  --color-neutral-5: #fdfcf8;        /* Page background - warm white */
-  --color-neutral-20: #f5f4f1;       /* Alt sections */
-  --color-neutral-80: #3a3a3a;       /* Secondary text */
-  --color-neutral-100: #0a0a0a;      /* Primary text */
+  --color-neutral-5: #FAFAF8;        /* Page background - soft off-white */
+  --color-neutral-10: #F5F5F3;       /* Light background */
+  --color-neutral-20: #ECECEA;       /* Borders, dividers */
+  --color-neutral-60: #757575;       /* Metadata, secondary */
+  --color-neutral-80: #4A4A4A;       /* Muted text */
+  --color-neutral-100: #2A2A2A;      /* Primary text - softer than pure black */
   
-  /* Accent Colors */
-  --color-sage-50: #5B7C5D;          /* Primary accent - calm, editorial */
-  --color-blue-50: #2C5AA0;          /* Links */
+  /* Seasonal Accent Colors */
+  --color-spring: #FFB5BA;           /* Soft sakura pink */
+  --color-summer: #7FB069;           /* Fresh sage green */
+  --color-fall: #C26B5C;             /* Warm terracotta */
+  --color-winter: #6B8CAE;           /* Muted dusty blue */
+  
+  /* Current Season (will be dynamic) */
+  --color-accent: var(--color-spring);  /* Default to spring */
   
   /* Semantic Mappings */
   --color-text-primary: var(--color-neutral-100);
-  --color-text-secondary: var(--color-neutral-80);
+  --color-text-secondary: var(--color-neutral-60);
+  --color-text-muted: var(--color-neutral-80);
   --color-bg-surface: var(--color-neutral-0);
-  --color-bg-page: var(--color-neutral-5);
-  --color-accent-primary: var(--color-sage-50);
-  --color-link: var(--color-blue-50);
+  --color-bg-page: var(--color-neutral-0);
+  --color-bg-alt: var(--color-neutral-10);
+  --color-border: var(--color-neutral-20);
+  --color-accent-primary: var(--color-accent);
+  --color-link: var(--color-neutral-100);  /* Links match text */
 
-  /* Typography Scale */
-  --font-size-small: 0.875rem;       /* 14px - meta text */
+  /* Typography Scale - Elegant Editorial */
+  --font-size-tiny: 0.75rem;         /* 12px - dates, labels */
+  --font-size-small: 0.875rem;       /* 14px - metadata */
   --font-size-base: 1rem;            /* 16px - body */
   --font-size-large: 1.125rem;       /* 18px - large body */
-  --font-size-xlarge: 1.5rem;        /* 24px - h3 */
-  --font-size-2xl: 2rem;             /* 32px - h2 */
-  --font-size-3xl: 2.5rem;           /* 40px - h1 */
+  --font-size-xlarge: 1.5rem;        /* 24px - small headlines */
+  --font-size-2xl: 2.25rem;          /* 36px - h2 */
+  --font-size-3xl: 3rem;             /* 48px - h1 on desktop */
+  --font-size-4xl: 4rem;             /* 64px - hero headlines */
 
-  /* Font Families */
-  --font-serif: 'Lora', Georgia, serif;      /* Headlines, body */
-  --font-sans: 'Inter', -apple-system, sans; /* UI, meta */
+
+  /* Font Families - 3 Font System */
+  --font-serif-display: 'Literata', Georgia, serif;    /* Headlines only */
+  --font-sans-geometric: 'DM Sans', -apple-system, sans-serif; /* Uppercase, metadata */
+  --font-serif-body: 'EB Garamond', Georgia, serif;    /* Body text */
+  
+  /* Legacy mappings for compatibility */
+  --font-serif: var(--font-serif-display);
+  --font-sans: var(--font-sans-geometric);
 
   /* Font Weights & Line Heights */
+  --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.7;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.15;         /* Headlines */
+  --line-height-normal: 1.6;         /* Body text */
+  --line-height-relaxed: 1.75;       /* Reading comfort */
 
   /* Spacing Scale - Editorial Generous Spacing */
   --space-1: 0.25rem;    /* 4px */
@@ -56,10 +76,26 @@
   --space-10: 8rem;      /* 128px */
 
   /* Layout Constraints */
-  --content-max-width: 680px;        /* Single column reading */
-  --page-padding: var(--space-6);    /* Page sides */
+  --content-max-width: 720px;        /* Comfortable reading width */
+  --header-height: 80px;              /* Header space */
+  --page-padding: var(--space-5);    /* Page sides on mobile */
+  --page-padding-lg: var(--space-8); /* Page sides on desktop */
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;   /* Headlines */
+  --letter-spacing-normal: 0;        /* Body */
+  --letter-spacing-wide: 0.05em;     /* Small caps, metadata */
+  --letter-spacing-wider: 0.1em;     /* Labels */
 
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  :root {
+    --page-padding: var(--page-padding-lg);
+  }
 }

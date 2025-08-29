@@ -1,17 +1,20 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getSeasonalColor, getCurrentSeason } from '../utils/season';
 
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Zero to Vibe Coder - A designer-turned-PM learning to build with AI" } = Astro.props;
+const { title, description = "Vibe Code Moonlighter - Designer by day, coder by night. Building in the moonlight hours." } = Astro.props;
+const seasonalColor = getSeasonalColor();
+const currentSeason = getCurrentSeason();
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-season={currentSeason}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -26,17 +29,36 @@ const { title, description = "Zero to Vibe Coder - A designer-turned-PM learning
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    
+    <!-- Dynamic seasonal color -->
+    <style define:vars={{ seasonalColor }}>
+      :root {
+        --color-accent: var(--seasonalColor);
+      }
+    </style>
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="page-frame">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 
 <style is:global>
   @import '../styles/tokens.css';
   @import '../styles/global.css';
+</style>
+
+<style>
+  .page-frame {
+    min-height: 100vh;
+    border: 10px solid var(--color-border);
+    margin: 0;
+    padding: var(--space-4);
+    background: var(--color-bg-page);
+  }
 </style>
