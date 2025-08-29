@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 ---
 
 <Layout 
@@ -7,10 +8,8 @@ import Layout from '../layouts/Layout.astro';
   description="The story of a designer-turned-PM learning to build products with AI"
 >
   <div class="container">
+    <PageHeader title="About" />
     <article class="about">
-      <header class="page-header">
-        <h1>About</h1>
-      </header>
 
       <div class="content">
         <p>
@@ -57,14 +56,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .about {
-    padding: var(--space-8) 0;
-  }
-
-  .page-header {
-    text-align: center;
-    margin-bottom: var(--space-8);
-    padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-neutral-20);
+    padding: 0 0 var(--space-8);
   }
 
   .content {

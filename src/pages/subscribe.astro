@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 ---
 
 <Layout 
@@ -7,11 +8,11 @@ import Layout from '../layouts/Layout.astro';
   description="Get updates on the journey from designer to AI-assisted builder"
 >
   <div class="container">
+    <PageHeader 
+      title="Subscribe"
+      subtitle="Get updates on the journey from Figma to functional"
+    />
     <article class="subscribe-page">
-      <header class="page-header">
-        <h1>Subscribe</h1>
-        <p>Get updates on the journey from Figma to functional</p>
-      </header>
 
       <div class="subscribe-content">
         <div class="value-prop">
@@ -54,24 +55,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .subscribe-page {
-    padding: var(--space-8) 0;
-  }
-
-  .page-header {
-    text-align: center;
-    margin-bottom: var(--space-8);
-    padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-neutral-20);
-  }
-
-  .page-header h1 {
-    margin-bottom: var(--space-3);
-  }
-
-  .page-header p {
-    font-size: var(--font-size-large);
-    color: var(--color-text-secondary);
-    margin: 0;
+    padding: 0 0 var(--space-8);
   }
 
   .subscribe-content {

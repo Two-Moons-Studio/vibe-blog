@@ -1,15 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 ---
 
 <Layout 
   title="Zero to Ship - Your Builder Journey" 
   description="A comprehensive roadmap for designers, PMs, and complete beginners ready to build and ship their own products. No BS, just practical steps to get you from idea to live product."
 >
+  <PageHeader 
+    title="Zero to Ship"
+    subtitle="The No-BS Learning Path for Future Builders"
+  />
+  
   <article class="learning-path">
     <header class="hero">
-      <h1>Zero to Ship</h1>
-      <p class="hero-subtitle">The No-BS Learning Path for Future Builders</p>
       <p class="hero-description">
         Whether you're a designer tired of hearing "not feasible," a PM wanting to prototype faster, 
         or someone with zero coding experience but big ideas—this is your roadmap from complete beginner 
@@ -539,28 +543,9 @@ import Layout from '../layouts/Layout.astro'
   /* Hero Section */
   .hero {
     text-align: center;
-    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-8);
+    padding: 0 0 var(--space-8);
     border-bottom: 1px solid var(--color-neutral-20);
     margin-bottom: var(--space-8);
-  }
-
-  .hero h1 {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    margin-bottom: var(--space-3);
-    color: var(--color-text-primary);
-  }
-
-  .hero-subtitle {
-    font-family: var(--font-sans-geometric);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-medium);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-wide);
-    color: var(--color-accent-primary);
-    margin-bottom: var(--space-5);
   }
 
   .hero-description {

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Tag from '../../components/Tag.astro';
 import { getCollection } from 'astro:content';
@@ -44,16 +45,15 @@ const sortedTags = Array.from(allTags).sort();
 ---
 
 <Layout title={`${tag} - Vibe Code Moonlighter`}>
-  <div class="page-container">
-    <header class="page-header">
-      <h1 class="page-title">
-        Posts tagged with <span class="highlight">{tag}</span>
-      </h1>
-      <p class="post-count">
-        {posts.length} {posts.length === 1 ? 'post' : 'posts'}
-      </p>
-    </header>
+  <PageHeader 
+    label="Posts tagged with"
+    title={tag}
+  />
+  <div class="post-count">
+    {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+  </div>
 
+  <div class="page-container">
     <nav class="tags-nav">
       <div class="tags-list">
         {sortedTags.map(t => (
@@ -94,38 +94,22 @@ const sortedTags = Array.from(allTags).sort();
 </Layout>
 
 <style>
-  .page-container {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 0 var(--page-padding);
-  }
-
-  .page-header {
-    text-align: center;
-    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-8);
-    border-bottom: 1px solid var(--color-neutral-20);
-    margin-bottom: var(--space-8);
-  }
-
-  .page-title {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    margin: 0 0 var(--space-3);
-  }
-
-  .highlight {
-    color: var(--color-accent);
-  }
-
   .post-count {
+    text-align: center;
     font-family: var(--font-sans-geometric);
     font-size: 0.75rem;
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-text-secondary);
+    margin-top: -var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .page-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--page-padding);
   }
 
   .tags-nav {
