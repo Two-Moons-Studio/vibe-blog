@@ -1,0 +1,584 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Layout title="Typography Color Accents - Demo">
+  <PageHeader 
+    title="Typography Color Accents"
+    subtitle="Different ways to add dynamic color splashes to type"
+  />
+
+  <div class="demo-container">
+    <!-- Option 1: Random Letter Highlights -->
+    <section class="demo-option">
+      <h3>Option 1: Random Letter Highlights</h3>
+      <h1 class="demo-title option-1">
+        Ship <span class="accent">r</span>eal thin<span class="accent">g</span>s without the t<span class="accent">r</span>aditional coding <span class="accent">p</span>ath
+      </h1>
+      <p class="description">Individual letters colored with accent color - feels editorial and playful</p>
+    </section>
+
+    <!-- Option 2: Partial Letter Gradients -->
+    <section class="demo-option">
+      <h3>Option 2: Gradient Through Letters</h3>
+      <h1 class="demo-title option-2">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Gradient clips through specific parts of the text</p>
+    </section>
+
+    <!-- Option 3: Word Emphasis -->
+    <section class="demo-option">
+      <h3>Option 3: Strategic Word Accents</h3>
+      <h1 class="demo-title option-3">
+        Ship <span class="accent">real</span> things without the traditional <span class="accent">coding</span> path
+      </h1>
+      <p class="description">Entire meaningful words highlighted</p>
+    </section>
+
+    <!-- Option 4: First Letter of Each Word -->
+    <section class="demo-option">
+      <h3>Option 4: First Letter Emphasis</h3>
+      <h1 class="demo-title option-4">
+        <span class="accent">S</span>hip <span class="accent">R</span>eal <span class="accent">T</span>hings <span class="accent">W</span>ithout <span class="accent">T</span>he <span class="accent">T</span>raditional <span class="accent">C</span>oding <span class="accent">P</span>ath
+      </h1>
+      <p class="description">First letter of key words colored</p>
+    </section>
+
+    <!-- Option 5: Vertical Stripe Through Text -->
+    <section class="demo-option">
+      <h3>Option 5: Vertical Color Stripe</h3>
+      <h1 class="demo-title option-5">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Vertical gradient stripe cutting through text</p>
+    </section>
+
+    <!-- Option 6: Underline/Strike Accents -->
+    <section class="demo-option">
+      <h3>Option 6: Typographic Marks</h3>
+      <h1 class="demo-title option-6">
+        Ship <span class="underline">real</span> things <span class="strike">without</span> the traditional <span class="underline">coding</span> path
+      </h1>
+      <p class="description">Using underlines and strikes as color accents</p>
+    </section>
+
+    <!-- Option 7: Partial Fill Variations -->
+    <section class="demo-option">
+      <h3>Option 7A: Bottom 40% Fill</h3>
+      <h1 class="demo-title option-7a">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Bottom 40% of all text filled with accent color</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7B: Top 30% Fill</h3>
+      <h1 class="demo-title option-7b">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Top 30% of text filled with accent color</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7C: Diagonal Fill (45°)</h3>
+      <h1 class="demo-title option-7c">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Diagonal gradient fill across text</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7D: Middle Band (30-70%)</h3>
+      <h1 class="demo-title option-7d">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Middle horizontal band of color</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7E: Steep Diagonal (15°)</h3>
+      <h1 class="demo-title option-7e">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Subtle angled fill across text</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7F: Wave Pattern</h3>
+      <h1 class="demo-title option-7f">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Wavy gradient through text</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7G: Left to Right Fade</h3>
+      <h1 class="demo-title option-7g">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Gradient from left (full color) to right (no color)</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7H: Subtle Left Accent</h3>
+      <h1 class="demo-title option-7h">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Just a touch of green on the left edge</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7I: Very Subtle Left Touch (5%)</h3>
+      <h1 class="demo-title option-7i">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Barely there - just the first few characters</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7J: Left Edge Highlight (10%)</h3>
+      <h1 class="demo-title option-7j">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Quick fade from green to black in first 10%</p>
+    </section>
+
+    <!-- Option 7K: Ascender/Descender Simulation -->
+    <section class="demo-option">
+      <h3>Option 7K: Ascender/Descender Effect (Manual)</h3>
+      <h1 class="demo-title option-7k">
+        S<span class="ascender">h</span>i<span class="descender">p</span> rea<span class="ascender">l</span> <span class="ascender">t</span><span class="ascender">h</span>in<span class="descender">g</span>s wi<span class="ascender">t</span><span class="ascender">h</span>ou<span class="ascender">t</span> <span class="ascender">t</span><span class="ascender">h</span>e <span class="ascender">t</span>ra<span class="ascender">d</span>i<span class="ascender">t</span>iona<span class="ascender">l</span> co<span class="ascender">d</span>in<span class="descender">g</span> <span class="descender">p</span>a<span class="ascender">t</span><span class="ascender">h</span>
+      </h1>
+      <p class="description">Manual marking of letters with ascenders (h,l,t,d,b,k,f) and descenders (g,p,q,y,j)</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7L: Top Third Effect (Simulates Ascenders)</h3>
+      <h1 class="demo-title option-7l">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Colors only the top third where ascenders would be</p>
+    </section>
+
+    <section class="demo-option">
+      <h3>Option 7M: Top & Bottom (Ascenders + Descenders)</h3>
+      <h1 class="demo-title option-7m">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Colors top 25% and bottom 25% where ascenders/descenders live</p>
+    </section>
+
+    <!-- Option 8: Random on Each Load -->
+    <section class="demo-option">
+      <h3>Option 8: Dynamic Random (Refresh to See Change)</h3>
+      <h1 class="demo-title option-8" id="dynamic-title">
+        Ship real things without the traditional coding path
+      </h1>
+      <p class="description">Different letters colored on each page load</p>
+    </section>
+
+    <!-- Option 9: Subtle Background Highlights -->
+    <section class="demo-option">
+      <h3>Option 9: Background Highlights</h3>
+      <h1 class="demo-title option-9">
+        Ship <span class="highlight">real</span> things without the <span class="highlight">traditional</span> coding path
+      </h1>
+      <p class="description">Subtle background color behind select words</p>
+    </section>
+
+    <!-- Option 10: Mixed Approach -->
+    <section class="demo-option">
+      <h3>Option 10: Mixed Typography Play</h3>
+      <h1 class="demo-title option-10">
+        <span class="accent">S</span>hip <span class="highlight">real</span> thin<span class="accent">g</span>s wi<span class="partial">thout</span> the traditional <span class="underline">coding</span> <span class="accent">path</span>
+      </h1>
+      <p class="description">Combining multiple techniques for maximum expression</p>
+    </section>
+
+    <div class="nav-back">
+      <a href="/">← Back to homepage</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .demo-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--page-padding) var(--space-10);
+  }
+
+  .demo-option {
+    margin-bottom: var(--space-10);
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  }
+
+  .demo-option h3 {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .demo-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    margin: 0 0 var(--space-3);
+    color: var(--color-text-primary);
+  }
+
+  .description {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Option 1: Simple spans */
+  .option-1 .accent {
+    color: var(--color-accent);
+  }
+
+  /* Option 2: Gradient clip */
+  .option-2 {
+    background: linear-gradient(
+      90deg, 
+      var(--color-text-primary) 0%,
+      var(--color-text-primary) 15%,
+      var(--color-accent) 15%,
+      var(--color-accent) 25%,
+      var(--color-text-primary) 25%,
+      var(--color-text-primary) 60%,
+      var(--color-accent) 60%,
+      var(--color-accent) 70%,
+      var(--color-text-primary) 70%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 3: Word highlights */
+  .option-3 .accent {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* Option 4: First letters */
+  .option-4 .accent {
+    color: var(--color-accent);
+    font-size: 1.1em;
+  }
+
+  /* Option 5: Vertical stripe */
+  .option-5 {
+    background: linear-gradient(
+      90deg,
+      var(--color-text-primary) 0%,
+      var(--color-text-primary) 45%,
+      var(--color-accent) 45%,
+      var(--color-accent) 55%,
+      var(--color-text-primary) 55%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 6: Underlines and strikes */
+  .option-6 .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.2em;
+  }
+
+  .option-6 .strike {
+    text-decoration: line-through;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 3px;
+  }
+
+  /* Option 7A: Bottom 40% fill */
+  .option-7a {
+    background: linear-gradient(
+      to top,
+      var(--color-accent) 0%,
+      var(--color-accent) 40%,
+      var(--color-text-primary) 40%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7B: Top 30% fill */
+  .option-7b {
+    background: linear-gradient(
+      to bottom,
+      var(--color-accent) 0%,
+      var(--color-accent) 30%,
+      var(--color-text-primary) 30%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7C: Diagonal 45° fill */
+  .option-7c {
+    background: linear-gradient(
+      45deg,
+      var(--color-text-primary) 0%,
+      var(--color-text-primary) 40%,
+      var(--color-accent) 40%,
+      var(--color-accent) 60%,
+      var(--color-text-primary) 60%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7D: Middle band */
+  .option-7d {
+    background: linear-gradient(
+      to bottom,
+      var(--color-text-primary) 0%,
+      var(--color-text-primary) 30%,
+      var(--color-accent) 30%,
+      var(--color-accent) 70%,
+      var(--color-text-primary) 70%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7E: Subtle diagonal 15° */
+  .option-7e {
+    background: linear-gradient(
+      15deg,
+      var(--color-accent) 0%,
+      var(--color-accent) 50%,
+      var(--color-text-primary) 50%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7F: Wave pattern */
+  .option-7f {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-text-primary) 0px,
+      var(--color-text-primary) 20px,
+      var(--color-accent) 20px,
+      var(--color-accent) 40px,
+      var(--color-text-primary) 40px,
+      var(--color-text-primary) 60px,
+      var(--color-accent) 60px,
+      var(--color-accent) 80px
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7G: Left to right fade */
+  .option-7g {
+    background: linear-gradient(
+      to right,
+      var(--color-accent) 0%,
+      var(--color-accent) 30%,
+      var(--color-text-primary) 70%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7H: Subtle left accent - just 15% */
+  .option-7h {
+    background: linear-gradient(
+      to right,
+      var(--color-accent) 0%,
+      var(--color-accent) 8%,
+      var(--color-text-primary) 15%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7I: Very subtle - just 5% */
+  .option-7i {
+    background: linear-gradient(
+      to right,
+      var(--color-accent) 0%,
+      var(--color-text-primary) 5%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7J: Left edge 10% with sharper transition */
+  .option-7j {
+    background: linear-gradient(
+      to right,
+      var(--color-accent) 0%,
+      var(--color-accent) 5%,
+      var(--color-text-primary) 10%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7K: Manual ascender/descender coloring */
+  .option-7k .ascender,
+  .option-7k .descender {
+    color: var(--color-accent);
+  }
+
+  /* Option 7L: Top third (ascender zone) */
+  .option-7l {
+    background: linear-gradient(
+      to bottom,
+      var(--color-accent) 0%,
+      var(--color-accent) 33%,
+      var(--color-text-primary) 33%,
+      var(--color-text-primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 7M: Top and bottom (ascenders + descenders) */
+  .option-7m {
+    background: linear-gradient(
+      to bottom,
+      var(--color-accent) 0%,
+      var(--color-accent) 25%,
+      var(--color-text-primary) 25%,
+      var(--color-text-primary) 75%,
+      var(--color-accent) 75%,
+      var(--color-accent) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Option 9: Background highlights */
+  .option-9 .highlight {
+    background: linear-gradient(
+      to bottom,
+      transparent 40%,
+      var(--color-accent) 40%,
+      var(--color-accent) 70%,
+      transparent 70%
+    );
+    padding: 0 0.2em;
+    opacity: 0.3;
+  }
+
+  /* Option 10: Mixed */
+  .option-10 .accent { color: var(--color-accent); }
+  .option-10 .highlight { 
+    background: var(--color-accent);
+    color: white;
+    padding: 0 0.3em;
+  }
+  .option-10 .partial {
+    background: linear-gradient(
+      to bottom,
+      var(--color-text-primary) 50%,
+      var(--color-accent) 50%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .option-10 .underline {
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 2px;
+  }
+
+  .nav-back {
+    text-align: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-back a {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .nav-back a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .demo-title {
+      font-size: var(--font-size-xlarge);
+    }
+  }
+</style>
+
+<script>
+  // Option 8: Random coloring on load
+  const dynamicTitle = document.getElementById('dynamic-title');
+  if (dynamicTitle) {
+    const text = dynamicTitle.textContent || '';
+    const words = text.split(' ');
+    
+    // Randomly select 3-5 positions to color
+    const numAccents = Math.floor(Math.random() * 3) + 3;
+    const positions = new Set();
+    
+    while (positions.size < numAccents) {
+      positions.add(Math.floor(Math.random() * text.length));
+    }
+    
+    let newHTML = '';
+    for (let i = 0; i < text.length; i++) {
+      if (positions.has(i) && text[i] !== ' ') {
+        newHTML += `<span style="color: var(--color-accent)">${text[i]}</span>`;
+      } else {
+        newHTML += text[i];
+      }
+    }
+    
+    dynamicTitle.innerHTML = newHTML;
+  }
+</script>
