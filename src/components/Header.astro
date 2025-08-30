@@ -10,9 +10,9 @@ const season = getCurrentSeason();
 <!-- Fixed Navigation -->
 <div class="nav-left">
   <a href="/">Index</a>
-  <a href="/archive">Archive</a>
-  <a href="/tags/reality-checks">Tags</a>
   <a href="/zero-to-ship">Zero to Ship</a>
+  <a href="/tags/reality-checks">Tags</a>
+  <a href="/archive">Archive</a>
 </div>
 <div class="nav-right">
   <a href="/about">About</a>
@@ -67,6 +67,25 @@ const season = getCurrentSeason();
   .nav-right a:hover {
     color: var(--color-accent);
     text-decoration: none;
+  }
+
+  /* Special sparkle for Zero to Ship */
+  .nav-left a[href="/zero-to-ship"] {
+    animation: sparkle 4s ease-in-out infinite;
+  }
+
+  .nav-left a[href="/zero-to-ship"]:hover {
+    animation: none;
+    color: var(--color-accent);
+  }
+
+  @keyframes sparkle {
+    0%, 100% { 
+      color: var(--color-text-primary);
+    }
+    50% { 
+      color: var(--color-accent);
+    }
   }
 
   /* Static Header */
