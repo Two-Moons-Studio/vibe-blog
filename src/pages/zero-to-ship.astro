@@ -20,14 +20,20 @@ import PageHeader from '../components/PageHeader.astro';
     <button class="path-tab active" data-path="pm">
       <span class="tab-text">PRODUCT</span>
     </button>
-    <button class="path-tab disabled" data-path="designer">
-      <span class="tab-text">DESIGN</span>
-      <span class="coming-soon">Coming Soon</span>
-    </button>
-    <button class="path-tab disabled" data-path="everyone">
-      <span class="tab-text">LEADERS</span>
-      <span class="coming-soon">Coming Soon</span>
-    </button>
+    <div class="path-tab-container">
+      <button class="path-tab disabled" data-path="designer">
+        <span class="tab-text">DESIGN</span>
+        <span class="coming-soon">Coming Soon</span>
+      </button>
+      <div class="tooltip-box">Sign up via newsletter<br>to be the first to hear!</div>
+    </div>
+    <div class="path-tab-container">
+      <button class="path-tab disabled" data-path="everyone">
+        <span class="tab-text">EVERYONE</span>
+        <span class="coming-soon">Coming Soon</span>
+      </button>
+      <div class="tooltip-box">Sign up via newsletter<br>to be the first to hear!</div>
+    </div>
   </nav>
 
   <!-- Modules Container -->
@@ -359,19 +365,27 @@ import PageHeader from '../components/PageHeader.astro';
     position: relative;
   }
 
-  .path-tab.disabled::after {
-    content: 'Subscribe to newsletter to get notified';
+  .path-tab-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tooltip-box {
     position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-text-primary);
+    bottom: -65px;
+    background: var(--color-accent);
     color: var(--color-neutral-0);
     padding: var(--space-2) var(--space-3);
     border-radius: 4px;
-    font-size: 0.65rem;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-medium);
     letter-spacing: 0.05em;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -379,16 +393,21 @@ import PageHeader from '../components/PageHeader.astro';
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
-  .path-tab.disabled:hover::after {
+  .tooltip-box::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--color-accent);
+  }
+
+  .path-tab-container:hover .tooltip-box {
     opacity: 1;
-  }
-
-  .path-tab.disabled[data-path="designer"]::after {
-    content: 'Subscribe to newsletter for Design path updates';
-  }
-
-  .path-tab.disabled[data-path="everyone"]::after {
-    content: 'Subscribe to newsletter for Leaders path updates';
   }
 
   /* Modules Container */
