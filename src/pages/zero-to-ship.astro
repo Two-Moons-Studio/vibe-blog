@@ -1,20 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 ---
 
 <Layout 
   title="Zero to Ship - Vibe Code Moonlighter" 
   description="Learn the core mechanics of AI-assisted building. Ship products faster than you can write PRDs."
 >
-  <!-- Hero Section -->
-  <section class="hero">
-    <span class="hero-label">THE NO-BS LEARNING PATH</span>
-    <h1 class="hero-title">Zero to Ship</h1>
-    <p class="hero-description">
-      Master the fundamental mechanics of AI-assisted building.<br />
-      Not the glossy tools. The real patterns that matter.
-    </p>
-  </section>
+  <div class="container-medium">
+    <PageHeader 
+      title="Zero to Ship"
+      subtitle="Master the fundamental mechanics of AI-assisted building. Not the glossy tools. The real patterns that matter."
+      label="THE NO-BS LEARNING PATH"
+      variant="hero"
+    />
 
   <!-- Path Selector -->
   <nav class="path-selector">
@@ -27,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
     </button>
     <button class="path-tab disabled" data-path="everyone">
       <span class="tab-text">LEADERS</span>
-      <span class="coming-soon">Get Notified</span>
+      <span class="coming-soon">Coming Soon</span>
     </button>
   </nav>
 
@@ -218,73 +217,24 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </article>
 
-  </div>
+    </div>
 
-  <!-- Bottom CTA -->
-  <section class="bottom-cta">
-    <div class="cta-divider"></div>
-    <p class="cta-text">
-      Ready to stop writing specs and start shipping products?
-    </p>
-    <a href="/subscribe" class="cta-button">
-      Get Started
-    </a>
-  </section>
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+      <div class="cta-divider"></div>
+      <p class="cta-text">
+        Ready to stop writing specs and start shipping products?
+      </p>
+      <a href="/subscribe" class="cta-button">
+        Get Started
+      </a>
+    </section>
+
+  </div>
 
 </Layout>
 
 <style>
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: calc(var(--space-10) + var(--space-10)) var(--page-padding) var(--space-10);
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 1px;
-    background: var(--color-border);
-  }
-
-  .hero-label {
-    display: inline-block;
-    font-family: var(--font-sans-geometric);
-    font-size: 0.65rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.35em;
-    color: var(--color-accent);
-    margin-bottom: var(--space-5);
-    position: relative;
-  }
-
-  .hero-title {
-    font-family: var(--font-serif-display);
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: var(--font-weight-semibold);
-    line-height: 0.9;
-    margin: 0 0 var(--space-6);
-    color: var(--color-text-primary);
-    letter-spacing: -0.03em;
-  }
-
-  .hero-description {
-    font-family: var(--font-serif-body);
-    font-size: var(--font-size-xlarge);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-text-secondary);
-    margin: 0 auto;
-    max-width: 600px;
-  }
-
   /* Path Selector */
   .path-selector {
     display: flex;
@@ -292,7 +242,7 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     gap: var(--space-8);
     padding: var(--space-8) var(--page-padding);
-    margin-bottom: var(--space-10);
+    margin: var(--space-8) 0 var(--space-10);
     position: relative;
   }
 
@@ -409,22 +359,23 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .path-tab.disabled::after {
-    content: 'Sign up for newsletter to get notified when this launches';
+    content: 'Subscribe to newsletter to get notified';
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--color-text-primary);
     color: var(--color-neutral-0);
     padding: var(--space-2) var(--space-3);
     border-radius: 4px;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     letter-spacing: 0.05em;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--transition-normal);
-    z-index: 100;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
   .path-tab.disabled:hover::after {
@@ -432,11 +383,11 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .path-tab.disabled[data-path="designer"]::after {
-    content: 'Get notified when Design path launches';
+    content: 'Subscribe to newsletter for Design path updates';
   }
 
   .path-tab.disabled[data-path="everyone"]::after {
-    content: 'Get notified when Leaders path launches';
+    content: 'Subscribe to newsletter for Leaders path updates';
   }
 
   /* Modules Container */
@@ -483,11 +434,12 @@ import Layout from '../layouts/Layout.astro';
   .module-label {
     display: block;
     font-family: var(--font-sans-geometric);
-    font-size: 0.65rem;
-    font-weight: var(--font-weight-semibold);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     color: var(--color-accent);
+    line-height: var(--line-height-normal);
     margin-bottom: var(--space-3);
   }
 
@@ -522,22 +474,21 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     gap: var(--space-3);
     font-family: var(--font-sans-geometric);
-    font-size: 0.7rem;
-    font-weight: var(--font-weight-semibold);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
     background: none;
     border: none;
     padding: var(--space-2) 0;
     cursor: pointer;
     transition: all var(--transition-normal);
-    border-bottom: 1px solid transparent;
   }
 
   .module-expand:hover {
     color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
   }
 
   .module-expand .arrow {

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import PostPreview from '../components/PostPreview.astro';
 import Tag from '../components/Tag.astro';
 import { getCollection } from 'astro:content';
@@ -13,19 +14,13 @@ const sortedPosts = allPosts
 ---
 
 <Layout title="Vibe Code Moonlighter - Designer to Builder Journey">
-  <div class="page-container">
-    <section class="hero">
-      <div class="hero-content">
-        <span class="hero-label">Learning by building, sharing the stumbles</span>
-        <h1 class="hero-title">
-          Ship real things without the traditional coding path
-        </h1>
-        <p class="hero-description">
-          A humble set of bite-sized tips for product people who want to build<br />
-          and design folks who want to ship.
-        </p>
-      </div>
-    </section>
+  <div class="container-wide">
+    <PageHeader 
+      title="Ship real things without the traditional coding path"
+      subtitle="A humble set of bite-sized tips for product people who want to build and design folks who want to ship."
+      label="Learning by building, sharing the stumbles"
+      variant="hero"
+    />
 
     <section class="posts-section">
       <div class="posts-header">
@@ -66,51 +61,6 @@ const sortedPosts = allPosts
 </Layout>
 
 <style>
-  .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--page-padding);
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-10);
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .hero-label {
-    font-family: var(--font-sans-geometric);
-    font-size: 0.7rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--color-accent);
-  }
-
-  .hero-title {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    letter-spacing: var(--letter-spacing-tight);
-    margin: var(--space-4) 0 var(--space-5);
-  }
-
-  .hero-description {
-    font-family: var(--font-serif-body);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-text-secondary);
-    margin: 0 auto;
-    max-width: 600px;
-  }
-
   /* Posts Section */
   .posts-section {
     padding: var(--space-8) 0 var(--space-10);
@@ -125,11 +75,12 @@ const sortedPosts = allPosts
 
   .section-label {
     font-family: var(--font-sans-geometric);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     letter-spacing: 0.3em;
     color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
     white-space: nowrap;
   }
 
@@ -168,11 +119,12 @@ const sortedPosts = allPosts
   .post-date {
     display: block;
     font-family: var(--font-sans-geometric);
-    font-size: 0.65rem;
-    font-weight: var(--font-weight-medium);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.3em;
     color: var(--color-accent);
+    line-height: var(--line-height-normal);
     margin-bottom: var(--space-3);
   }
 

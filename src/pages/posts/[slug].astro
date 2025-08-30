@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import Tag from '../../components/Tag.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
@@ -30,31 +31,24 @@ const formatDate = (date: Date) => {
 ---
 
 <Layout title={post.data.title} description={post.data.excerpt}>
-  <article class="post-article">
-    <header class="post-hero">
-      <time class="post-date" datetime={post.data.date.toISOString()}>
-        {formatDate(post.data.date).toUpperCase()}
-      </time>
-      
-      <h1 class="post-title">{post.data.title}</h1>
-      
-      {post.data.excerpt && (
-        <p class="post-excerpt">{post.data.excerpt}</p>
-      )}
-      
-      {post.data.tags && post.data.tags.length > 0 && (
-        <div class="post-tags">
-          {post.data.tags.map(tag => (
-            <Tag tag={tag} size="small" />
-          ))}
-        </div>
-      )}
-    </header>
-
-    <div class="post-container">
-      <div class="post-content prose">
-        <Content />
+  <div class="container">
+    <PageHeader 
+      title={post.data.title}
+      subtitle={post.data.excerpt}
+      label={formatDate(post.data.date).toUpperCase()}
+      variant="standard"
+    />
+    
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="post-tags">
+        {post.data.tags.map(tag => (
+          <Tag tag={tag} size="small" />
+        ))}
       </div>
+    )}
+
+    <div class="post-content prose">
+      <Content />
     </div>
 
     <footer class="post-footer">
@@ -69,71 +63,21 @@ const formatDate = (date: Date) => {
         </a>
       </nav>
     </footer>
-  </article>
+
+  </div>
 </Layout>
 
 <style>
-  .post-article {
-    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-10);
-  }
-
-  /* Hero Section */
-  .post-hero {
-    text-align: center;
-    padding: var(--space-8) var(--page-padding) var(--space-10);
-    max-width: 860px;
-    margin: 0 auto;
-  }
-
-  .post-date {
-    display: block;
-    font-family: var(--font-sans-geometric);
-    font-size: 0.7rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--color-accent);
-    margin-bottom: var(--space-5);
-  }
-
   .post-tags {
     display: flex;
     justify-content: center;
     gap: var(--space-2);
-    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
   }
 
   .post-tags :global(.tag) {
     font-size: 0.55rem !important;
     padding: 2px 8px !important;
-  }
-
-
-  .post-title {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    letter-spacing: var(--letter-spacing-tight);
-    margin: 0 0 var(--space-5);
-    color: var(--color-text-primary);
-  }
-
-  .post-excerpt {
-    font-family: var(--font-serif-body);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  /* Content Container */
-  .post-container {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 0 var(--page-padding);
   }
 
   /* Prose Content Styles */

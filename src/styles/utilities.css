@@ -13,6 +13,12 @@
   padding: 0 var(--page-padding);
 }
 
+.container-medium {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
 .container-wide {
   max-width: 1200px;
   margin: 0 auto;
@@ -89,14 +95,15 @@
   color: var(--color-neutral-0);
 }
 
-/* Meta text */
+/* Meta text - standardized uppercase spaced text */
 .meta-text {
   font-family: var(--font-sans-geometric);
-  font-size: 0.75rem;
-  font-weight: var(--font-weight-medium);
+  font-size: 0.6rem;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.3em;
   color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
 }
 
 .meta-text.accent {
