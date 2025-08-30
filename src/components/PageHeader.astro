@@ -30,7 +30,7 @@ const {
 
 <style>
   .page-header {
-    padding: calc(var(--space-8) + var(--space-6)) var(--page-padding) var(--space-6);
+    padding: calc(var(--space-10) + var(--space-8)) var(--page-padding) var(--space-6);
     margin-bottom: var(--space-8);
   }
 
@@ -78,27 +78,27 @@ const {
 
   /* Hero variant for landing pages */
   .page-header.hero {
-    padding: calc(var(--space-8) + var(--space-6)) 0 var(--space-8);
-    max-width: 800px;
+    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-8);
+    max-width: 640px;
     margin: 0 auto var(--space-10);
     position: relative;
   }
 
   .page-header.hero .page-title {
     font-size: clamp(2.25rem, 6vw, 3.75rem);
-    line-height: 0.9;
+    line-height: 1;
     letter-spacing: -0.03em;
   }
 
   /* Minimal variant */
   .page-header.minimal {
-    padding: var(--space-6) 0 var(--space-5);
+    padding: calc(var(--space-10) + var(--space-8)) 0 var(--space-5);
     margin-bottom: var(--space-5);
   }
 
   /* Compact variant for tag pages */
   .page-header.compact {
-    padding-top: calc(var(--space-8) + var(--space-6));
+    padding-top: calc(var(--space-10) + var(--space-8));
     padding-bottom: var(--space-6);
   }
 
@@ -115,11 +115,15 @@ const {
 
   @media (max-width: 768px) {
     .page-header {
-      padding: calc(var(--space-6) + var(--space-4)) var(--page-padding) var(--space-5);
+      padding: calc(var(--space-8) + var(--space-6)) var(--page-padding) var(--space-5);
     }
 
     .page-header.hero {
-      padding: calc(var(--space-6) + var(--space-4)) 0 var(--space-6);
+      padding: calc(var(--space-8) + var(--space-6)) 0 var(--space-6);
+    }
+
+    .page-header.minimal {
+      padding: calc(var(--space-8) + var(--space-6)) 0 var(--space-5);
     }
 
     .page-title {

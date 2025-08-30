@@ -1,0 +1,1427 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Tag from '../components/Tag.astro';
+---
+
+<Layout title="Design System - Vibe Code Moonlighter">
+  <div class="ds-container">
+    <header class="ds-header">
+      <span class="ds-label">DESIGN SYSTEM</span>
+      <h1 class="ds-title">Vibe Code Moonlighter</h1>
+      <p class="ds-description">
+        Editorial design system with seasonal accents and refined typography
+      </p>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="ds-nav">
+      <div class="nav-title">SECTIONS</div>
+      <ul class="nav-list">
+        <li><a href="#overview" class="nav-link">Overview</a></li>
+        <li><a href="#typography" class="nav-link">Typography</a></li>
+        <li><a href="#page-architecture" class="nav-link">Page Architecture</a></li>
+        <li><a href="#typography-standards" class="nav-link">Typography Standards</a></li>
+        <li><a href="#colors" class="nav-link">Colors</a></li>
+        <li><a href="#spacing" class="nav-link">Spacing</a></li>
+        <li><a href="#components" class="nav-link">Components</a></li>
+        <li><a href="#utilities" class="nav-link">Utilities</a></li>
+      </ul>
+    </nav>
+
+    <div class="ds-content">
+      <!-- Architecture Overview -->
+      <section class="ds-section" id="overview">
+        <h2 class="section-title">Architecture Overview</h2>
+        
+        <div class="overview-grid">
+          <div class="overview-card">
+            <h3 class="overview-title">Page Structure</h3>
+            <p class="overview-desc">Three PageHeader variants (hero, standard, minimal) with consistent typography and spacing patterns.</p>
+            <ul class="overview-list">
+              <li><strong>Hero:</strong> Homepage + Zero to Ship (800px max-width)</li>
+              <li><strong>Standard:</strong> Posts, About, Subscribe, Archive, Tags</li>
+              <li><strong>Minimal:</strong> Lighter spacing for utility pages</li>
+            </ul>
+          </div>
+          
+          <div class="overview-card">
+            <h3 class="overview-title">Container System</h3>
+            <p class="overview-desc">Three container patterns for different content types and reading experiences.</p>
+            <ul class="overview-list">
+              <li><strong>Wide (1200px):</strong> Homepage only</li>
+              <li><strong>Medium (900px):</strong> Zero to Ship learning page</li>
+              <li><strong>Standard (720px):</strong> All other pages for comfortable reading</li>
+            </ul>
+          </div>
+          
+          <div class="overview-card">
+            <h3 class="overview-title">Typography System</h3>
+            <p class="overview-desc">3-font system with standardized uppercase text across all components.</p>
+            <ul class="overview-list">
+              <li><strong>Literata:</strong> Display headlines only</li>
+              <li><strong>DM Sans:</strong> All uppercase/geometric text</li>
+              <li><strong>EB Garamond:</strong> Body text and reading content</li>
+            </ul>
+          </div>
+          
+          <div class="overview-card">
+            <h3 class="overview-title">Design Philosophy</h3>
+            <p class="overview-desc">Editorial sophistication with generous whitespace and seasonal color accents.</p>
+            <ul class="overview-list">
+              <li><strong>Consistency:</strong> All uppercase text uses identical styling (0.6rem)</li>
+              <li><strong>Scalability:</strong> New pages inherit proper patterns automatically</li>
+              <li><strong>Seasonal:</strong> Color accents rotate with seasons</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography -->
+      <section class="ds-section" id="typography">
+        <h2 class="section-title">Typography</h2>
+      
+      <div class="typography-grid">
+        <div class="type-specimen">
+          <span class="type-label">Display Serif</span>
+          <h1 class="display-example">Literata</h1>
+          <p class="type-info">Headlines & Titles</p>
+          <code class="type-token">--font-serif-display</code>
+          <p class="type-usage">h1, h2, h3, hero titles</p>
+        </div>
+        
+        <div class="type-specimen">
+          <span class="type-label">Geometric Sans</span>
+          <p class="sans-example">DM SANS</p>
+          <p class="type-info">Metadata & Labels</p>
+          <code class="type-token">--font-sans-geometric</code>
+          <p class="type-usage">Navigation, dates, tags, buttons</p>
+        </div>
+        
+        <div class="type-specimen">
+          <span class="type-label">Body Serif</span>
+          <p class="body-example">EB Garamond</p>
+          <p class="type-info">Body Text & Reading</p>
+          <code class="type-token">--font-serif-body</code>
+          <p class="type-usage">Paragraphs, excerpts, prose</p>
+        </div>
+      </div>
+
+      <div class="type-scale">
+        <h3 class="subsection-title">Type Scale</h3>
+        <div class="scale-item">
+          <span class="scale-size">4xl</span>
+          <p class="text-4xl">Building in moonlight</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">3xl</span>
+          <p class="text-3xl">Building in moonlight</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">2xl</span>
+          <p class="text-2xl">Building in moonlight</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">xl</span>
+          <p class="text-xl">Building in moonlight</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">lg</span>
+          <p class="text-lg">Building in moonlight</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">base</span>
+          <p class="text-base">Building in moonlight</p>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">sm</span>
+          <p class="text-sm">Building in moonlight</p>
+        </div>
+      </div>
+    </section>
+
+      <!-- Page Architecture -->
+      <section class="ds-section" id="page-architecture">
+        <h2 class="section-title">Page Architecture</h2>
+      
+      <div class="architecture-grid">
+        <div class="pattern-card">
+          <h3 class="pattern-title">Hero Pages</h3>
+          <p class="pattern-description">Homepage, Zero to Ship - Marketing focused</p>
+          <code class="pattern-code">
+&lt;div class="container-wide"&gt;
+  &lt;PageHeader variant="hero" /&gt;
+&lt;/div&gt;
+          </code>
+          <div class="pattern-specs">
+            <span class="spec">Max-width: 1200px</span>
+            <span class="spec">Hero title: clamp(2.25rem, 6vw, 3.75rem)</span>
+            <span class="spec">Hero content: 800px max-width</span>
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <h3 class="pattern-title">Standard Pages</h3>
+          <p class="pattern-description">Posts, About, Archive - Content focused</p>
+          <code class="pattern-code">
+&lt;div class="container"&gt;
+  &lt;PageHeader variant="standard" /&gt;
+&lt;/div&gt;
+          </code>
+          <div class="pattern-specs">
+            <span class="spec">Max-width: 720px</span>
+            <span class="spec">Standard title: 2.25rem</span>
+            <span class="spec">Reading-optimized width</span>
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <h3 class="pattern-title">Learning Pages</h3>
+          <p class="pattern-description">Courses, tutorials - Educational focus</p>
+          <code class="pattern-code">
+&lt;div class="container-medium"&gt;
+  &lt;PageHeader variant="hero" /&gt;
+&lt;/div&gt;
+          </code>
+          <div class="pattern-specs">
+            <span class="spec">Max-width: 900px</span>
+            <span class="spec">Balanced for content & visual hierarchy</span>
+            <span class="spec">Used by Zero to Ship</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- Typography Standards -->
+      <section class="ds-section" id="typography-standards">
+        <h2 class="section-title">Typography Usage</h2>
+        
+        <div class="usage-grid">
+          <div class="usage-card">
+            <h3 class="usage-title">Headings in Practice</h3>
+            <div class="usage-example">
+              <h1 class="demo-h1">Ship real things without the traditional coding path</h1>
+              <code class="usage-code">h1 { font: Literata 2.25-3.75rem semibold }</code>
+              <h2 class="demo-h2">MODULE ONE</h2>
+              <code class="usage-code">h2 { font: DM Sans 0.875rem 900 uppercase }</code>
+              <h3 class="demo-h3">Foundation & Mental Models</h3>
+              <code class="usage-code">h3 { font: Literata 1.5rem medium }</code>
+            </div>
+          </div>
+          
+          <div class="usage-card">
+            <h3 class="usage-title">Body Text Usage</h3>
+            <div class="usage-example">
+              <p class="demo-paragraph">From terminal terror to GitHub confidence. Learn the core mechanics that every AI builder needs. This is how body text appears across the site.</p>
+              <code class="usage-code">p { font: EB Garamond 1.125rem normal }</code>
+              <p class="demo-excerpt">Post excerpts use the same font but may vary in size and color depending on context.</p>
+              <code class="usage-code">.post-excerpt { font: EB Garamond 1.125rem, color: secondary }</code>
+            </div>
+          </div>
+          
+          <div class="usage-card">
+            <h3 class="usage-title">Standardized Meta Text</h3>
+            <div class="usage-example">
+              <div class="demo-meta-stack">
+                <span class="demo-nav">JOURNEY</span>
+                <span class="demo-date">AUG 25</span>
+                <span class="demo-label">THE NO-BS LEARNING PATH</span>
+                <span class="demo-button">PRIMARY BUTTON</span>
+              </div>
+              <code class="usage-code">All uppercase text: DM Sans 0.6rem bold, letter-spacing: 0.3em</code>
+              <p class="usage-note">Navigation, dates, labels, buttons - all identical except color</p>
+            </div>
+          </div>
+          
+          <div class="usage-card">
+            <h3 class="usage-title">Responsive Scaling</h3>
+            <div class="usage-example">
+              <div class="demo-responsive">
+                <div class="demo-desktop">Desktop: clamp(2.25rem, 6vw, 3.75rem)</div>
+                <div class="demo-mobile">Mobile: clamp(1.75rem, 5vw, 2.5rem)</div>
+              </div>
+              <code class="usage-code">Hero titles use fluid scaling with clamp()</code>
+              <p class="usage-note">Maintains proportions across all screen sizes</p>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="subsection-title">Token Reference</h3>
+      
+      <div class="standard-grid">
+        <div class="standard-card">
+          <h3 class="standard-title">Uppercase Spaced Text</h3>
+          <p class="standard-description">All labels, navigation, dates - consistent sizing</p>
+          <div class="standard-example meta-example">CONSISTENT STYLING</div>
+          <div class="standard-specs">
+            <span class="spec-item">Font Size: 0.6rem</span>
+            <span class="spec-item">Weight: Bold (700)</span>
+            <span class="spec-item">Letter Spacing: 0.3em</span>
+            <span class="spec-item">Line Height: Normal (1.6)</span>
+          </div>
+          <p class="standard-usage">
+            <strong>Used for:</strong> Navigation links, page labels, section headers, 
+            post dates, module labels, button text
+          </p>
+        </div>
+
+        <div class="standard-card">
+          <h3 class="standard-title">Page Headers</h3>
+          <p class="standard-description">Green accent labels + titles + descriptions</p>
+          <div class="standard-example">
+            <span class="accent-example">THE NO-BS LEARNING PATH</span>
+            <h2 class="title-example">Page Title</h2>
+            <p class="desc-example">Consistent subtitle styling across all pages</p>
+          </div>
+          <div class="standard-specs">
+            <span class="spec-item">Label: 0.6rem, accent color</span>
+            <span class="spec-item">Title: Hero 2.25-3.75rem | Standard 2.25rem</span>
+            <span class="spec-item">Subtitle: 1.125rem, max-width 500px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- Colors -->
+      <section class="ds-section" id="colors">
+        <h2 class="section-title">Color System</h2>
+      
+      <div class="color-subsection">
+        <h3 class="subsection-title">Seasonal Accent (Current: Spring)</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="swatch spring"></div>
+            <span class="color-label">SPRING</span>
+            <span class="color-value">--color-spring</span>
+            <span class="color-usage">Active Mar-May</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch summer"></div>
+            <span class="color-label">SUMMER</span>
+            <span class="color-value">--color-summer</span>
+            <span class="color-usage">Active Jun-Aug</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch fall"></div>
+            <span class="color-label">FALL</span>
+            <span class="color-value">--color-fall</span>
+            <span class="color-usage">Active Sep-Nov</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch winter"></div>
+            <span class="color-label">WINTER</span>
+            <span class="color-value">--color-winter</span>
+            <span class="color-usage">Active Dec-Feb</span>
+          </div>
+        </div>
+        <div class="usage-note">
+          <strong>Currently using:</strong> <code>--color-accent</code> = <code>--color-spring</code>
+          <br>
+          <strong>Used in:</strong> Category tags, hero label, seasonal dots, buttons
+        </div>
+      </div>
+
+      <div class="color-subsection">
+        <h3 class="subsection-title">Neutrals</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="swatch neutral-0"></div>
+            <span class="color-label">WHITE</span>
+            <span class="color-value">--color-neutral-0</span>
+            <span class="color-usage">Cards, overlays</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch neutral-5"></div>
+            <span class="color-label">BG PAGE</span>
+            <span class="color-value">--color-bg-page</span>
+            <span class="color-usage">Main background</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch neutral-10"></div>
+            <span class="color-label">BG ALT</span>
+            <span class="color-value">--color-bg-alt</span>
+            <span class="color-usage">Alt sections</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch neutral-20"></div>
+            <span class="color-label">BORDER</span>
+            <span class="color-value">--color-border</span>
+            <span class="color-usage">Dividers, lines</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch neutral-60"></div>
+            <span class="color-label">TEXT SEC</span>
+            <span class="color-value">--color-text-secondary</span>
+            <span class="color-usage">Meta, dates</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch neutral-80"></div>
+            <span class="color-label">TEXT MUTE</span>
+            <span class="color-value">--color-text-muted</span>
+            <span class="color-usage">Subtle text</span>
+          </div>
+          <div class="color-swatch">
+            <div class="swatch neutral-100"></div>
+            <span class="color-label">TEXT PRI</span>
+            <span class="color-value">--color-text-primary</span>
+            <span class="color-usage">Headlines, body</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- Spacing -->
+      <section class="ds-section" id="spacing">
+        <h2 class="section-title">Spacing System</h2>
+      
+      <div class="spacing-grid">
+        <div class="spacing-item">
+          <div class="spacing-box space-1"></div>
+          <code class="spacing-token">--space-1</code>
+          <span class="spacing-value">4px</span>
+          <span class="spacing-usage">Tiny gaps</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-2"></div>
+          <code class="spacing-token">--space-2</code>
+          <span class="spacing-value">8px</span>
+          <span class="spacing-usage">Small gaps</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-3"></div>
+          <code class="spacing-token">--space-3</code>
+          <span class="spacing-value">12px</span>
+          <span class="spacing-usage">Inner padding</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-4"></div>
+          <code class="spacing-token">--space-4</code>
+          <span class="spacing-value">16px</span>
+          <span class="spacing-usage">Standard gap</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-5"></div>
+          <code class="spacing-token">--space-5</code>
+          <span class="spacing-value">24px</span>
+          <span class="spacing-usage">Section gaps</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-6"></div>
+          <code class="spacing-token">--space-6</code>
+          <span class="spacing-value">32px</span>
+          <span class="spacing-usage">Large gaps</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-7"></div>
+          <code class="spacing-token">--space-7</code>
+          <span class="spacing-value">48px</span>
+          <span class="spacing-usage">Section spacing</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-8"></div>
+          <code class="spacing-token">--space-8</code>
+          <span class="spacing-value">64px</span>
+          <span class="spacing-usage">Page sections</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-box space-10"></div>
+          <code class="spacing-token">--space-10</code>
+          <span class="spacing-value">128px</span>
+          <span class="spacing-usage">Homepage article gap</span>
+        </div>
+      </div>
+    </section>
+
+      <!-- Components -->
+      <section class="ds-section" id="components">
+        <h2 class="section-title">Component Patterns</h2>
+      
+      <div class="component-grid">
+        <!-- Buttons -->
+        <div class="component-item">
+          <h3 class="component-title">Buttons</h3>
+          <div class="component-examples">
+            <button class="btn-primary">Primary Button</button>
+            <button class="btn-secondary">Secondary</button>
+            <a href="#" class="link-button">Link Button</a>
+          </div>
+        </div>
+
+        <!-- Interactive Tags -->
+        <div class="component-item">
+          <h3 class="component-title">Interactive Tags</h3>
+          <div class="component-examples">
+            <Tag tag="Reality Checks" size="small" />
+            <Tag tag="Getting Unstuck" size="small" />
+            <Tag tag="Design" size="medium" />
+            <Tag tag="Active Tag" size="small" />
+          </div>
+          <div class="component-info">
+            <code class="component-usage">&lt;Tag tag="..." size="small|medium" /&gt;</code>
+            <p class="component-description">Clickable tags that link to filtered views. Hover for accent color fill.</p>
+          </div>
+        </div>
+
+        <!-- Labels -->
+        <div class="component-item">
+          <h3 class="component-title">Static Labels</h3>
+          <div class="component-examples">
+            <span class="label-primary">JOURNEY</span>
+            <span class="label-secondary">AUG 25</span>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="component-item full-width">
+          <h3 class="component-title">Post Card</h3>
+          <article class="post-card">
+            <div class="card-meta">
+              <time>AUG 24</time>
+              <span class="card-category">JOURNEY</span>
+            </div>
+            <h2 class="card-title">Hello from the Moonlight Hours</h2>
+            <p class="card-excerpt">The journey begins at midnight. From pixels to production, one commit at a time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+      <!-- Utilities -->
+      <section class="ds-section" id="utilities">
+        <h2 class="section-title">Utility Classes</h2>
+      
+      <div class="utilities-grid">
+        <div class="utility-group">
+          <h3 class="utility-title">Text Utilities</h3>
+          <code>.meta</code>
+          <code>.prose</code>
+          <code>.container</code>
+        </div>
+        
+        <div class="utility-group">
+          <h3 class="utility-title">Layout</h3>
+          <code>--content-max-width: 720px</code>
+          <code>--header-height: 80px</code>
+          <code>--page-padding: 24px/64px</code>
+        </div>
+        
+        <div class="utility-group">
+          <h3 class="utility-title">Effects</h3>
+          <code>border-radius: 6px</code>
+          <code>border-radius: 8px</code>
+          <code>transition: 200ms ease</code>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .ds-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--page-padding) var(--space-10);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  @media (max-width: 1024px) {
+    .ds-container {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  .ds-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .ds-label {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+  }
+
+  .ds-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-3xl);
+    margin: var(--space-4) 0 var(--space-5);
+  }
+
+  .ds-description {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Sections */
+  .ds-section {
+    margin-bottom: var(--space-10);
+  }
+
+  .section-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .subsection-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-xlarge);
+    margin: var(--space-6) 0 var(--space-4);
+  }
+
+  /* Typography */
+  .typography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .type-specimen {
+    padding: var(--space-5);
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+  }
+
+  .type-label {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-secondary);
+  }
+
+  .display-example {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    margin: var(--space-3) 0;
+  }
+
+  .sans-example {
+    font-family: var(--font-sans-geometric);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: var(--space-3) 0;
+  }
+
+  .body-example {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-2xl);
+    margin: var(--space-3) 0;
+  }
+
+  .type-info {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-2);
+  }
+
+  .type-token {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    background: var(--color-bg-surface);
+    padding: var(--space-1) var(--space-2);
+    border-radius: 4px;
+    margin-bottom: var(--space-2);
+  }
+
+  .type-usage {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Type Scale */
+  .type-scale {
+    background: var(--color-bg-alt);
+    padding: var(--space-6);
+    border-radius: 8px;
+  }
+
+  .scale-item {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .scale-size {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-secondary);
+    width: 3rem;
+  }
+
+  .text-4xl { font-size: var(--font-size-4xl); }
+  .text-3xl { font-size: var(--font-size-3xl); }
+  .text-2xl { font-size: var(--font-size-2xl); }
+  .text-xl { font-size: var(--font-size-xlarge); }
+  .text-lg { font-size: var(--font-size-large); }
+  .text-base { font-size: var(--font-size-base); }
+  .text-sm { font-size: var(--font-size-small); }
+
+  /* Colors */
+  .color-subsection {
+    margin-bottom: var(--space-6);
+  }
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .color-swatch {
+    text-align: center;
+  }
+
+  .swatch {
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    margin-bottom: var(--space-2);
+    border: 1px solid var(--color-border);
+  }
+
+  .swatch.spring { background: var(--color-spring); }
+  .swatch.summer { background: var(--color-summer); }
+  .swatch.fall { background: var(--color-fall); }
+  .swatch.winter { background: var(--color-winter); }
+  .swatch.neutral-0 { background: var(--color-neutral-0); }
+  .swatch.neutral-5 { background: var(--color-neutral-5); }
+  .swatch.neutral-10 { background: var(--color-neutral-10); }
+  .swatch.neutral-20 { background: var(--color-neutral-20); }
+  .swatch.neutral-60 { background: var(--color-neutral-60); }
+  .swatch.neutral-80 { background: var(--color-neutral-80); }
+  .swatch.neutral-100 { background: var(--color-neutral-100); }
+
+  .color-label {
+    display: block;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-primary);
+  }
+
+  .color-value {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--color-text-primary);
+    margin: var(--space-1) 0;
+  }
+
+  .color-usage {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .usage-note {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .usage-note code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    background: var(--color-bg-surface);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  /* Spacing */
+  .spacing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .spacing-item {
+    text-align: center;
+  }
+
+  .spacing-box {
+    background: var(--color-accent);
+    margin: 0 auto var(--space-2);
+  }
+
+  .space-1 { height: var(--space-1); width: var(--space-1); }
+  .space-2 { height: var(--space-2); width: var(--space-2); }
+  .space-3 { height: var(--space-3); width: var(--space-3); }
+  .space-4 { height: var(--space-4); width: var(--space-4); }
+  .space-5 { height: var(--space-5); width: var(--space-5); }
+  .space-6 { height: var(--space-6); width: var(--space-6); }
+  .space-7 { height: var(--space-7); width: var(--space-7); }
+  .space-8 { height: var(--space-8); width: var(--space-8); }
+  .space-10 { height: var(--space-10); width: var(--space-10); }
+
+  .spacing-token {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--color-text-primary);
+    margin: var(--space-1) 0;
+  }
+
+  .spacing-value {
+    display: block;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .spacing-usage {
+    display: block;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Components */
+  .component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .component-item {
+    padding: var(--space-5);
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+  }
+
+  .component-item.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .component-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--space-4);
+  }
+
+  .component-examples {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-3);
+  }
+
+  .component-info {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .component-usage {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: var(--color-text-primary);
+    background: var(--color-bg-surface);
+    padding: var(--space-2);
+    border-radius: 4px;
+    margin-bottom: var(--space-2);
+  }
+
+  .component-description {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: var(--color-accent);
+    color: white;
+    padding: var(--space-3) var(--space-5);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  .btn-secondary {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: transparent;
+    color: var(--color-text-primary);
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-text-primary);
+  }
+
+  .link-button {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+  }
+
+  .link-button:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* Labels */
+  .label-primary {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+  }
+
+  .label-secondary {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-secondary);
+  }
+
+  .tag-outline {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+  }
+
+  /* Post Card */
+  .post-card {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-5);
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
+  .card-meta time {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-secondary);
+  }
+
+  .card-category {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+  }
+
+  .card-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-medium);
+    margin: 0 0 var(--space-2);
+  }
+
+  .card-excerpt {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Utilities */
+  .utilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .utility-group {
+    padding: var(--space-5);
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+  }
+
+  .utility-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--space-3);
+  }
+
+  .utility-group code {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+    background: var(--color-bg-surface);
+    border-radius: 4px;
+  }
+
+  /* Page Architecture */
+  .architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .pattern-card {
+    background: var(--color-bg-alt);
+    padding: var(--space-5);
+    border-radius: 8px;
+  }
+
+  .pattern-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--space-2);
+  }
+
+  .pattern-description {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .pattern-code {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    background: var(--color-bg-surface);
+    padding: var(--space-3);
+    border-radius: 4px;
+    margin-bottom: var(--space-4);
+    white-space: pre-line;
+  }
+
+  .pattern-specs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .spec {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  /* Typography Standards */
+  .standard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .standard-card {
+    background: var(--color-bg-alt);
+    padding: var(--space-5);
+    border-radius: 8px;
+  }
+
+  .standard-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--space-2);
+  }
+
+  .standard-description {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .standard-example {
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-bg-surface);
+    border-radius: 6px;
+  }
+
+  .meta-example {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-text-primary);
+    text-align: center;
+  }
+
+  .accent-example {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+
+  .title-example {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin: 0 0 var(--space-3);
+  }
+
+  .desc-example {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .standard-specs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+  }
+
+  .spec-item {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .standard-usage {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  /* Side Navigation */
+  .ds-nav {
+    position: sticky;
+    top: var(--space-8);
+    background: var(--color-bg-alt);
+    padding: var(--space-5);
+    border-radius: 8px;
+    height: fit-content;
+  }
+
+  @media (max-width: 1024px) {
+    .ds-nav {
+      position: static;
+      grid-row: 2;
+    }
+  }
+
+  .nav-title {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list li {
+    margin: 0;
+  }
+
+  .nav-link {
+    display: block;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    transition: color var(--transition-normal);
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .ds-content {
+    grid-column: 2;
+  }
+
+  @media (max-width: 1024px) {
+    .ds-content {
+      grid-column: 1;
+    }
+  }
+
+  /* Overview Section */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-5);
+  }
+
+  .overview-card {
+    background: var(--color-bg-alt);
+    padding: var(--space-5);
+    border-radius: 8px;
+  }
+
+  .overview-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--space-2);
+  }
+
+  .overview-desc {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .overview-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .overview-list li {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .overview-list li:before {
+    content: '•';
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Typography Usage Section */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-5);
+    margin-bottom: var(--space-6);
+  }
+
+  .usage-card {
+    background: var(--color-bg-alt);
+    padding: var(--space-5);
+    border-radius: 8px;
+  }
+
+  .usage-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--space-3);
+  }
+
+  .usage-example {
+    background: var(--color-bg-surface);
+    padding: var(--space-4);
+    border-radius: 6px;
+    margin-bottom: var(--space-3);
+  }
+
+  .usage-code {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin: var(--space-2) 0;
+    font-style: italic;
+  }
+
+  .usage-note {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin: var(--space-1) 0 0;
+  }
+
+  .demo-h1 {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    margin: 0 0 var(--space-2);
+  }
+
+  .demo-h2 {
+    font-family: var(--font-sans-geometric);
+    font-size: var(--font-size-small);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: var(--space-3) 0 var(--space-2);
+  }
+
+  .demo-h3 {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-medium);
+    margin: var(--space-2) 0;
+  }
+
+  .demo-paragraph {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-2);
+  }
+
+  .demo-excerpt {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    color: var(--color-text-secondary);
+    margin: var(--space-2) 0 0;
+  }
+
+  .demo-meta-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .demo-nav,
+  .demo-date,
+  .demo-label,
+  .demo-button {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.6rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    display: inline-block;
+  }
+
+  .demo-nav {
+    color: var(--color-text-primary);
+  }
+
+  .demo-date {
+    color: var(--color-text-secondary);
+  }
+
+  .demo-label {
+    color: var(--color-accent);
+  }
+
+  .demo-button {
+    color: var(--color-neutral-0);
+    background: var(--color-accent);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 6px;
+    width: fit-content;
+  }
+
+  .demo-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .demo-desktop {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  .demo-mobile {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+  }
+</style>
