@@ -8,7 +8,7 @@ draft: false
 
 You want to vibe code. Build things with AI. Ship actual products. First, you need a tool to do it.
 
-<span class="context-label">INDUSTRY CATCHUP:</span> <span class="context-text">You can vibe code with anything. Popular options include all-in-one platforms like Bolt or Replit (everything handled for you), AI features built into chat apps (ChatGPT, Claude.ai), coding assistants that work alongside code editors (Cursor, GitHub Copilot), and CLI tools that work in your terminal. CLI stands for Command Line Interface - basically typing commands instead of clicking buttons.</span>
+<span class="context-label">INDUSTRY CATCHUP</span> <span class="context-text">You can vibe code with anything. Popular options include all-in-one platforms like Bolt or Replit (everything handled for you), AI features built into chat apps (ChatGPT, Claude.ai), coding assistants that work alongside code editors (Cursor, GitHub Copilot), and CLI tools that work in your terminal. CLI stands for Command Line Interface - basically typing commands instead of clicking buttons.</span>
 
 I'm using iTerm2 with Claude Code (CLI tool where you interact by typing commands rather than clicking buttons - iTerm2 just makes the terminal experience better than Mac's default with split panes, better copy-paste, color support). [You can get it here](https://iterm2.com).
 

@@ -8,7 +8,7 @@ draft: false
 
 Every tutorial assumes you already have a "project directory." They say "cd into your project folder" like you know what that means. Meanwhile everything's scattered across Desktop and Downloads.
 
-<span class="context-label">QUICK CONTEXT:</span> Developers keep all their code in one place. Usually `~/dev` or `~/projects`. Some people use `~/code` or `~/workspace`. I went with `~/coding` because it made sense to me, but `~/dev` is probably most common. Pick whatever feels right - the point is having one dedicated place.
+<span class="context-label">QUICK CONTEXT</span> Developers keep all their code in one place. Usually `~/dev` or `~/projects`. Some people use `~/code` or `~/workspace`. I went with `~/coding` because it made sense to me, but `~/dev` is probably most common. Pick whatever feels right - the point is having one dedicated place.
 
 Make yours:
 

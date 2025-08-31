@@ -72,7 +72,6 @@ p {
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
-  max-width: 65ch; /* Optimal reading width */
 }
 
 /* Links */
@@ -135,7 +134,7 @@ pre {
   padding: var(--space-4);
   border-radius: 6px;
   overflow-x: auto;
-  margin: var(--space-5) 0;
+  margin: var(--space-3) 0 var(--space-5) 0; /* Reduced top margin */
   font-family: 'Courier New', monospace;
   font-size: 0.7rem;
   font-weight: 500;
@@ -159,7 +158,7 @@ pre code {
   background: var(--color-accent);
   color: var(--color-neutral-0);
   font-family: var(--font-sans-geometric);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.3em;

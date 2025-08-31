@@ -108,11 +108,22 @@ When explaining conventions, show the variations. "Usually `~/dev` or `~/project
 
 ## Formatting Patterns
 
-### Context Blocks
-For industry context or background info:
+### Context Blocks (Inline Sidenotes)
+Use these sparingly as inline sidenotes when you need to explain something technical or provide industry context. They should appear naturally wherever they make sense in the flow - middle of a paragraph, end of a section, or not at all if unnecessary. Think of them like helpful whispers, not required sections.
+
 ```html
-<span class="context-label">INDUSTRY CATCHUP:</span> <span class="context-text">Explanation in italics...</span>
+<span class="context-label">INDUSTRY CATCHUP</span> <span class="context-text">Explanation in italics...</span>
 ```
+
+**When to use:**
+- Reader might not know a technical term
+- Industry convention needs explaining  
+- Quick clarification would help
+
+**When NOT to use:**
+- As a formulaic second paragraph
+- When the main text is already clear
+- Just to have one in the article
 
 ### Headers
 Use H2 (##) for main sections - they'll render as uppercase sans-serif automatically:

@@ -8,7 +8,7 @@ draft: false
 
 You're going to build websites and apps like a developer. That means having the right tools installed - the cookware for coding. Without these tools, you can't ask Chef Claude to cook anything.
 
-<span class="context-label">DEV INSIGHT:</span> <span class="context-text">Developers use package managers to install tools. Think App Store but for command line tools. Mac uses Homebrew - it handles versions, permissions, updates.</span>
+<span class="context-label">DEV INSIGHT</span> <span class="context-text">Developers use package managers to install tools. Think App Store but for command line tools. Mac uses Homebrew - it handles versions, permissions, updates.</span>
 
 Normally you'd go to [Homebrew's website](https://brew.sh) and download it, but we can install it directly from the command line. After Homebrew, we'll get three essential tools. Takes about 10 minutes total.
 
