@@ -15,6 +15,36 @@ draft: false
 ## Core Voice
 Write like you're explaining something to a smart friend who just hasn't learned this yet. They're not dumb, they just need context. You're giving them the industry shortcuts without being condescending or overly clever.
 
+## The Chef Claude Metaphor
+Claude Code is "Chef Claude" - your vibe code chef. This metaphor runs throughout our content because:
+
+**Why it works:**
+- You don't need to be a chef to describe what you want to eat → You don't need to be a coder to describe what you want to build
+- A chef knows all the techniques and recipes → Claude knows all the patterns and syntax  
+- You can cook with a recipe vs hiring a chef → You can code yourself vs hiring a developer
+- "Season to taste" → Iterate and refine with Claude until it's right
+- Kitchen tools/cookware → Dev tools (Homebrew, Git, Node, etc.)
+
+**How it removes intimidation:**
+- Everyone understands asking a chef to make something
+- No one expects to know how to cook when working with a chef
+- The chef explains what they're doing if you want to learn
+- You judge by results (does it taste good?) not process (how it was made)
+
+**The collaborative nature:**
+- You're not "commanding" or "prompting" - you're having a conversation with your chef
+- The chef might suggest improvements or alternatives
+- You can say "more salt" or "less spicy" → "make the button bigger" or "change the color"
+
+**Future concepts it sets up:**
+- Recipe files → CLAUDE.md instructions
+- Mise en place → Project setup
+- Different cuisines → Different frameworks/languages
+- Kitchen nightmares → Debugging
+- Plating → Design and UI
+
+Use this metaphor naturally throughout articles. Don't force it, but lean into it when explaining concepts. It makes vibe coding feel approachable and even fun.
+
 ## What TO Do
 
 ### Opening Pattern

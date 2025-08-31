@@ -48,7 +48,7 @@ h1 {
 
 h2 {
   font-family: var(--font-sans-geometric);
-  font-size: var(--font-size-small);
+  font-size: 0.6rem !important; /* Much smaller - 9.6px with !important */
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.3em;

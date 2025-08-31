@@ -18,11 +18,8 @@ Open iTerm2. You'll see something like:
 ```
 yourname@YourComputer ~ %
 ```
-**What you're looking at:**
-- `yourname` = your user account
-- `YourComputer` = your machine name  
-- `~` = you're in your home folder
-- `%` = ready for your command
+
+What you're looking at: `yourname` is your user account, `YourComputer` is your machine name, `~` means you're in your home folder, and `%` means it's ready for your command.
 
 ## FREQUENTLY USED COMMANDS
 
@@ -44,4 +41,4 @@ yourname@YourComputer ~ %
 
 Knowing where you are in the CLI matters. You'll be starting Claude sessions inside specific project folders, so understanding navigation prevents the frustration of Claude creating files in the wrong place or not finding what you need.
 
-Next: Creating a proper workspace for all your projects.
+[Next: Creating Your Code Workspace →](/posts/creating-code-workspace)

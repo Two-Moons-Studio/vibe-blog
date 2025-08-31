@@ -27,3 +27,5 @@ You'll probably end up with subfolders like `projects` for real stuff, `learning
 Drag the folder to your Finder sidebar. You'll use it constantly.
 
 Next time someone says "navigate to your project directory," you'll know exactly where you're going.
+
+[Next: Installing Your Dev Tools →](/posts/installing-dev-tools)
