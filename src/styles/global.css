@@ -125,6 +125,7 @@ hr {
   border-radius: 3px;
   color: rgb(55, 65, 81); /* Dark gray for readability */
   white-space: nowrap;
+  vertical-align: 0.15em; /* Lift to align with text baseline */
 }
 
 /* Code blocks - black terminal style */
