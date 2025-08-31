@@ -68,17 +68,21 @@ import PageHeader from '../components/PageHeader.astro';
               <span class="lesson-number">1.1</span>
               <span class="lesson-title">Terminal Terror to Terminal Courage</span>
             </a>
-            <a href="/posts/git-mental-model" class="lesson-item">
+            <a href="/posts/making-home-for-code" class="lesson-item">
               <span class="lesson-number">1.2</span>
-              <span class="lesson-title">Git as Your Save-Point System</span>
+              <span class="lesson-title">Making a Home for Your Code</span>
             </a>
-            <a href="/posts/three-hour-semicolon" class="lesson-item">
+            <a href="/posts/one-thing-to-install" class="lesson-item">
               <span class="lesson-number">1.3</span>
-              <span class="lesson-title">Local vs Production Mental Model</span>
+              <span class="lesson-title">The One Thing to Install First</span>
             </a>
-            <a href="/posts/npm-install-prayer-circle" class="lesson-item">
+            <a href="/posts/claude-code-setup" class="lesson-item">
               <span class="lesson-number">1.4</span>
-              <span class="lesson-title">Why Setup is Harder Than Coding</span>
+              <span class="lesson-title">Claude Code: Your Coding Copilot</span>
+            </a>
+            <a href="/posts/teaching-claude-about-you" class="lesson-item">
+              <span class="lesson-number">1.5</span>
+              <span class="lesson-title">Teaching Claude About Your Project</span>
             </a>
           </div>
         </div>
@@ -227,12 +231,11 @@ import PageHeader from '../components/PageHeader.astro';
 
     <!-- Bottom CTA -->
     <section class="bottom-cta">
-      <div class="cta-divider"></div>
       <p class="cta-text">
-        Ready to stop writing specs and start shipping products?
+        Learning the vibe code approach by actually building. No weekly emails or scheduled sends. Just <span class="highlight">real lessons when I figure something out</span>.
       </p>
       <a href="/subscribe" class="cta-button">
-        Get Started
+        Join the Newsletter
       </a>
     </section>
 
@@ -646,65 +649,40 @@ import PageHeader from '../components/PageHeader.astro';
     position: relative;
   }
 
-  .cta-divider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      var(--color-border) 30%,
-      var(--color-border) 70%,
-      transparent
-    );
-  }
 
   .cta-text {
     font-family: var(--font-serif-display);
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xlarge);
     line-height: var(--line-height-tight);
     color: var(--color-text-primary);
     margin: 0 0 var(--space-8);
     letter-spacing: -0.02em;
   }
 
+  .cta-text .highlight {
+    color: var(--color-accent);
+  }
+
   .cta-button {
     display: inline-block;
     font-family: var(--font-sans-geometric);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.3em;
     color: var(--color-neutral-0);
     background: var(--color-text-primary);
-    padding: var(--space-4) var(--space-8);
+    padding: var(--space-4) var(--space-6);
     text-decoration: none;
     transition: all var(--transition-normal);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--color-accent);
-    transition: left 0.3s ease;
-    z-index: -1;
+    border: 2px solid var(--color-text-primary);
+    border-radius: 0;
   }
 
   .cta-button:hover {
-    transform: translateY(-2px);
-  }
-
-  .cta-button:hover::before {
-    left: 0;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
   }
 
   /* Mobile Responsive */
