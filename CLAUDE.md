@@ -65,6 +65,7 @@ Every post follows this template:
 - **No BS tone** - direct, helpful, real
 - **Tags for organization** - will become guides later
 - **Markdown format** - simple and portable
+- **Follow ZERO-TO-SHIP-WRITING-GUIDE.md** for article voice and formatting
 
 ## IMPORTANT: Todo Management
 - ALWAYS update TODO.md when completing tasks or finding new ones

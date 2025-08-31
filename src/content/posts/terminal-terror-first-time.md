@@ -18,7 +18,6 @@ Open iTerm2. You'll see something like:
 ```
 yourname@YourComputer ~ %
 ```
-
 **What you're looking at:**
 - `yourname` = your user account
 - `YourComputer` = your machine name  

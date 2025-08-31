@@ -1,5 +1,17 @@
 # Zero to Ship Article Writing Guide
 
+## Article File Format
+Create articles in `/src/content/posts/[slug].md` with this frontmatter:
+```markdown
+---
+title: "Article Title"
+date: 2025-08-31T10:00:00Z
+excerpt: "Brief one-liner description."
+tags: ["getting-started", "foundation"]
+draft: false
+---
+```
+
 ## Core Voice
 Write like you're explaining something to a smart friend who just hasn't learned this yet. They're not dumb, they just need context. You're giving them the industry shortcuts without being condescending or overly clever.
 
@@ -63,6 +75,32 @@ Some concepts need 200 words, others need 800. Write until you've explained it c
 
 ### Concrete Examples
 When explaining conventions, show the variations. "Usually `~/dev` or `~/projects`. Some people use `~/code`" gives them the pattern without being prescriptive.
+
+## Formatting Patterns
+
+### Context Blocks
+For industry context or background info:
+```html
+<span class="context-label">INDUSTRY CATCHUP:</span> <span class="context-text">Explanation in italics...</span>
+```
+
+### Headers
+Use H2 (##) for main sections - they'll render as uppercase sans-serif automatically:
+```markdown
+## GETTING STARTED
+## FREQUENTLY USED COMMANDS  
+## TIPS FOR BETTER USAGE
+```
+
+### Code Examples
+- Inline code: Use backticks for commands like `pwd` or `cd folder`
+- Code blocks: Use triple backticks with language hint (bash, javascript, etc)
+- Terminal output: Use plaintext code blocks
+
+### Lists
+- Use bullet points for explanations
+- Bold the command/term, then explain after dash or colon
+- Example: **pwd** - Shows where you are (print working directory)
 
 ## Remember
 You're writing for product and design people who want to build. They're smart, they're motivated, they just need someone to fill in the gaps that every tutorial skips. Be that friend who actually explains the basics without making them feel basic.
