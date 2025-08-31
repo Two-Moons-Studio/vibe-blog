@@ -30,6 +30,8 @@
 - [ ] Automate content organization and guide creation from tags
 - [ ] Review and revise design system to be distinct from FR (good starting point but needs own identity)
 - [ ] Update typography, colors, spacing to have unique vibe-blog aesthetic
+- [ ] **Style code blocks and inline code properly** - Currently too light/large, needs tighter/bolder styling for better readability
+- [ ] **Add context-label styling** - Black bg, white text, sans-serif caps (0.6rem, 0.3em spacing) for inline context callouts
 
 ## Future Features (Phase 2+)
 

@@ -1,64 +1,56 @@
 ---
 title: "The One Thing to Install First"
 date: 2025-08-31T11:00:00Z
-excerpt: "Just Homebrew, nothing else. It's the app store for developer tools, and you need it."
+excerpt: "Homebrew: The app store for developer tools. Install this once, everything else becomes easy."
 tags: ["getting-started", "foundation", "tools"]
 draft: false
 ---
 
-## The Setup
+Every tutorial assumes you already have their tools installed. "First, make sure you have Node 18+" or "You'll need Python 3.9 or higher." But they never tell you HOW to install these things.
 
-Your Mac needs developer tools. But instead of downloading 47 different things from sketchy websites, you need one thing: Homebrew. It's basically the App Store, but for terminal stuff.
+You end up on sketchy download sites, choosing between 15 different installers, dealing with version conflicts, permission errors. It's a mess.
 
-## The Struggle
+<span class="context-label">QUICK CONTEXT:</span> Developers use package managers to install tools. Think of it like the App Store but for command line tools. On Mac, everyone uses Homebrew. It handles versions, permissions, updates, everything.
 
-Every tutorial: "First, install Node. And Python. And Git. And..."
+Install Homebrew once, then everything else is just `brew install whatever`.
 
-How? From where? What version? Why are there 16 ways to install Node? Why does nothing work?
+**Installing Homebrew:**
 
-You end up with permission errors, version conflicts, and tears.
-
-## The Solution
-
-Copy this. Paste into terminal. Hit enter:
+Copy this entire line, paste it into Terminal, hit Enter:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-It'll ask for your password. That's normal. Type it (nothing will show up as you type - also normal). Hit enter.
+It'll ask for your password. Type it. Nothing will show up as you type (not even dots). That's normal. Hit Enter.
 
-Wait 3-5 minutes. Done.
+Wait. It takes 5-10 minutes. It's downloading and setting up a bunch of stuff. Get coffee.
 
-## The Designer Take
+**What you'll see:**
+- Lots of text scrolling by = normal
+- "Password:" = type your Mac password
+- Something about Xcode = say yes
+- "Installation successful!" = you're done
 
-Homebrew is Figma plugins but for your terminal. Instead of hunting for tools, you just say "brew install whatever" and it handles everything. 
-
-Like how you don't manually download and install Figma plugins from random websites. You use the plugin browser. Same energy.
-
-## The PM Take
-
-This is infrastructure. You're setting up the foundation once so everything else just works. It's like setting up Slack before a project - you don't want to do it mid-sprint.
-
-Every other tool you'll need can be installed through Homebrew. One command, no hunting for download links.
-
-## Reality Check
-
-⏱️ **Time:** 5-10 minutes  
-🧠 **Sanity:** High (just copy-paste)  
-💰 **Cost:** Free  
-
-**What might happen:**
-- "Password:" appears. Type your Mac password. Nothing shows up. That's fine.
-- It takes forever. That's normal. Get coffee.
-- "Permission denied" - You forgot sudo. Try: `sudo [command]`
-- Asks about Xcode. Say yes to everything.
-
-**How to know it worked:**
+**Check it worked:**
 ```bash
 brew --version
 ```
 
-If you see "Homebrew 4.x.x" or similar, you're golden.
+If you see "Homebrew 4.something.something", you're golden.
 
-Next: Getting Claude Code, your AI copilot.
+**Why this matters:**
+
+From now on, when tutorials say "install Node" or "install Git" or "install literally anything", you just:
+
+```bash
+brew install node
+brew install git
+brew install whatever-they-said
+```
+
+No download pages. No version confusion. No permission errors. Homebrew handles it all.
+
+Think of it as the foundation. You can't build a house without a foundation, and you can't install developer tools properly without Homebrew.
+
+Next: Getting Claude Code, the AI that'll actually help you build stuff.

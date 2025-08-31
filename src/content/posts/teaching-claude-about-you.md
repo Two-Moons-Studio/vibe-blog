@@ -1,104 +1,76 @@
 ---
 title: "Teaching Claude About Your Project"
 date: 2025-08-31T13:00:00Z
-excerpt: "The CLAUDE.md file is like giving your AI assistant a job description. Here's what to put in it."
+excerpt: "Stop repeating yourself. Write project rules once, Claude follows them forever."
 tags: ["getting-started", "ai-tools", "foundation"]
 draft: false
 ---
 
-## The Setup
+Every conversation with Claude starts the same way. "Make it minimal." "No, simpler." "I said no animations." "Why did you add React?" "STOP MAKING IT COMPLICATED."
 
-Claude is smart but not psychic. It doesn't know you hate rounded corners or that you're building a portfolio site. You need to tell it. Once.
+You're training the same AI over and over. Like Groundhog Day but with code.
 
-Enter: The CLAUDE.md file.
+<span class="context-label">THE FIX:</span> Claude reads a file called CLAUDE.md in your project folder every time it starts. Put your rules there once. Never repeat yourself again.
 
-## The Struggle
+**Create your rules file:**
 
-Every conversation starts the same:
-- "Make it minimal"
-- "No, MORE minimal"
-- "I said no animations"
-- "Why did you add a database?"
-- "I HATE gradients"
-
-You're repeating yourself like a broken record. Claude keeps forgetting your preferences. Your blood pressure rises.
-
-## The Solution
-
-In your project folder, create `CLAUDE.md`:
-
+In your project folder:
 ```bash
-cd ~/coding/projects/my-first-site
+cd ~/dev/my-project
 touch CLAUDE.md
+open CLAUDE.md
 ```
 
-Open it and add:
+**What to put in it:**
 
 ```markdown
-# Project: My First Site
+# Project: [Your Project Name]
 
-## What This Is
-Simple portfolio site. HTML and CSS only. No framework needed.
+## What We're Building
+One sentence. What is this thing?
+
+## Tech Stack
+- HTML and CSS only (no frameworks yet)
+- No build tools
+- No npm packages unless I specifically ask
 
 ## Design Rules
-- Minimal. Like, MINIMAL minimal
+- Minimal. Dead simple.
 - Black text, white background
+- System fonts
+- No animations unless requested
 - No gradients ever
-- No animations unless I ask
-- System fonts are fine
 
-## Tech Rules  
-- Plain HTML/CSS
-- No frameworks
-- No build tools yet
-- No database
-- Keep it simple
-
-## Workflow
-- I'm learning, explain what you're doing
-- Show me one approach, not three
-- Small steps
+## How to Work with Me
+- One solution, not three options
+- Explain what you're doing
+- Keep it simple over clever
+- If something seems complex, stop and ask
 ```
 
-Save it. Now Claude reads this every time.
+Save it. Now Claude knows your preferences.
 
-## The Designer Take
+**Why this works:**
 
-This is your design system doc but for AI. Like how you'd brief a junior designer. Set the constraints once, enforce them forever.
+Claude literally reads this file at the start of every conversation. It's like giving a new teammate a one-page brief. No more explaining that you hate rounded corners or that you're not ready for React yet.
 
-Think of it as your AI's brand guidelines. No more explaining your aesthetic every damn time.
+**Pro moves to add:**
 
-## The PM Take
-
-This is a PRD for your AI. Clear requirements, constraints, and success criteria. It's async communication at its finest - write once, reference always.
-
-Pro move: Add a "What NOT to do" section. Explicitly forbid the things that annoy you.
-
-## Reality Check
-
-⏱️ **Time:** 5 minutes to write  
-🧠 **Sanity:** Saves hours of re-explaining  
-💰 **Cost:** Free  
-
-**What to include:**
-- Project goal (one sentence)
-- Tech constraints (what you will/won't use)
-- Design preferences (your style)
-- Workflow preferences (how you like to work)
-
-**What NOT to include:**
-- Your life story
-- 47 pages of requirements
-- Everything you might possibly want someday
-
-**Advanced move:**
 ```markdown
-## When You're Lost
-If something seems too complex, stop and ask me.
-Don't add features I didn't request.
-Simple > Clever.
+## Common Tasks
+- "Make it responsive" = mobile-first, one breakpoint at 768px
+- "Add interaction" = vanilla JS only, no libraries
+
+## What NOT to Do
+- Don't add features I didn't ask for
+- Don't optimize prematurely  
+- Don't add "nice to haves"
 ```
 
-Claude will literally read this and follow it.
+**The advanced version:**
 
-Next: Actually building something you can see in a browser.
+As your project grows, your CLAUDE.md grows. Eventually it becomes your project's brain - architecture decisions, design patterns, even common bug fixes. But start simple. Even five lines of preferences will save you hours of repetition.
+
+Think of it as documentation that actually gets read. Because it does. Every single time.
+
+Next: Building your first actual thing that works in a browser.
