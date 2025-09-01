@@ -45,9 +45,9 @@
 
 
   /* Font Families - 3 Font System */
-  --font-serif-display: Georgia, serif;    /* Headlines only */
-  --font-sans-geometric: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Uppercase, metadata */
-  --font-serif-body: Georgia, serif;    /* Body text */
+  --font-serif-display: 'Literata', Georgia, serif;    /* Headlines only */
+  --font-sans-geometric: 'DM Sans', -apple-system, sans-serif; /* Uppercase, metadata */
+  --font-serif-body: 'EB Garamond', Georgia, serif;    /* Body text */
   
   /* Legacy mappings for compatibility */
   --font-serif: var(--font-serif-display);
