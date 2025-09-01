@@ -32,7 +32,6 @@
   --color-border: var(--color-neutral-20);
   --color-accent-primary: var(--color-accent);
   --color-link: var(--color-neutral-100);  /* Links match text */
-  --color-code-bg: #2D3748;  /* Dark gray for code blocks */
 
   /* Typography Scale - Elegant Editorial */
   --font-size-tiny: 0.75rem;         /* 12px - dates, labels */
@@ -46,9 +45,9 @@
 
 
   /* Font Families - 3 Font System */
-  --font-serif-display: 'Merriweather', Georgia, serif;    /* Headlines only */
-  --font-sans-geometric: 'Inter', -apple-system, sans-serif; /* Uppercase, metadata */
-  --font-serif-body: 'Merriweather', Georgia, serif;    /* Body text */
+  --font-serif-display: 'Literata', Georgia, serif;    /* Headlines only */
+  --font-sans-geometric: 'DM Sans', -apple-system, sans-serif; /* Uppercase, metadata */
+  --font-serif-body: 'EB Garamond', Georgia, serif;    /* Body text */
   
   /* Legacy mappings for compatibility */
   --font-serif: var(--font-serif-display);

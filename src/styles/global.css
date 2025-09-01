@@ -47,13 +47,15 @@ h1 {
 }
 
 h2 {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: var(--font-size-small);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   line-height: var(--line-height-normal);
   margin: var(--space-7) 0 var(--space-4);
+  /* Debug: Force font to load */
+  font-display: swap;
 }
 
 h3 {
@@ -95,48 +97,13 @@ li {
   margin-bottom: var(--space-2);
 }
 
-/* Code Styles - Clean separation of inline vs block */
-
-/* Inline code - used in paragraphs, lists, etc */
-:not(pre) > code {
+/* Code */
+code {
   font-family: 'Courier New', monospace;
-  font-size: 0.7em;
-  font-weight: 500;
-  background: rgba(229, 231, 235, 0.5); /* Subtle light gray */
-  padding: 0.15em 0.3em;
+  font-size: 0.9em;
+  background: var(--color-neutral-20);
+  padding: var(--space-1) var(--space-2);
   border-radius: 6px;
-  color: var(--color-text-primary);
-  vertical-align: 0.15em; /* Lift to align with text baseline */
-}
-
-/* Code blocks */
-pre {
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  background: var(--color-code-bg) !important;
-  padding: var(--space-4);
-  border-radius: 12px;
-  overflow-x: auto;
-  margin: var(--space-4) 0;
-  border: 1px solid var(--color-border);
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-/* Override Astro's inline styles */
-pre.astro-code {
-  background-color: var(--color-code-bg) !important;
-}
-
-/* Code inside pre blocks - no additional styling */
-pre code {
-  background: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  color: inherit;
-  font-size: 1em !important; /* Use pre's font size */
-  vertical-align: baseline !important;
-  font-weight: inherit;
 }
 
 /* Context Label - inline callouts in articles */
