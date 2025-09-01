@@ -67,6 +67,22 @@ Every post follows this template:
 - **Markdown format** - simple and portable
 - **Follow ZERO-TO-SHIP-WRITING-GUIDE.md** for article voice and formatting
 
+### CRITICAL: Avoid "Claude Voice" in Content
+When writing articles or copy, avoid these patterns:
+- Punchy marketing language ("This is different. PERIOD.")
+- Repetitive structure ("No X. No Y. No Z.")
+- Overly dramatic declarations
+- Too many short sentences in a row
+- Perfect parallel construction everywhere
+
+Write naturally, like explaining to a friend. Slightly messy is better than marketing polish.
+
+When user says something has "Claude voice" or is "too marketing-y":
+1. Remove dramatic punctuation and declarations
+2. Replace punchy sentences with natural conversation
+3. Don't try to sound clever or witty
+4. Just explain things simply
+
 ## IMPORTANT: Todo Management
 - ALWAYS update TODO.md when completing tasks or finding new ones
 - TODO.md is the source of truth (not just in-memory todos)

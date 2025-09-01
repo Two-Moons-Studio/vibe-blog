@@ -62,7 +62,7 @@ Paint a picture of how they'll use this. "Each project will get its own folder i
 ## What NOT to Do
 
 ### Banned Phrases and Patterns
-- "Here's what they're not telling you"
+- "Here's what they're not telling you" / "Here's what nobody tells you"
 - "Question? Answer" format
 - "The one [thing] to rule them all"
 - "Stop [doing X], start [doing Y]"
@@ -70,6 +70,9 @@ Paint a picture of how they'll use this. "Each project will get its own folder i
 - Any "reality check" sections
 - Designer/PM takes as separate sections
 - Forced 6-part structure
+- "This blog is different. PERIOD." (dramatic declarations)
+- "No X. No Y. No Z." (repetitive negation patterns)
+- "The YouTube videos are clickbait. The Twitter threads are hype." (punchy dismissals)
 
 ### Avoid Trying Too Hard
 - No forced wit or cleverness
@@ -86,8 +89,23 @@ Paint a picture of how they'll use this. "Each project will get its own folder i
 
 ## Tone Guidelines
 
-### Keep It Conversational
+### Keep It Conversational (Avoid "Claude Voice")
 Write how you'd actually explain it to someone. Not formal documentation, not a comedy routine. Just clear explanation with occasional natural personality.
+
+**Signs you're in "Claude voice":**
+- Too many short, punchy sentences in a row
+- Everything sounds like marketing copy
+- Overly structured with perfect parallel construction
+- Trying too hard to be clever or dramatic
+
+**Natural voice examples:**
+- BAD: "Everyone wants to code. Nobody knows where to start. This changes that."
+- GOOD: "A lot of people have been asking me how to get started with AI coding."
+
+- BAD: "No prerequisites. No gatekeeping. No BS."
+- GOOD: "It either assumes you know what npm is, or it's trying to sell you something."
+
+Remember: Slightly messy and human is better than perfectly polished marketing speak.
 
 ### Industry Insider Without Gatekeeping
 Share the "everyone does it this way" knowledge without making it seem exclusive. You're bringing them into the loop, not showing off that you're already in it.
