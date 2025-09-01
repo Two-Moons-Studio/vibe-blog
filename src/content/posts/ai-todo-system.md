@@ -8,7 +8,7 @@ draft: false
 
 You just finished your tech plan. At this point, Claude usually gets excited and wants to immediately start building everything - setting up the project, creating components, configuring deployment, all at once.
 
-I've learned to interrupt it here. Instead of letting Claude run ahead, I ask it to break everything down into todos first. That way I can actually see what needs to be done and pick what to work on.
+**I've learned to interrupt it here.** Instead of letting Claude run ahead, I ask it to break everything down into todos first. That way I can actually see what needs to be done and pick what to work on.
 
 ```
 Before we build anything, create a todo list based on our TECH-PLAN.md. 
@@ -31,7 +31,7 @@ Claude has a built-in todo system that automatically tracks what you're working 
 7. Deploy to Vercel
 ```
 
-The built-in tool is fine for a single session, but todos disappear when you start fresh. That's why I also keep a TODO.md file.
+The built-in tool is fine for a single session, but **todos disappear when you start fresh.** That's why I also keep a TODO.md file.
 
 ## KEEPING YOUR OWN TODO.MD
 
@@ -83,8 +83,6 @@ Each session builds on the last without having to re-explain everything.
 
 ## HOW I ACTUALLY WORK
 
-Honestly, I just pick whatever I feel like working on that day. Sometimes it's the next logical todo, sometimes it's something random from the backlog that sounds fun. The todos are there so I don't forget what needs doing, not to dictate what I work on.
-
-The key is having everything written down so when you come back a week later, you know what's done and what's left. Whether you work systematically through the list or jump around based on mood doesn't matter - as long as you're making progress.
+Honestly, I just pick whatever I feel like working on that day. Sometimes it's the next logical todo, sometimes it's something random from the backlog that sounds fun. The todos are there so I don't forget what needs doing, not to dictate what I work on. The key is having everything written down so when you come back a week later, you know what's done and what's left - whether you work systematically through the list or jump around based on mood doesn't really matter.
 
 [Next: Setting Claude Up for Success →](/posts/setting-claude-up-for-success)
