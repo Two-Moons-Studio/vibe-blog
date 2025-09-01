@@ -2,13 +2,28 @@
 
 ## Next Steps - IMMEDIATE
 
+### Design System Scaling Adjustment
+- [ ] **SCALE UP: Current design is 10% too small (0.9x scale applied globally)**
+- [ ] Files that need scaling adjustment:
+  - `/src/styles/tokens.css` - All rem values, spacing scale
+  - `/src/components/PageHeader.astro` - Hardcoded rem values (0.54rem → larger)
+  - `/src/components/Header.astro` - Nav text sizes
+  - `/src/components/Footer.astro` - Newsletter and footer text
+  - `/src/components/Tag.astro` - Tag font sizes
+  - `/src/pages/index.astro` - Post grid spacing, dates
+  - `/src/pages/posts/[slug].astro` - Article typography, code blocks
+  - `/src/pages/zero-to-ship.astro` - Module numbers, all hardcoded values
+  - `/src/pages/tags/[tag].astro` and `/src/pages/tags/index.astro` - List layouts
+- [ ] Consider: Scale up by 5-7% (multiply current values by 1.05-1.07) for better readability
+- [ ] Code blocks currently at 0.7rem - consider 0.75-0.8rem
+
 ### Module 4: Ship & Iterate (needs 4 articles)
 - [ ] See CONTENT-BACKLOG.md for article ideas when ready to write
 
 ### Newsletter Setup
-- [ ] Set up Buttondown account and get embed code
-- [ ] Replace placeholder in subscribe.astro with actual Buttondown form
-- [ ] Test newsletter signup flow
+- [x] Set up Buttondown account and get embed code
+- [x] Replace placeholder in subscribe.astro with actual Buttondown form
+- [x] Test newsletter signup flow - WORKING!
 - [ ] Add newsletter CTA to About page
 
 ### Design Polish
@@ -33,6 +48,15 @@
 - [ ] Simple analytics (Vercel Analytics)
 - [ ] Premium content for supporters (when audience grows)
 - [ ] GitHub template for learner progress tracking
+
+## Completed
+
+### Recent Session Accomplishments
+- [x] Newsletter integration with Buttondown - Modal, footer, and subscribe page
+- [x] Fixed Vercel deployment issues - Switched to static build with API function
+- [x] Scaled down entire design system by 10% (now needs adjustment back up)
+- [x] Fixed nested anchor issues on tag pages
+- [x] Adjusted code block font sizes
 
 ## Completed
 

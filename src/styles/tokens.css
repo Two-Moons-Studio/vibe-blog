@@ -33,15 +33,15 @@
   --color-accent-primary: var(--color-accent);
   --color-link: var(--color-neutral-100);  /* Links match text */
 
-  /* Typography Scale - Elegant Editorial (90% scale) */
-  --font-size-tiny: 0.675rem;        /* 10.8px - dates, labels */
-  --font-size-small: 0.788rem;       /* 12.6px - metadata */
-  --font-size-base: 0.9rem;          /* 14.4px - body */
-  --font-size-large: 1.013rem;       /* 16.2px - large body */
-  --font-size-xlarge: 1.35rem;       /* 21.6px - small headlines */
-  --font-size-2xl: 2.025rem;         /* 32.4px - h2 */
-  --font-size-3xl: 2.7rem;           /* 43.2px - h1 on desktop */
-  --font-size-4xl: 3.6rem;           /* 57.6px - hero headlines */
+  /* Typography Scale - Elegant Editorial (100% original scale) */
+  --font-size-tiny: 0.75rem;         /* 12px - dates, labels */
+  --font-size-small: 0.875rem;       /* 14px - metadata */
+  --font-size-base: 1rem;            /* 16px - body */
+  --font-size-large: 1.125rem;       /* 18px - large body */
+  --font-size-xlarge: 1.5rem;        /* 24px - small headlines */
+  --font-size-2xl: 2.25rem;          /* 36px - h2 */
+  --font-size-3xl: 3rem;             /* 48px - h1 on desktop */
+  --font-size-4xl: 4rem;             /* 64px - hero headlines */
 
 
   /* Font Families - 3 Font System */
@@ -63,17 +63,17 @@
   --line-height-normal: 1.6;         /* Body text */
   --line-height-relaxed: 1.75;       /* Reading comfort */
 
-  /* Spacing Scale - Editorial Generous Spacing (90% scale) */
-  --space-1: 0.225rem;   /* 3.6px */
-  --space-2: 0.45rem;    /* 7.2px */
-  --space-3: 0.675rem;   /* 10.8px */
-  --space-4: 0.9rem;     /* 14.4px */
-  --space-5: 1.35rem;    /* 21.6px */
-  --space-6: 1.8rem;     /* 28.8px */
-  --space-7: 2.7rem;     /* 43.2px */
-  --space-8: 3.6rem;     /* 57.6px */
-  --space-9: 5.4rem;     /* 86.4px */
-  --space-10: 7.2rem;    /* 115.2px */
+  /* Spacing Scale - Editorial Generous Spacing (100% original scale) */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.5rem;     /* 24px */
+  --space-6: 2rem;       /* 32px */
+  --space-7: 3rem;       /* 48px */
+  --space-8: 4rem;       /* 64px */
+  --space-9: 6rem;       /* 96px */
+  --space-10: 8rem;      /* 128px */
 
   /* Layout Constraints */
   --content-max-width: 720px;        /* Comfortable reading width */
