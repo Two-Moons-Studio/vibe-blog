@@ -1,16 +1,16 @@
 ---
-title: "Don't Run Out of Conversation"
+title: "AI Has Limits: Context Windows and Memory"
 date: 2025-08-31T16:30:00Z
-excerpt: "What 'context' means and why your Claude forgets everything."
+excerpt: "Why Claude forgets what you're building and how to work around the limits."
 tags: ["workflow", "ai-tools", "optimization"]
 draft: false
 ---
 
-You're two hours into building, everything's working, then Claude starts suggesting things you already rejected or forgets what you're building. You've hit the context limit.
+This is an AI thing. It's called "context windows" and is regularly coupled with the idea of token limits and token management. When this article was written, [Anthropic released a 1M token context window](https://www.anthropic.com/news/1m-context) and people were crying tears of joy.
 
 ## WHAT "CONTEXT" ACTUALLY MEANS
 
-Think of context as Claude's working memory. Like your laptop's RAM, not its hard drive. Every message, every piece of code, every file Claude reads - it all sits in this temporary memory.
+Think of Claude like the guy from Memento - brilliant but can only remember so much at once. Every message, every file Claude reads, every piece of code it writes - they all take up space in this limited memory.
 
 When it fills up:
 - Claude forgets earlier messages
@@ -18,39 +18,46 @@ When it fills up:
 - It starts repeating work
 - Quality drops dramatically
 
-<span class="context-label">CONTEXT BUDGET</span> <span class="context-text">You get roughly 200K tokens per conversation. That's about 150,000 words, but every file Claude reads and writes eats into that. Big files burn through it fast.</span>
+## WHY AI HAS CONTEXT WINDOWS
 
-## THE /CONTEXT COMMAND
+Seems weird that AI would have a deliberate weakness like this, right? It's actually about computational cost. Processing a million tokens at once requires massive GPU memory and compute power. Context windows are the tradeoff between "AI that works fast" and "AI that remembers everything." Companies are constantly pushing these limits higher - hence the celebration when limits increase.
 
-Want to see what Claude remembers? Type:
+## THE CORE POINT: PLAN YOUR SESSION
 
-```
-/context
-```
+You need to plan your working session within context windows. This means:
+- Budgeting time for regular pushes
+- Leveraging different models to optimize token usage
+- Having good awareness of what Claude can do when you see "10% remaining"
 
-You'll see:
+Here's rough token usage by task type:
+
+| Task | Approximate Token Usage |
+|------|------------------------|
+| Simple HTML page | 500-1K tokens |
+| Reading a component file | 2-5K tokens |
+| Building a full feature | 10-20K tokens |
+| Debugging complex issue | 15-30K tokens |
+| Reading large codebase | 50-100K tokens |
+| Using subagents | 20-50K per agent |
+
+## TRACKING AND MANAGING CONTEXT
+
+Type `/context` to see what Claude remembers:
 - Token count used
 - What percentage is left
 - Recent messages
 - Files in memory
 
-When you hit 70%, start thinking about wrapping up. At 90%, you're in danger zone.
+When you see yourself approaching 80-90% filled up in that `/context` visual, consider wrapping things up. You can use `/compact` to continue:
+- It summarizes the conversation into key points
+- Clears old messages but keeps the summary
+- Gives you breathing room to continue
+- **What you lose:** Specific code details, exact decisions, nuanced discussions
+- **What stays:** General project understanding, recent work, key decisions
 
-## /COMPACT: YOUR RESET BUTTON
+You can also compact early - if you're at 50% and about to start something big, compact first to maximize available context for the new task.
 
-When context gets full, use:
-
-```
-/compact
-```
-
-This:
-- Summarizes the conversation
-- Clears old messages
-- Keeps recent context
-- Gives you breathing room
-
-But you lose detail. Claude might forget specific decisions or nuances. That's why todos and documentation matter - they survive compacting.
+To this day, I still prompt a `read CLAUDE.md` and/or `look at TODO.md` even post-compact because I want to ensure Claude has a very strong start to the session. I never think that usage of tokens for re-reading context docs is a waste. You can also set up hooks to automatically read certain files at the start of every session.
 
 ## BUILDING IN CHUNKS
 
@@ -58,7 +65,7 @@ The secret to not running out: build in focused chunks, not marathon sessions.
 
 **Bad approach:**
 "Build my entire blog from scratch"
-(Burns through context in one session)
+(Burns through context in one session, quality gets worse towards the end)
 
 **Good approach:**
 - Session 1: "Set up the project structure"
@@ -66,44 +73,22 @@ The secret to not running out: build in focused chunks, not marathon sessions.
 - Session 3: "Add blog post functionality"
 - Session 4: "Style everything"
 
-Each session starts fresh with full context.
+Each session starts fresh with full context. When Claude's on a roll, there's huge temptation to keep pushing - "Now add tags", "Now add search", "Now add comments." Stop. This burns context and creates brittle code. The last 20% of your context produces 80% of your bugs.
 
-## RESISTING THE URGE TO KEEP GOING
+## MODEL SWITCHING FOR TOKEN OPTIMIZATION
 
-When Claude's on a roll, there's huge temptation to keep pushing - "Now add tags", "Now add search", "Now add comments"...
-
-Stop. This burns context and creates brittle code. Better to:
-1. Build core functionality
-2. Test it works
-3. [Commit and push](/posts/git-your-safety-net)
-4. Start fresh session for next feature
-
-<span class="context-label">HARD TRUTH</span> <span class="context-text">The last 20% of your context produces 80% of your bugs. When Claude starts forgetting things, mistakes multiply.</span>
-
-## WHEN TO SWITCH CHEFS
-
-Claude Code offers different models:
+Claude Code offers different models. Switch mid-conversation with `/model`:
 
 **Sonnet** (default):
-- Fast responses
-- Great for building
+- Fast responses, great for building
 - Conservative with context
 - Use for 90% of work
 
 **Opus**:
-- Deeper thinking
-- Better at strategy
-- Creative solutions
+- Deeper thinking, better at strategy
 - Burns more context
 - Switch for complex problems
 
-**Haiku**:
-- Lightning fast
-- Minimal context usage
-- Good for simple tasks
-- Use for bulk updates
-
-Switch models mid-conversation:
 ```
 /model opus
 Let's rethink this architecture...
@@ -112,70 +97,19 @@ Let's rethink this architecture...
 Now let's build it...
 ```
 
-## THE CHUNK WORKFLOW
+## PRACTICAL WORKFLOW
 
-Here's my actual workflow for building without context issues:
-
-**Start of session:**
-```
-/context
-[Check I have full context]
-
-Read TODO.md
-What's the next chunk to build?
-```
-
-**Middle of session:**
-```
-/context
-[Check usage at 50%]
-
-Let's finish this component and commit
-```
-
-**End of session:**
-```
-Push all changes
-Update TODO.md with progress
-[Close session before 80% context]
-```
-
-## SIGNS YOU NEED A FRESH START
-
-Start a new session when:
+**Watch for warning signs:**
 - Claude suggests things you already rejected
 - Code quality drops
 - Responses get generic
 - Claude says "I don't recall..."
 - You're past 80% context
 
-Don't try to squeeze out those last few tokens. Fresh context = fresh thinking.
-
-## THE CONTINUITY TRICK
-
-Before ending a session, update your [TODO.md](/posts/ai-todo-system):
-
-```
-Update TODO.md with:
-- What we completed
-- What's in progress  
-- Next priority
-- Any important decisions
-
-Then push everything.
-```
-
-Next session starts with:
-```
-Read TODO.md and continue where we left off.
-```
-
-Zero friction restart.
+When ending a session, update your TODO.md with what you completed and what's next. Push everything. Next session starts with `Read TODO.md and continue where we left off.`
 
 ## WHY THIS MATTERS
 
-Most people try to build everything in one marathon session. They hit context limits, Claude gets confused, quality drops, bugs multiply, and they end up starting over.
-
-Building in chunks with fresh context each time means you ship cleaner code faster. It feels slower but it's actually much faster because you avoid the death spiral.
+Building in chunks with fresh context each time means you ship cleaner code faster. It feels slower but it's actually much faster because you avoid the death spiral of hallucinations, repeated errors, and Claude forgetting what you already decided.
 
 [Next: Subagents: Your Content Army →](/posts/subagents-your-content-army)

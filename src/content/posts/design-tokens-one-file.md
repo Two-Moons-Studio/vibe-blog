@@ -1,5 +1,5 @@
 ---
-title: "Design Tokens: One File to Rule Them All"
+title: "Design Tokens: Make Everything Match"
 date: 2025-08-31T17:00:00Z
 excerpt: "How to make your site look intentional, not random."
 tags: ["design", "building", "workflow"]

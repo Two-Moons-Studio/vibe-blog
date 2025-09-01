@@ -127,4 +127,4 @@ But here's the real power - pushing constantly lets me try weird experimental st
 
 <span class="context-label">FUTURE YOU THANKS YOU</span> <span class="context-text">Six months from now when you want to update something, Git shows you exactly what you did and why. Without it, you're starting from scratch.</span>
 
-[Next: Don't Run Out of Conversation →](/posts/dont-run-out-of-conversation)
+[Next: AI Has Limits: Context Windows and Memory →](/posts/dont-run-out-of-conversation)
