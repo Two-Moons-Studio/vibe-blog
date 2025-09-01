@@ -2,6 +2,14 @@
 
 Simple, elegant blog for documenting the designer-to-builder journey. Built with editorial sophistication, maintained with ease.
 
+## 📚 Start Here - Required Reading
+When starting any session, especially for content creation:
+1. **Read `CONTENT-GUIDE.md`** - Voice, strategy, and writing guidelines
+2. **Check `TODO.md`** - Current priorities and tasks
+3. **Review `CONTENT-BACKLOG.md`** - When selecting articles to write
+
+For technical work, this file (CLAUDE.md) has everything you need.
+
 ## Commands (Slash Commands)
 
 ### `/vibe-start`
@@ -60,28 +68,19 @@ Every post follows this template:
 - **Components**: 4 total (Header, Footer, PostPreview, Layout)
 
 ## Content Guidelines
+- **Follow CONTENT-GUIDE.md** for comprehensive voice, strategy, and formatting
 - **Bite-sized posts** (300-800 words initially)
 - **Honest documentation** - struggles and wins equally
 - **No BS tone** - direct, helpful, real
-- **Tags for organization** - will become guides later
-- **Markdown format** - simple and portable
-- **Follow ZERO-TO-SHIP-WRITING-GUIDE.md** for article voice and formatting
+- **Chef Claude metaphor** - Claude as chef, user making dinner not becoming chef
 
 ### CRITICAL: Avoid "Claude Voice" in Content
-When writing articles or copy, avoid these patterns:
-- Punchy marketing language ("This is different. PERIOD.")
-- Repetitive structure ("No X. No Y. No Z.")
-- Overly dramatic declarations
-- Too many short sentences in a row
-- Perfect parallel construction everywhere
-
-Write naturally, like explaining to a friend. Slightly messy is better than marketing polish.
-
-When user says something has "Claude voice" or is "too marketing-y":
-1. Remove dramatic punctuation and declarations
-2. Replace punchy sentences with natural conversation
-3. Don't try to sound clever or witty
-4. Just explain things simply
+See CONTENT-GUIDE.md Section 3 for detailed voice guidelines and examples.
+Key points:
+- No punchy marketing language
+- Avoid repetitive structures
+- Write naturally, like explaining to a friend
+- Slightly messy is better than marketing polish
 
 ## IMPORTANT: Todo Management
 - ALWAYS update TODO.md when completing tasks or finding new ones
@@ -107,8 +106,15 @@ When user says something has "Claude voice" or is "too marketing-y":
 ### Adding New Posts
 1. Create markdown file in `/src/content/posts/[slug].md`
 2. Add frontmatter (title, date, excerpt, tags, draft: false)
-3. Write content using 6-part structure
+3. Follow voice guidelines in CONTENT-GUIDE.md
 4. Commit and push to deploy
+
+### Zero to Ship Page
+- Main page: `/src/pages/zero-to-ship.astro`
+- 4 modules with expandable content
+- Path selector for PM/Designer/Everyone (PM active, others coming soon)
+- Progress tracking in localStorage
+- Editorial design with generous whitespace
 
 ### Future Features (Phase 2+)
 - Tag-based guide collections
@@ -139,11 +145,18 @@ When user says something has "Claude voice" or is "too marketing-y":
 - ALWAYS work on `develop` branch unless fixing critical production issues
 - Create PR from develop → main when ready to deploy
 
-## Key Files
+## Key Documentation Files
+- **`CLAUDE.md`** - This file (AI assistant instructions)
+- **`CONTENT-GUIDE.md`** - Content strategy, voice, Zero to Ship path
+- **`CONTENT-BACKLOG.md`** - Article pipeline and ideas
+- **`TODO.md`** - Active tasks and project status
+- **`PROJECT-OVERVIEW.md`** - Quick project summary
+
+## Key Technical Files
 - `astro.config.mjs` - Site config, sitemap, domain
 - `src/content/config.ts` - Post schema definition
 - `src/styles/tokens.css` - All design values
-- `CLAUDE.md` - This file (instructions for AI)
+- `src/pages/zero-to-ship.astro` - Learning path page
 
 ## Quick Reference
 ```bash

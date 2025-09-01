@@ -1,69 +1,43 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
-import PostPreview from '../../components/PostPreview.astro';
 import Tag from '../../components/Tag.astro';
 import { getCollection } from 'astro:content';
 
-export async function getStaticPaths() {
-  const allPosts = await getCollection('posts');
-  const publishedPosts = allPosts.filter(post => !post.data.draft);
-  
-  // Get all unique tags
-  const uniqueTags = new Set();
-  publishedPosts.forEach(post => {
-    post.data.tags?.forEach(tag => {
-      uniqueTags.add(tag);
-    });
-  });
-
-  // Create a path for each tag
-  return Array.from(uniqueTags).map(tag => {
-    const slug = tag.toLowerCase().replace(/\s+/g, '-');
-    const filteredPosts = publishedPosts
-      .filter(post => post.data.tags?.includes(tag))
-      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-    
-    return {
-      params: { tag: slug },
-      props: { tag, posts: filteredPosts }
-    };
-  });
-}
-
-const { tag, posts } = Astro.props;
-
-// Get all tags for the navigation
+// Get all posts and all tags
 const allPosts = await getCollection('posts');
-const allTags = new Set();
-allPosts
+const publishedPosts = allPosts
   .filter(post => !post.data.draft)
-  .forEach(post => {
-    post.data.tags?.forEach(t => allTags.add(t));
-  });
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Get all unique tags
+const allTags = new Set();
+publishedPosts.forEach(post => {
+  post.data.tags?.forEach(tag => allTags.add(tag));
+});
 const sortedTags = Array.from(allTags).sort();
 ---
 
-<Layout title={`${tag} - Vibe Code Moonlighter`}>
+<Layout title="Tags - Vibe Code Moonlighter">
   <PageHeader 
-    label="Posts tagged with"
-    title={tag}
-    subtitle={`${posts.length} ${posts.length === 1 ? 'post' : 'posts'}`}
+    label="Browse by topic"
+    title="All Posts"
+    subtitle={`${publishedPosts.length} ${publishedPosts.length === 1 ? 'post' : 'posts'}`}
     variant="standard"
   />
 
   <div class="page-container">
     <nav class="tags-nav">
       <div class="tags-list">
-        {sortedTags.map(t => (
-          <Tag tag={t} isActive={t === tag} size="small" />
+        {sortedTags.map(tag => (
+          <Tag tag={tag} size="small" />
         ))}
       </div>
     </nav>
 
     <section class="posts-section">
       <div class="posts-list">
-        {posts.map(post => (
+        {publishedPosts.map(post => (
           <article class="post-item">
             <a href={`/posts/${post.slug}`} class="post-link">
               <div class="post-header">
