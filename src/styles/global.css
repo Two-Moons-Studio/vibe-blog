@@ -48,7 +48,7 @@ h1 {
 
 h2 {
   font-family: var(--font-sans-geometric);
-  font-size: 0.6rem !important; /* Much smaller - 9.6px with !important */
+  font-size: 0.6rem !important;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -92,88 +92,17 @@ ul, ol {
 }
 
 li {
-  margin-bottom: 0.25rem; /* 4px - tighter spacing */
-  line-height: 1.4; /* Also tighten line height within items */
+  margin-bottom: var(--space-1);
+  line-height: 1.4;
 }
 
-/* Blockquotes */
-blockquote {
-  border-left: 3px solid var(--color-accent);
-  padding-left: var(--space-5);
-  margin: var(--space-6) 0;
-  font-style: italic;
-  color: var(--color-text-secondary);
-}
-
-/* Horizontal Rules */
-hr {
-  border: none;
-  border-top: 1px solid var(--color-border);
-  margin: var(--space-8) 0;
-}
-
-/* Code Styles - Clean separation of inline vs block */
-
-/* Inline code - used in paragraphs, lists, etc */
-:not(pre) > code {
+/* Code */
+code {
   font-family: 'Courier New', monospace;
-  font-size: 0.7em;
-  font-weight: 500;
-  background: rgba(229, 231, 235, 0.5); /* Subtle light gray */
-  padding: 0.15em 0.3em;
-  border-radius: 3px;
-  color: rgb(55, 65, 81); /* Dark gray for readability */
-  white-space: nowrap;
-  vertical-align: 0.15em; /* Lift to align with text baseline */
-}
-
-/* Code blocks - black terminal style */
-pre {
-  background: var(--color-neutral-100); /* Dark background */
-  color: var(--color-neutral-0); /* Light text */
-  padding: var(--space-4);
+  font-size: 0.9em;
+  background: var(--color-neutral-20);
+  padding: var(--space-1) var(--space-2);
   border-radius: 6px;
-  overflow-x: auto;
-  margin: var(--space-3) 0 var(--space-5) 0; /* Reduced top margin */
-  font-family: 'Courier New', monospace;
-  font-size: 0.7rem;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-/* Code inside pre blocks - no additional styling */
-pre code {
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  color: inherit;
-  font-size: 1em; /* Use pre's font size */
-  font-weight: inherit;
-  white-space: pre;
-}
-
-/* Context Label - inline callouts in articles */
-.context-label {
-  display: inline-block;
-  background: var(--color-accent);
-  color: var(--color-neutral-0);
-  font-family: var(--font-sans-geometric);
-  font-size: 0.55rem;
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  padding: 2px 10px;
-  margin-right: var(--space-2);
-  line-height: var(--line-height-normal);
-  vertical-align: 2px; /* Nudge up to align with serif baseline */
-  position: relative;
-  top: -1px;
-}
-
-/* Context block text - italicized green following the label */
-.context-text {
-  font-style: italic;
-  color: var(--color-accent);
 }
 
 /* Layout Utilities */
