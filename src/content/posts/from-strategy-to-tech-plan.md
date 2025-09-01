@@ -6,11 +6,11 @@ tags: ["strategy", "planning", "technical"]
 draft: false
 ---
 
-You have a strategy. You know what you're building. Now comes the part where most non-devs freeze - the technical decisions. Here's the secret: Claude makes better technical decisions than you do.
+You have a strategy doc. Great. Now you need to figure out how to actually build it - what framework, what tools, all that technical stuff. This used to be where I'd get stuck, but Claude is surprisingly good at making these decisions if you ask the right way.
 
 ## ENTER PLAN MODE
 
-Claude has two modes: planning and building. Planning is where Claude thinks through the approach without writing code. This is where the magic happens.
+Claude has two modes: planning and building. Planning is where Claude thinks through the approach without writing code. It's basically asking Claude to be your architect before being your builder.
 
 In your project folder with Claude running:
 
@@ -34,7 +34,7 @@ Claude will think through:
 
 ## PROMPTS THAT PREVENT OVERENGINEERING
 
-Claude loves to impress you. Left unchecked, it'll suggest React, TypeScript, testing frameworks, and a dozen dependencies. Here are prompts that keep it simple:
+I've noticed Claude sometimes gets excited and suggests a whole tech stack when you just need a simple site. Here are prompts that help keep things manageable:
 
 **The "No Framework" Prompt:**
 ```
@@ -51,7 +51,7 @@ What's the simplest version that could go live today?
 I need to be able to update this myself in 6 months without remembering anything
 ```
 
-<span class="context-label">HARD TRUTH</span> <span class="context-text">Every framework you add is a future Google search when something breaks. Every dependency is a potential security warning. Simple survives.</span>
+<span class="context-label">LEARNED THIS THE HARD WAY</span> <span class="context-text">Every framework you add is something else to debug later. I spent three hours once because a dependency updated and broke everything.</span>
 
 ## WHY I USE ASTRO (AND YOU MIGHT TOO)
 
@@ -103,7 +103,7 @@ Here's the TECH-PLAN.md for this blog (simplified):
 
 ## LET CLAUDE OWN THE ARCHITECTURE
 
-This is hard for PMs but crucial: don't micromanage the technical decisions. You wouldn't tell an architect which beams to use. Give Claude the requirements and let it design.
+This was hard for me to learn as a PM - you have to let go of the technical decisions. You wouldn't tell an architect which specific beams to use in a building. Same principle here.
 
 Your job:
 - Define constraints ("must work on mobile")
@@ -122,8 +122,6 @@ Your TECH-PLAN.md isn't just documentation - it's Claude's blueprint. Every futu
 - Why we made these choices
 - What we're NOT doing
 
-<span class="context-label">PM SUPERPOWER</span> <span class="context-text">Good PMs define the 'what' and 'why' clearly enough that the 'how' becomes obvious. Let Claude handle the obvious.</span>
-
-You now have a strategy and a technical plan. You haven't written code yet, but you're already ahead of 90% of side projects. Time to break this down into tasks.
+Now you have both a strategy and a technical plan. You still haven't written any code, but you actually know what you're building and how. That's more than most side projects ever figure out.
 
 [Next: The AI Todo System →](/posts/ai-todo-system)
