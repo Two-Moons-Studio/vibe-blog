@@ -23,15 +23,10 @@ const sortedPosts = allPosts
     />
 
     <section class="posts-section">
-      <div class="posts-header">
-        <span class="section-label">Latest Posts</span>
-        <div class="section-line"></div>
-      </div>
-      
       <div class="posts-grid">
         {sortedPosts.length > 0 ? (
           sortedPosts.map((post, index) => (
-            <article class={`post-item ${index === 0 ? 'featured' : ''}`}>
+            <article class="post-item">
               <a href={`/posts/${post.slug}`} class="post-link">
                 <time class="post-date">
                   {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase()}
@@ -63,31 +58,8 @@ const sortedPosts = allPosts
 <style>
   /* Posts Section */
   .posts-section {
-    padding: var(--space-8) 0 var(--space-10);
-  }
-
-  .posts-header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-8);
-  }
-
-  .section-label {
-    font-family: var(--font-sans-geometric);
-    font-size: 0.6rem;
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--color-text-primary);
-    line-height: var(--line-height-normal);
-    white-space: nowrap;
-  }
-
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--color-border);
+    padding: 0 0 var(--space-10);
+    margin-top: -50px;
   }
 
   /* Posts Grid */
@@ -102,9 +74,6 @@ const sortedPosts = allPosts
     padding-top: var(--space-5);
   }
 
-  .post-item.featured {
-    grid-column: 1 / -1;
-  }
 
   .post-link {
     display: block;
@@ -140,9 +109,6 @@ const sortedPosts = allPosts
     transition: color var(--transition-normal);
   }
 
-  .featured .post-title {
-    font-size: var(--font-size-small);
-  }
 
   .post-excerpt {
     font-family: var(--font-serif-body);
@@ -157,13 +123,7 @@ const sortedPosts = allPosts
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-  }
-
-  .post-tags :global(.tag) {
-    font-size: 0.55rem !important;
-    padding: 2px 10px !important; /* More horizontal padding for breathing room */
-    margin-right: var(--space-2) !important; /* Space between tags */
-    margin-bottom: var(--space-1) !important; /* Small space when wrapping */
+    gap: var(--space-2);
   }
 
   .no-posts {
@@ -191,10 +151,6 @@ const sortedPosts = allPosts
     .posts-grid {
       grid-template-columns: 1fr;
       gap: var(--space-8);
-    }
-
-    .featured .post-title {
-      font-size: var(--font-size-xlarge);
     }
   }
 </style>
