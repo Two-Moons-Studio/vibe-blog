@@ -79,6 +79,13 @@ Every post follows this template:
 - NEVER commit without explicit user request
 - Ask for feedback/approval on significant changes
 
+## Git Workflow
+1. Ensure you're on `develop` branch: `git checkout develop`
+2. Make changes and test locally
+3. Commit and push to `develop`
+4. Create PR to merge into `main` when ready for production
+5. NEVER commit directly to `main` unless emergency hotfix
+
 ## Workflows
 
 ### Adding New Posts
@@ -112,7 +119,9 @@ Every post follows this template:
 
 ## Branch Strategy
 - **main** - Production (auto-deploys to live site)
-- Simple single-branch workflow for solo maintenance
+- **develop** - Development branch for testing changes
+- ALWAYS work on `develop` branch unless fixing critical production issues
+- Create PR from develop → main when ready to deploy
 
 ## Key Files
 - `astro.config.mjs` - Site config, sitemap, domain
