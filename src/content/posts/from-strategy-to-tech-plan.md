@@ -75,16 +75,12 @@ Here's the actual TECH-PLAN.md for this blog (simplified):
 
 ## OUR PROJECT'S TECH STACK EXPLAINED
 
-For those who've never heard these terms before, here's what Claude and I chose and why:
+Here's what Claude and I chose, in plain English:
 
 - **Astro** - Think of it as WordPress but for developers. It turns your writing (in Markdown files) into a website automatically. Excels at fast load times since it ships zero JavaScript by default.
-
 - **Markdown** - The simplest way to write formatted text. Like a Word doc but in plain text that never breaks. Extra helpful since Claude Desktop and Claude Code naturally generate content in this format.
-
 - **Vanilla JavaScript** - Just regular JavaScript, no fancy frameworks. Like speaking English instead of lawyer-speak.
-
 - **GitHub** - Where your code lives online. Like Google Drive but for code. Free backup forever.
-
 - **Vercel** - A hosting platform that takes your GitHub code and makes it a real website anyone can visit. Updates automatically when you change things. Think of it as your website's home on the internet.
 
 With simple projects like this, you don't need a CMS or complex databases to set up. Claude becomes your personalized CMS - you just ask it to create or update content and it handles everything.
