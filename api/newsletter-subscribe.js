@@ -1,7 +1,17 @@
-export default async function handler(request) {
+export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle OPTIONS request for CORS
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   // Only allow POST requests
-  if (request.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 });
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
@@ -9,32 +19,13 @@ export default async function handler(request) {
     
     if (!apiKey) {
       console.error('BUTTONDOWN_API_KEY is not set');
-      return new Response(
-        JSON.stringify({ error: 'Server configuration error' }), 
-        { 
-          status: 500,
-          headers: { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          }
-        }
-      );
+      return res.status(500).json({ error: 'Server configuration error' });
     }
     
-    const data = await request.json();
-    const { email } = data;
+    const { email } = req.body;
 
     if (!email) {
-      return new Response(
-        JSON.stringify({ error: 'Email is required' }), 
-        { 
-          status: 400,
-          headers: { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          }
-        }
-      );
+      return res.status(400).json({ error: 'Email is required' });
     }
 
     const response = await fetch('https://api.buttondown.email/v1/subscribers', {
@@ -72,43 +63,17 @@ export default async function handler(request) {
         errorMessage = error.non_field_errors[0];
       }
       
-      return new Response(
-        JSON.stringify({ error: errorMessage }), 
-        { 
-          status: response.status,
-          headers: { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          }
-        }
-      );
+      return res.status(response.status).json({ error: errorMessage });
     }
 
-    return new Response(
-      JSON.stringify({ success: true, message: 'Thanks for subscribing! Check your inbox to confirm.' }), 
-      { 
-        status: 200,
-        headers: { 
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-      }
-    );
+    return res.status(200).json({ 
+      success: true, 
+      message: 'Thanks for subscribing! Check your inbox to confirm.' 
+    });
   } catch (error) {
     console.error('Newsletter subscribe error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Something went wrong. Please try again.' }), 
-      { 
-        status: 500,
-        headers: { 
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-      }
-    );
+    return res.status(500).json({ 
+      error: 'Something went wrong. Please try again.' 
+    });
   }
 }
-
-export const config = {
-  runtime: 'edge',
-};
