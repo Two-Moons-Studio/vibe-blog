@@ -1,5 +1,5 @@
 ---
-title: "The AI Todo System: Cross-Session Memory"
+title: "Todos: Picking Up Where You Left Off"
 date: 2025-08-31T15:00:00Z
 excerpt: "How to keep Claude in sync across sessions with smart todo management."
 tags: ["workflow", "planning", "ai-tools"]
