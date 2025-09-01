@@ -1,12 +1,12 @@
 ---
-title: "From Plan to Product: Building Your Blog"
+title: "From Plan to Product: Actually Building"
 date: 2025-08-31T16:00:00Z
-excerpt: "Stop planning. Start building. Watch Claude work its magic."
+excerpt: "The moment you stop planning and start building with Claude."
 tags: ["building", "execution", "workflow"]
 draft: false
 ---
 
-You have a strategy. A technical plan. Todos. A configured Claude. Time to actually build something. This is where the magic happens - or where most people get stuck forever.
+Okay, you've done all the planning. You have your strategy, tech plan, todos, and CLAUDE.md. Now comes the part where you actually have to type something to Claude and watch it build. This is weirdly nerve-wracking the first time.
 
 ## THE MOMENT OF TRUTH
 

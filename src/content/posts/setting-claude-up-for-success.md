@@ -1,12 +1,12 @@
 ---
 title: "Setting Claude Up for Success"
 date: 2025-08-31T15:30:00Z
-excerpt: "The ultimate CLAUDE.md setup. Never repeat yourself again."
+excerpt: "How to write a CLAUDE.md that actually prevents problems."
 tags: ["workflow", "ai-tools", "configuration"]
 draft: false
 ---
 
-Your CLAUDE.md file is Claude's operating system. Set it up right once, and Claude becomes a completely different tool. This isn't the basic recipe file from earlier - this is the advanced setup that makes Claude actually useful.
+After a few sessions where Claude deleted the wrong files or completely rewrote things I liked, I learned that CLAUDE.md isn't just helpful - it's essential. Here's what actually works.
 
 ## THE ULTIMATE CLAUDE.MD
 
@@ -40,7 +40,7 @@ Here's what most people don't include but should:
 - Don't assume I remember our last session
 ```
 
-This transforms Claude from an eager intern to a thoughtful senior developer.
+I learned these rules the hard way. Each one prevents a specific thing that went wrong in a past session.
 
 ## THE PERMISSION-BASED WORKFLOW
 

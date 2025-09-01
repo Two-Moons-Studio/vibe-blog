@@ -1,12 +1,12 @@
 ---
 title: "Version Control Without the Drama"
 date: 2025-08-31T17:30:00Z
-excerpt: "Git saves your ass. Let Claude handle the commands."
+excerpt: "How to never lose work again, with Claude handling Git for you."
 tags: ["git", "workflow", "tools"]
 draft: false
 ---
 
-You know that panic when a Word doc corrupts and you lose everything? That's every coder's nightmare. Git is your time machine - it saves every version of your work. And Claude handles all the confusing commands.
+I once lost three hours of work because I didn't commit and my laptop crashed. Never again. Git is basically a save button on steroids, and the best part is Claude handles all the commands for you.
 
 ## WHY PUSHING MATTERS SO MUCH
 
@@ -15,9 +15,9 @@ Your code lives in three places:
 2. **Git's memory** - Saved but still local
 3. **GitHub** - Safe in the cloud forever
 
-Most people do 1 and 2 but forget 3. Then their laptop dies. Don't be most people.
+I learned this when my laptop died mid-project. Everything local was gone, but GitHub had everything I'd pushed.
 
-<span class="context-label">THE RULE</span> <span class="context-text">If it's not pushed to GitHub, it doesn't exist. Every break, every completion, every "this works!" moment - push it.</span>
+<span class="context-label">MY RULE NOW</span> <span class="context-text">If it's not pushed to GitHub, it doesn't exist. Every break, every small win, every "this works!" moment - push it.</span>
 
 ## CLAUDE'S GIT WORKFLOW
 

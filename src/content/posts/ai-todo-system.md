@@ -1,21 +1,22 @@
 ---
-title: "The AI Todo System: Your Cross-Session Memory"
+title: "The AI Todo System: Cross-Session Memory"
 date: 2025-08-31T15:00:00Z
-excerpt: "Claude forgets. Todos remember. This changes everything."
+excerpt: "How to keep Claude in sync across sessions with smart todo management."
 tags: ["workflow", "planning", "ai-tools"]
 draft: false
 ---
 
-Here's what nobody tells you about AI coding: Claude has amnesia. Start a new session and it's like meeting a stranger. Unless you use todos.
+The biggest challenge with AI coding is that Claude starts fresh every session. You close your laptop, come back tomorrow, and Claude has no idea what you were building. Todos fix that.
 
 ## WHY AI TODOS ARE DIFFERENT
 
-These aren't your Notion checkboxes. AI todos are:
-- **Memory across sessions** - Pick up exactly where you left off
-- **Context for Claude** - It knows what's done, what's next
-- **Momentum keepers** - No more "wait, what was I building?"
+AI todos aren't just a task list - they're how you maintain context between sessions. When you start a new Claude session and say "read TODO.md", Claude instantly knows:
+- What's already built
+- What you're working on
+- What comes next
+- Why certain decisions were made
 
-Think of todos as your project's save file. Without them, you're starting a new game every time.
+It's basically your project's memory card.
 
 ## THE TODOWRITE TOOL
 
@@ -36,7 +37,7 @@ Claude will break down your project into phases:
 7. Deploy to Vercel
 ```
 
-<span class="context-label">POWER MOVE</span> <span class="context-text">The TodoWrite tool has bugs where it sometimes overwrites the whole list. That's why many of us also maintain a TODO.md file as backup. Do both.</span>
+<span class="context-label">HEADS UP</span> <span class="context-text">The TodoWrite tool sometimes has issues where it overwrites the list. I always keep a TODO.md file as backup. Better safe than starting over.</span>
 
 ## TODO.MD: YOUR BACKUP BRAIN
 
