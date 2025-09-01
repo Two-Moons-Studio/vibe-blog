@@ -6,7 +6,7 @@ tags: ["strategy", "planning", "technical"]
 draft: false
 ---
 
-If you follow successful vibe coders on Reddit, you'll notice a pattern - they all spend time on technical planning before building. It's the difference between shipping something that works and having a folder full of half-finished attempts. I was lucky enough to learn this from a talented engineering vibe coder who walked me through it.
+If you follow successful vibe coders on Reddit, you'll notice a pattern - they all spend time on technical planning before building. I was lucky enough to learn this from a talented engineering vibe coder who walked me through it.
 
 When I built my first editorial site (which I later cloned to start this blog - story for another day), having a proper tech plan made everything else just work. Here's how to do it right.
 
@@ -14,7 +14,7 @@ When I built my first editorial site (which I later cloned to start this blog - 
 
 Claude has two modes: planning and building. Planning is where Claude thinks through the approach without writing code. It's basically asking Claude to be your architect before being your builder.
 
-Quick tip: You can toggle between modes with `/mode` or explicitly tell Claude to enter plan mode.
+Quick tip: You can toggle between modes with `/mode` or `Shift+Tab`, or explicitly tell Claude to enter plan mode.
 
 In your project folder with Claude running:
 
