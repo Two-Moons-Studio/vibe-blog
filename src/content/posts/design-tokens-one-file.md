@@ -1,12 +1,12 @@
 ---
-title: "Teaching Claude Design Consistency"
+title: "Design Tokens: One File to Rule Them All"
 date: 2025-08-31T17:00:00Z
-excerpt: "How to stop Claude from making every button a different color."
+excerpt: "How to make your site look intentional, not random."
 tags: ["design", "building", "workflow"]
 draft: false
 ---
 
-My first project with Claude looked like five different people built it. Blue buttons here, green ones there, random fonts everywhere. Turns out Claude needs explicit design instructions or it just makes things up as it goes.
+My first project with Claude looked like five different people built it. Blue buttons here, green ones there, random fonts everywhere. Claude was solving each component in isolation without any system.
 
 ## THE RANDOM LEGO PROBLEM
 
@@ -59,23 +59,16 @@ Make it feel like:
 
 Claude translates these references into your design system.
 
-## THE "MAKE IT LIKE" PROMPT
+## THE "MAKE IT LIKE" SHORTCUT
 
-Don't know design? Use references:
+Don't know design? Use references Claude already knows:
 
-**"Make it like Material Design"**
-Claude implements Google's design system
+- **"Make it like Stripe"** - Clean, minimal, professional
+- **"Make it like Medium"** - Editorial, readable, focused on content
+- **"Make it like Linear"** - Modern, precise, subtle animations
+- **"Make it like a newspaper"** - Traditional, serif fonts, clear hierarchy
 
-**"Make it like Apple's website"**
-Clean, minimal, lots of white space
-
-**"Make it like a newspaper"**
-Editorial, serif fonts, clear hierarchy
-
-**"Make it like Superhuman"**
-Dark mode, keyboard-first, premium feel
-
-Claude knows these design languages and can approximate them.
+Claude knows these design languages and can approximate them using your tokens.
 
 ## WHY CLAUDE NEEDS YOUR HELP
 
@@ -172,8 +165,12 @@ You don't need to be a designer. You need to:
 3. **Start minimal** - Black, white, one accent color
 4. **Let Claude systematize** - It's good at creating design systems
 
+## WHY THIS MATTERS
+
+The difference between a professional site and an amateur one isn't fancy animations or gradients. It's consistency. When every button looks the same, every heading uses the same font, every card has the same spacing - your site looks intentional.
+
+Design tokens force this consistency. Claude can't randomly pick colors because the colors are defined. It can't make up spacing because the spacing scale exists. Your site looks like one person built it because one system controls it.
+
 <span class="context-label">DESIGNER SECRET</span> <span class="context-text">Most "designed" sites are just consistent. Same spacing, same colors, same patterns. That's 90% of looking professional.</span>
 
-Your site now looks intentional, not random. Time to save your work properly.
-
-[Next: Version Control Without the Drama →](/posts/version-control-without-drama)
+[Next: Deployment Without Fear →](/posts/hello-moonlight)

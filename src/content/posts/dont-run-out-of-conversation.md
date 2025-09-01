@@ -1,12 +1,12 @@
 ---
-title: "Managing Context Like a Pro"
+title: "Don't Run Out of Conversation"
 date: 2025-08-31T16:30:00Z
-excerpt: "What 'context' means and how to not lose all your work when it runs out."
+excerpt: "What 'context' means and why your Claude forgets everything."
 tags: ["workflow", "ai-tools", "optimization"]
 draft: false
 ---
 
-You're two hours into building, everything's going great, then Claude starts forgetting what you're building or suggesting things you already said no to. You've hit the context limit. Here's how to deal with it.
+You're two hours into building, everything's working, then Claude starts suggesting things you already rejected or forgets what you're building. You've hit the context limit.
 
 ## WHAT "CONTEXT" ACTUALLY MEANS
 
@@ -68,19 +68,14 @@ The secret to not running out: build in focused chunks, not marathon sessions.
 
 Each session starts fresh with full context.
 
-## RESISTING "BUILD EVERYTHING AT ONCE"
+## RESISTING THE URGE TO KEEP GOING
 
-There's temptation when Claude's on a roll to keep pushing:
-
-"Now add tags"
-"Now add search"  
-"Now add comments"
-"Now add..."
+When Claude's on a roll, there's huge temptation to keep pushing - "Now add tags", "Now add search", "Now add comments"...
 
 Stop. This burns context and creates brittle code. Better to:
 1. Build core functionality
 2. Test it works
-3. Commit and push
+3. [Commit and push](/posts/git-your-safety-net)
 4. Start fresh session for next feature
 
 <span class="context-label">HARD TRUTH</span> <span class="context-text">The last 20% of your context produces 80% of your bugs. When Claude starts forgetting things, mistakes multiply.</span>
@@ -158,7 +153,7 @@ Don't try to squeeze out those last few tokens. Fresh context = fresh thinking.
 
 ## THE CONTINUITY TRICK
 
-Before ending a session:
+Before ending a session, update your [TODO.md](/posts/ai-todo-system):
 
 ```
 Update TODO.md with:
@@ -170,16 +165,17 @@ Update TODO.md with:
 Then push everything.
 ```
 
-Next session starts:
-
+Next session starts with:
 ```
 Read TODO.md and continue where we left off.
 ```
 
 Zero friction restart.
 
-<span class="context-label">CONTEXT IS CURRENCY</span> <span class="context-text">Spend it wisely. Building in chunks feels slower but actually ships faster because you avoid the context death spiral where everything breaks at once.</span>
+## WHY THIS MATTERS
 
-You now know how to manage Claude's memory. Next, let's make sure what you build looks consistent.
+Most people try to build everything in one marathon session. They hit context limits, Claude gets confused, quality drops, bugs multiply, and they end up starting over.
 
-[Next: Teaching Claude Your Design Language →](/posts/teaching-claude-design)
+Building in chunks with fresh context each time means you ship cleaner code faster. It feels slower but it's actually much faster because you avoid the death spiral.
+
+[Next: Subagents: Your Content Army →](/posts/subagents-your-content-army)

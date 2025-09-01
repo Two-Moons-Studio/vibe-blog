@@ -1,12 +1,12 @@
 ---
-title: "Subagents: Delegation on Steroids"
+title: "Subagents: Your Content Army"
 date: 2025-08-31T18:00:00Z
-excerpt: "How to make Claude delegate work to other Claudes while you focus on decisions."
+excerpt: "How to write 10 articles while building your site."
 tags: ["ai-tools", "workflow", "automation"]
 draft: false
 ---
 
-I discovered subagents by accident when Claude asked if it should "use a specialized agent" for research. I said yes, and watched it spawn another Claude to do the work. Now I use them constantly - it's like having a team that never sleeps.
+I discovered subagents by accident when Claude asked if it should "use a specialized agent" for research. I said yes, watched it spawn another Claude to do the work, and realized I'd just unlocked the ability to delegate.
 
 ## WHAT ARE SUBAGENTS?
 
@@ -37,23 +37,9 @@ You get the insights without the work.
 
 <span class="context-label">THE MAGIC</span> <span class="context-text">Subagents can work in parallel. I've had 5 different research tasks running while building. It feels like cheating.</span>
 
-## MY THREE FAVORITE SUBAGENT USES
+## THE KILLER USE CASE: CONTENT CREATION
 
-### 1. Brainstorming and Market Research
-
-```
-Use a subagent to:
-- Research what blog topics are trending
-- Find gaps in existing content
-- Suggest 10 article ideas
-- Include search volume hints
-```
-
-While you build, your researcher works. Come back to a list of validated ideas.
-
-### 2. Content Strategy and Writing
-
-This is the killer feature for PMs:
+This is where subagents shine for vibe coders:
 
 ```
 Use a subagent to write a blog post about [topic].
@@ -64,19 +50,27 @@ Context:
 - Match our existing tone
 ```
 
-I wrote 15 articles for this blog. Subagents drafted 5 of them. I edited, they drafted.
+I wrote 15 articles for this blog. Subagents drafted 5 of them. I edited, they drafted. While I was [building components](/posts/from-plan-to-product), subagents were writing content.
 
-### 3. SEO and Marketing (Future Power)
+## OTHER POWERFUL USES
 
+**Research and validation:**
 ```
-Use a subagent to:
-- Suggest SEO improvements for this post
-- Generate meta descriptions
-- Find relevant keywords
-- Create social media posts
+Use a subagent to research what blog topics are trending
+and find gaps in existing content
 ```
 
-Your marketing team in a command.
+**Documentation:**
+```
+Use a subagent to write setup instructions based on
+what we just built
+```
+
+**Marketing copy:**
+```
+Use a subagent to write meta descriptions and 
+social media posts for our content
+```
 
 ## REAL EXAMPLE: CONTENT GENERATION
 
@@ -168,34 +162,25 @@ Good prompt:
 matching the tone in STRATEGY.md, with 3 practical examples"
 ```
 
+## WHY THIS CHANGES EVERYTHING
+
+Without subagents, you're doing everything sequentially - build, then write content, then do SEO, then create marketing. It takes weeks.
+
+With subagents, you parallelize. While you build the homepage, a subagent writes your about page. While you fix bugs, another researches keywords. While you style components, a third drafts blog posts.
+
+I built this entire blog in a week because I wasn't doing everything myself. I was orchestrating.
+
 ## THE COMPOUND EFFECT
 
-Each subagent task saves 15-30 minutes. Do 10 per day:
-- 10 tasks × 20 minutes = 200 minutes saved
-- 200 minutes = 3+ hours
-- 3 hours = entire afternoon recovered
-
 Over a week building this blog:
-- 20 blog posts researched
-- 10 drafted
-- 5 published
-- Competitive analysis complete
+- 20 blog post ideas researched
+- 10 articles drafted
+- 5 fully edited and published
 - SEO strategy defined
+- Marketing copy written
 
-All while I focused on building.
+All while I focused on actually building the site. That's the power - you become a conductor, not a solo performer.
 
-## FUTURE SUPERPOWERS
+<span class="context-label">PM ADVANTAGE</span> <span class="context-text">Developers think in code. PMs think in systems. Subagents are systems. You're naturally better at orchestrating multiple workstreams than most developers.</span>
 
-What's coming:
-- **Design subagents**: "Create 5 logo variations"
-- **Testing subagents**: "Test all user flows"
-- **Analytics subagents**: "Analyze traffic and suggest improvements"
-- **Customer subagents**: "Summarize user feedback"
-
-The PM who masters subagents doesn't just build faster - they build smarter.
-
-<span class="context-label">PM ADVANTAGE</span> <span class="context-text">Developers focus on code. PMs think in systems. Subagents are systems. You're naturally better at this than most developers.</span>
-
-You now have an army. Time to ship.
-
-[Next: Ship It - Going Live →](/posts/ship-it-going-live)
+[Next: Design Tokens: One File to Rule Them All →](/posts/design-tokens-one-file)

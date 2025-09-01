@@ -162,4 +162,4 @@ After a few sessions, you'll get a feel for what's routine. You can even set up 
 
 These patterns work whether you're building with Astro, Next.js, or whatever. The tech doesn't matter as much as the workflow.
 
-[Next: Don't Run Out of Conversation →](/posts/dont-run-out-of-conversation)
+[Next: Git: Your Safety Net →](/posts/git-your-safety-net)
