@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # design system page (internal use only)
 src/pages/design-system.astro
+.vercel
