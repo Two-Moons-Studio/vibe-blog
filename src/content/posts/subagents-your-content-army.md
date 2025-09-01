@@ -6,53 +6,68 @@ tags: ["ai-tools", "workflow", "automation"]
 draft: false
 ---
 
-I discovered subagents by accident when Claude asked if it should "use a specialized agent" for research. I said yes, watched it spawn another Claude to do the work, and realized I'd just unlocked the ability to delegate.
+My vibe code mentor encouraged me to use subagents for tasks. While he used them for engineering stuff, I decided to test them with something I understood better: content strategy. In experimenting, I had a lot of fun realizing I could make mini-teams of Claude. I'm lazy about wearing all these hats myself, and it was really amazing.
 
 ## WHAT ARE SUBAGENTS?
 
-Subagents are specialized Claudes that Claude creates to handle specific tasks. Think of it as delegation:
+[Subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents) are specialized AI assistants that Claude Code can delegate tasks to. Each one operates in its own context window, separate from your main conversation. Here's the flow:
 
-- **You** → Claude (your main assistant)
-- **Claude** → Subagent (specialized worker)
-- **Subagent** → Completes task and reports back
+- **You** → Ask Claude to do something
+- **Claude** → Recognizes this needs a specialist and delegates to a subagent
+- **Subagent** → Works independently in its own context
+- **Subagent** → Returns results to Claude
+- **Claude** → Synthesizes and presents the final output to you
 
-You manage Claude. Claude manages the specialists.
+Claude acts as the orchestrator - it decides when to use subagents, manages them, and consolidates their work into coherent responses.
 
 ## THE TASK TOOL
 
-The magic happens with the Task tool:
+When you ask Claude to use a subagent, it invokes the Task tool:
 
 ```
 Use a subagent to research blog platforms and compare features
 ```
 
 Claude spawns a research agent that:
-- Searches the web
-- Compares options
-- Creates a summary
-- Reports back to Claude
-- Claude reports to you
+1. Searches the web
+2. Compares options
+3. Creates a summary
+4. Reports back to Claude
+5. Claude synthesizes and presents to you
 
-You get the insights without the work.
+## EXAMPLE: CONTENT STRATEGY FOR THIS SITE
 
-<span class="context-label">THE MAGIC</span> <span class="context-text">Subagents can work in parallel. I've had 5 different research tasks running while building. It feels like cheating.</span>
-
-## THE KILLER USE CASE: CONTENT CREATION
-
-This is where subagents shine for vibe coders:
+Here's an example of how I used subagents for this blog:
 
 ```
-Use a subagent to write a blog post about [topic].
-Context:
-- Read our STRATEGY.md for voice
-- 500-700 words
-- Include practical examples
-- Match our existing tone
+I want to create a series of articles taking my learnings from 
+the various .mds I supply you + whatever makes sense to layer in 
+from best practices people have discovered around the web.
+
+Use subagents to:
+- Do web research on Claude best practices
+- Look at Anthropic's documentation and guidelines
+- Research what vibe coders are struggling with on Reddit
+- Consolidate everything into themes
+
+Give me a proposal of articles to write organized by theme.
 ```
 
-I wrote 15 articles for this blog. Subagents drafted 5 of them. I edited, they drafted. While I was [building components](/posts/from-plan-to-product), subagents were writing content.
+Claude deployed multiple subagents in parallel:
+```
+I'll deploy subagents for this research:
+- Research agent: Gathering Claude best practices from web
+- Documentation agent: Analyzing Anthropic guidelines
+- Community agent: Finding common pain points from Reddit
 
-## OTHER POWERFUL USES
+[45 seconds later]
+
+Based on the agents' research, here's my proposal organized by theme...
+```
+
+I got a complete content strategy with 20+ article ideas organized into learning modules.
+
+## OTHER POWERFUL CONTENT-RELATED USE CASES
 
 **Research and validation:**
 ```
@@ -72,37 +87,6 @@ Use a subagent to write meta descriptions and
 social media posts for our content
 ```
 
-## REAL EXAMPLE: CONTENT GENERATION
-
-Here's exactly how I used subagents for this blog:
-
-**Me to Claude:**
-```
-I need 5 blog posts about common Claude mistakes. 
-Use subagents to:
-1. Research common user frustrations
-2. Draft outlines for each post
-3. Write the first post in full
-```
-
-**Claude's response:**
-```
-I'll deploy subagents for this task:
-- Research agent: Gathering common Claude pain points
-- Content strategist: Creating post outlines
-- Writer: Drafting the first post
-
-[30 seconds later]
-
-Here's what the agents found...
-```
-
-I got:
-- List of 15 common mistakes
-- 5 detailed outlines
-- One complete draft
-
-Time spent by me: 2 minutes.
 
 ## WHEN TO DELEGATE VS DIRECT
 
@@ -121,9 +105,7 @@ Time spent by me: 2 minutes.
 - Bug fixing
 - Real-time iteration
 
-<span class="context-label">THE RULE</span> <span class="context-text">If you'd delegate it to an intern, delegate it to a subagent. If you'd do it yourself, work with Claude directly.</span>
-
-## THE PARALLEL WORKFLOW
+## THE PARALLEL WORKFLOW (MULTI-CLAUDING)
 
 My actual workflow building this blog:
 
@@ -132,7 +114,7 @@ My actual workflow building this blog:
 Building the homepage component...
 ```
 
-**Window 2: Claude (separate session)**
+**Window 2: Claude (separate session in [iTerm](/posts/terminal-terror-first-time) window)**
 ```
 While I build, use subagents to:
 - Write 3 blog posts
@@ -140,7 +122,7 @@ While I build, use subagents to:
 - Create marketing copy
 ```
 
-I build. Subagents research and write. Everything happens simultaneously.
+I build, subagents research and write, everything happens simultaneously. This "multi-clauding" approach lets you leverage subagents while keeping your main coding session focused.
 
 ## SUBAGENT PROMPTING TIPS
 
@@ -151,36 +133,19 @@ Be specific about:
 - **Examples**: "Like our existing posts"
 - **Constraints**: "No technical jargon"
 
-Bad prompt:
-```
-"Write about Claude"
-```
+## THE PARALLEL ADVANTAGE
 
-Good prompt:
-```
-"Write a 600-word beginner-friendly post about Claude mistakes, 
-matching the tone in STRATEGY.md, with 3 practical examples"
-```
-
-## WHY THIS CHANGES EVERYTHING
-
-Without subagents, you're doing everything sequentially - build, then write content, then do SEO, then create marketing. It takes weeks.
+Without subagents, you're doing everything sequentially - build, then write content, then do SEO, then create marketing. It takes weeks and months.
 
 With subagents, you parallelize. While you build the homepage, a subagent writes your about page. While you fix bugs, another researches keywords. While you style components, a third drafts blog posts.
 
-I built this entire blog in a week because I wasn't doing everything myself. I was orchestrating.
-
-## THE COMPOUND EFFECT
-
-Over a week building this blog:
-- 20 blog post ideas researched
-- 10 articles drafted
-- 5 fully edited and published
+In **one night** I got:
+- 20+ blog posts drafted
 - SEO strategy defined
 - Marketing copy written
 
-All while I focused on actually building the site. That's the power - you become a conductor, not a solo performer.
+All while I focused on actually building the site. I built this entire blog in **two days** because I wasn't doing everything myself, I was orchestrating subagents.
 
-<span class="context-label">PM ADVANTAGE</span> <span class="context-text">Developers think in code. PMs think in systems. Subagents are systems. You're naturally better at orchestrating multiple workstreams than most developers.</span>
+[Anthropic's multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) shows this approach can outperform single-agent systems by 90% on complex tasks. The key is parallel exploration - multiple agents tackling different aspects simultaneously.
 
-[Next: Design Tokens: One File to Rule Them All →](/posts/design-tokens-one-file)
+[Next: Design Tokens: Make Everything Match →](/posts/design-tokens-one-file)
