@@ -35,14 +35,14 @@ const sortedPosts = allPosts
                 {post.data.excerpt && (
                   <p class="post-excerpt">{post.data.excerpt}</p>
                 )}
-                {post.data.tags && post.data.tags.length > 0 && (
-                  <div class="post-tags">
-                    {post.data.tags.map((tag) => (
-                      <Tag tag={tag} size="small" />
-                    ))}
-                  </div>
-                )}
               </a>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="post-tags">
+                  {post.data.tags.map((tag) => (
+                    <Tag tag={tag} size="small" />
+                  ))}
+                </div>
+              )}
             </article>
           ))
         ) : (
