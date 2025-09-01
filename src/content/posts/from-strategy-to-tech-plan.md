@@ -31,11 +31,7 @@ Requirements:
 Write this as TECH-PLAN.md
 ```
 
-Claude will think through:
-- What technology to use (and why)
-- Project structure
-- Key components needed
-- Deployment approach
+Claude will think through what technology to use, how to structure the project, what components you need, and how to deploy it.
 
 <span class="context-label">PRO TIP</span> <span class="context-text">If you have Context7 MCP installed (we'll cover this in a future article), Claude can pull in documentation for any framework it suggests, making the plan even more detailed.</span>
 
@@ -79,19 +75,19 @@ Here's the actual TECH-PLAN.md for this blog (simplified):
 
 ## OUR PROJECT'S TECH STACK EXPLAINED
 
-For those who've never heard these terms before, here's what Claude chose and why:
+For those who've never heard these terms before, here's what Claude and I chose and why:
 
-**Astro** - Think of it as WordPress but for developers. It turns your writing (in Markdown files) into a website automatically.
+- **Astro** - Think of it as WordPress but for developers. It turns your writing (in Markdown files) into a website automatically. Excels at fast load times since it ships zero JavaScript by default.
 
-**Markdown** - The simplest way to write formatted text. Like a Word doc but in plain text that never breaks.
+- **Markdown** - The simplest way to write formatted text. Like a Word doc but in plain text that never breaks. Extra helpful since Claude Desktop and Claude Code naturally generate content in this format.
 
-**Vanilla JavaScript** - Just regular JavaScript, no fancy frameworks. Like speaking English instead of lawyer-speak.
+- **Vanilla JavaScript** - Just regular JavaScript, no fancy frameworks. Like speaking English instead of lawyer-speak.
 
-**GitHub** - Where your code lives online. Like Google Drive but for code. Free backup forever.
+- **GitHub** - Where your code lives online. Like Google Drive but for code. Free backup forever.
 
-**Vercel** - Takes your GitHub code and makes it a real website. Updates automatically when you change things.
+- **Vercel** - A hosting platform that takes your GitHub code and makes it a real website anyone can visit. Updates automatically when you change things. Think of it as your website's home on the internet.
 
-The beauty? No database to manage, no server to maintain, no complex setup. Just files that turn into a website.
+With simple projects like this, you don't need a CMS or complex databases to set up. Claude becomes your personalized CMS - you just ask it to create or update content and it handles everything.
 
 ## WANT TO UNDERSTAND MORE?
 
@@ -102,23 +98,11 @@ Can you explain this tech plan to me like I'm a PM who's never coded?
 What are the trade-offs and why these choices?
 ```
 
-Or for a sanity check:
+If you don't have a tech background and want Claude to double-check its own work:
 
 ```
 Review this tech plan critically. What could go wrong? 
 What am I not thinking about? Be honest.
 ```
-
-## THE PLAN BECOMES REALITY
-
-Your TECH-PLAN.md isn't just documentation - it's Claude's blueprint. Every future session, Claude reads this and knows exactly what to build with.
-
-Once your tech plan is written and saved as TECH-PLAN.md, tell Claude:
-
-```
-Tech plan looks good. Exit plan mode and let's start building.
-```
-
-Time to make this real.
 
 [Next: The AI Todo System →](/posts/ai-todo-system)
