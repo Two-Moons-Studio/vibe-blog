@@ -15,7 +15,7 @@ const season = getCurrentSeason();
 </div>
 <div class="nav-right">
   <a href="/about">About</a>
-  <a href="/subscribe">Subscribe</a>
+  <button class="nav-button" data-newsletter-trigger>Subscribe</button>
 </div>
 
 <!-- Static Header -->
@@ -51,7 +51,8 @@ const season = getCurrentSeason();
   }
 
   .nav-left a,
-  .nav-right a {
+  .nav-right a,
+  .nav-button {
     font-family: var(--font-sans-geometric);
     font-size: 0.54rem;
     font-weight: var(--font-weight-bold);
@@ -62,8 +63,17 @@ const season = getCurrentSeason();
     transition: var(--transition-normal);
   }
 
+  .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+  }
+
   .nav-left a:hover,
-  .nav-right a:hover {
+  .nav-right a:hover,
+  .nav-button:hover {
     color: var(--color-accent);
     text-decoration: none;
   }
@@ -172,3 +182,14 @@ const season = getCurrentSeason();
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const newsletterTrigger = document.querySelector('[data-newsletter-trigger]');
+    newsletterTrigger?.addEventListener('click', () => {
+      if (typeof (window as any).openNewsletterModal === 'function') {
+        (window as any).openNewsletterModal();
+      }
+    });
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import NewsletterModal from '../components/NewsletterModal.astro';
 import { getSeasonalColor, getCurrentSeason } from '../utils/season';
 
 export interface Props {
@@ -64,6 +65,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
       </main>
       <Footer />
     </div>
+    <NewsletterModal />
   </body>
 </html>
 

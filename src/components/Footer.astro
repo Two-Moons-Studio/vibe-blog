@@ -7,6 +7,19 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
+  <!-- Newsletter Section -->
+  <div class="footer-newsletter">
+    <div class="newsletter-container">
+      <h3 class="newsletter-title">Stay in the moonlight</h3>
+      <p class="newsletter-subtitle">Weekly-ish updates on the journey from designer to builder</p>
+      <form class="newsletter-form" id="footer-newsletter-form">
+        <input type="email" placeholder="Your email" class="newsletter-input" id="footer-newsletter-email" required>
+        <button type="submit" class="newsletter-button" id="footer-newsletter-submit">SUBSCRIBE</button>
+      </form>
+      <div class="newsletter-message" id="footer-newsletter-message"></div>
+    </div>
+  </div>
+
   <div class="footer-container">
     <div class="footer-grid">
       <!-- Left: Tagline -->
@@ -38,15 +51,123 @@ const year = new Date().getFullYear();
 <style>
   .site-footer {
     margin-top: auto;
-    padding: var(--space-8) 0 var(--space-6);
-    border-top: 1px solid var(--color-border);
     background: var(--color-bg-surface);
   }
 
+  /* Newsletter Section */
+  .footer-newsletter {
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .newsletter-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 var(--page-padding);
+    text-align: center;
+  }
+
+  .newsletter-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .newsletter-subtitle {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-5);
+    font-style: italic;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: var(--space-3);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    outline: none;
+    transition: border-color var(--transition-normal);
+  }
+
+  .newsletter-input::placeholder {
+    font-family: var(--font-serif-body);
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  .newsletter-input:focus {
+    border-color: var(--color-accent);
+  }
+
+  .newsletter-button {
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-sans-geometric);
+    font-size: 0.54rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.27em;
+    text-transform: uppercase;
+    color: var(--color-bg-surface);
+    background: var(--color-text-primary);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+
+  .newsletter-button:hover {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .newsletter-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .newsletter-message {
+    margin-top: var(--space-3);
+    padding: var(--space-3);
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-normal);
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .newsletter-message:not(:empty) {
+    opacity: 1;
+  }
+
+  .newsletter-message--success {
+    color: var(--color-accent);
+  }
+
+  .newsletter-message--error {
+    color: var(--color-text-primary);
+  }
+
+  /* Main Footer Section */
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--page-padding);
+    padding: var(--space-6) var(--page-padding);
   }
 
   .footer-grid {
@@ -127,6 +248,14 @@ const year = new Date().getFullYear();
 
   /* Mobile */
   @media (max-width: 768px) {
+    .newsletter-form {
+      flex-direction: column;
+    }
+
+    .newsletter-button {
+      width: 100%;
+    }
+
     .footer-grid {
       grid-template-columns: 1fr;
       text-align: center;
@@ -144,3 +273,49 @@ const year = new Date().getFullYear();
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById('footer-newsletter-form') as HTMLFormElement;
+  const emailInput = document.getElementById('footer-newsletter-email') as HTMLInputElement;
+  const submitButton = document.getElementById('footer-newsletter-submit') as HTMLButtonElement;
+  const messageDiv = document.getElementById('footer-newsletter-message') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'SUBSCRIBING...';
+    messageDiv.textContent = '';
+    messageDiv.className = 'newsletter-message';
+
+    try {
+      const response = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        messageDiv.textContent = data.message || 'Thanks for subscribing!';
+        messageDiv.classList.add('newsletter-message--success');
+        emailInput.value = '';
+      } else {
+        messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
+        messageDiv.classList.add('newsletter-message--error');
+      }
+    } catch (error) {
+      messageDiv.textContent = 'Network error. Please try again.';
+      messageDiv.classList.add('newsletter-message--error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'SUBSCRIBE';
+    }
+  });
+</script>

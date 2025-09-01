@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://vibecodemoonlighter.com',
-  output: 'static',
+  output: 'server',
   adapter: vercel(),
   markdown: {
     shikiConfig: {

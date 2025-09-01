@@ -12,8 +12,8 @@
 - [ ] Add newsletter CTA to About page
 
 ### Design Polish
-- [ ] **Style code blocks and inline code properly** - Currently too light/large, needs tighter/bolder styling
-- [ ] **Add context-label styling** - Black bg, white text, sans-serif caps (0.6rem, 0.3em spacing)
+- [x] **Style code blocks and inline code properly** - Code blocks now at 0.7rem with proper bold weight
+- [ ] **Add context-label styling** - Black bg, white text, sans-serif caps (0.54rem, 0.27em spacing after scaling)
 - [ ] Review and improve mobile responsiveness
 - [ ] Add subtle animations/transitions
 

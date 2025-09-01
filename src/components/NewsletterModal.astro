@@ -1,0 +1,311 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = 'newsletter-modal' } = Astro.props;
+---
+
+<div id={id} class="modal-backdrop">
+  <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close modal" data-close-modal>
+      Close
+    </button>
+    
+    <div class="modal-content">
+      <h2 id="modal-title" class="modal-title">Stay in the loop</h2>
+      <p class="modal-subtitle">Weekly-ish updates on the journey from Figma to functional. No BS, just honest documentation.</p>
+      
+      <form class="newsletter-form" data-newsletter-form>
+        <div class="form-group">
+          <input 
+            type="email" 
+            class="email-input" 
+            placeholder="Your email"
+            required
+            aria-label="Email address"
+          >
+          <button type="submit" class="submit-button">
+            SUBSCRIBE
+          </button>
+        </div>
+      </form>
+      
+      <div class="form-message success-message" aria-live="polite" hidden>
+        Thanks for subscribing!<br>Check your inbox to confirm.
+      </div>
+      
+      <div class="form-message error-message" aria-live="polite" hidden>
+        Something went wrong. Please try again.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('newsletter-modal');
+    const closeButton = modal?.querySelector('[data-close-modal]');
+    const form = modal?.querySelector('[data-newsletter-form]') as HTMLFormElement;
+    const successMessage = modal?.querySelector('.success-message') as HTMLElement;
+    const errorMessage = modal?.querySelector('.error-message') as HTMLElement;
+    const emailInput = modal?.querySelector('.email-input') as HTMLInputElement;
+    const submitButton = form?.querySelector('.submit-button') as HTMLButtonElement;
+    
+    const closeModal = () => {
+      if (modal) {
+        modal.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        
+        setTimeout(() => {
+          form?.reset();
+          form?.removeAttribute('hidden');
+          successMessage?.setAttribute('hidden', '');
+          errorMessage?.setAttribute('hidden', '');
+          submitButton?.removeAttribute('disabled');
+        }, 300);
+      }
+    };
+    
+    const openModal = () => {
+      if (modal) {
+        modal.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          emailInput?.focus();
+        }, 100);
+      }
+    };
+    
+    (window as any).openNewsletterModal = openModal;
+    
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    closeButton?.addEventListener('click', closeModal);
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('modal-open')) {
+        closeModal();
+      }
+    });
+    
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'SUBSCRIBING...';
+      }
+      
+      try {
+        const response = await fetch('/api/newsletter-subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: emailInput?.value })
+        });
+        
+        if (response.ok) {
+          form.setAttribute('hidden', '');
+          successMessage?.removeAttribute('hidden');
+          
+          setTimeout(() => {
+            closeModal();
+          }, 3000);
+        } else {
+          throw new Error('Subscription failed');
+        }
+      } catch (error) {
+        errorMessage?.removeAttribute('hidden');
+        submitButton.disabled = false;
+        submitButton.textContent = 'SUBSCRIBE';
+      }
+    });
+  });
+</script>
+
+<style>
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 42, 42, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-slow);
+    padding: var(--space-5);
+  }
+  
+  .modal-backdrop.modal-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-container {
+    position: relative;
+    background: var(--color-bg-surface);
+    max-width: 480px;
+    width: 100%;
+    padding: var(--space-8);
+    transform: translateY(20px);
+    transition: transform var(--transition-slow);
+  }
+  
+  .modal-open .modal-container {
+    transform: translateY(0);
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: none;
+    border: none;
+    font-family: var(--font-sans-geometric);
+    font-size: 0.54rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.27em;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    padding: var(--space-2);
+  }
+  
+  .modal-close:hover {
+    color: var(--color-text-primary);
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  .modal-title {
+    font-family: var(--font-serif-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+  }
+  
+  .modal-subtitle {
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-7);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .newsletter-form {
+    margin-bottom: 0;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  
+  .email-input {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    outline: none;
+    transition: border-color var(--transition-normal);
+  }
+  
+  .email-input:focus {
+    border-color: var(--color-accent);
+  }
+  
+  .email-input::placeholder {
+    font-family: var(--font-serif-body);
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+  
+  .submit-button {
+    padding: var(--space-3) var(--space-5);
+    font-family: var(--font-sans-geometric);
+    font-size: 0.54rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.27em;
+    text-transform: uppercase;
+    color: var(--color-bg-surface);
+    background: var(--color-text-primary);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+  }
+  
+  .submit-button:hover {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+  }
+  
+  .submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .form-message {
+    display: none;
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    text-align: center;
+    background: var(--color-neutral-10);
+  }
+  
+  .form-message:not([hidden]) {
+    display: block;
+  }
+  
+  .success-message {
+    color: var(--color-accent);
+  }
+  
+  .error-message {
+    color: var(--color-text-primary);
+  }
+  
+  @media (max-width: 768px) {
+    .modal-container {
+      padding: var(--space-6);
+    }
+    
+    .modal-title {
+      font-size: var(--font-size-xlarge);
+    }
+    
+    .form-group {
+      flex-direction: column;
+    }
+    
+    .submit-button {
+      width: 100%;
+      padding: var(--space-4) var(--space-5);
+    }
+  }
+</style>

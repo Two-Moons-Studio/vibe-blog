@@ -28,13 +28,20 @@ import PageHeader from '../components/PageHeader.astro';
         </div>
 
         <div class="signup-form">
-          <!-- TODO: Replace with actual Buttondown embed -->
-          <div class="buttondown-placeholder">
-            <p><strong>Buttondown signup form will go here</strong></p>
-            <p class="setup-note">
-              To set up: Create Buttondown account → Get embed code → Replace this placeholder
-            </p>
-          </div>
+          <form id="subscribe-form" class="subscribe-form-element">
+            <input 
+              type="email" 
+              id="subscribe-email"
+              class="email-input" 
+              placeholder="Your email"
+              required
+              aria-label="Email address"
+            >
+            <button type="submit" id="subscribe-submit" class="submit-button">
+              SUBSCRIBE
+            </button>
+          </form>
+          <div id="subscribe-message" class="form-message"></div>
         </div>
 
         <div class="promises">
@@ -73,22 +80,87 @@ import PageHeader from '../components/PageHeader.astro';
   }
 
   .signup-form {
-    background: var(--color-neutral-20);
+    background: var(--color-neutral-10);
     padding: var(--space-6);
-    border-radius: 8px;
     margin-bottom: var(--space-8);
     text-align: center;
   }
 
-  .buttondown-placeholder {
-    color: var(--color-text-secondary);
+  .subscribe-form-element {
+    display: flex;
+    gap: var(--space-3);
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  .setup-note {
-    font-size: var(--font-size-small);
+  .email-input {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    outline: none;
+    transition: border-color var(--transition-normal);
+  }
+
+  .email-input::placeholder {
+    font-family: var(--font-serif-body);
+    color: var(--color-text-secondary);
     font-style: italic;
-    margin-top: var(--space-3);
-    margin-bottom: 0;
+  }
+
+  .email-input:focus {
+    border-color: var(--color-accent);
+  }
+
+  .submit-button {
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-sans-geometric);
+    font-size: 0.54rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.27em;
+    text-transform: uppercase;
+    color: var(--color-bg-surface);
+    background: var(--color-text-primary);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+
+  .submit-button:hover {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .form-message {
+    margin-top: var(--space-4);
+    padding: var(--space-3);
+    font-family: var(--font-serif-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .form-message:not(:empty) {
+    opacity: 1;
+  }
+
+  .form-message--success {
+    color: var(--color-accent);
+  }
+
+  .form-message--error {
+    color: var(--color-text-primary);
   }
 
   .promises {
@@ -110,4 +182,60 @@ import PageHeader from '../components/PageHeader.astro';
   .promises p:last-child {
     margin-bottom: 0;
   }
+
+  @media (max-width: 768px) {
+    .subscribe-form-element {
+      flex-direction: column;
+    }
+
+    .submit-button {
+      width: 100%;
+    }
+  }
 </style>
+
+<script>
+  const form = document.getElementById('subscribe-form') as HTMLFormElement;
+  const emailInput = document.getElementById('subscribe-email') as HTMLInputElement;
+  const submitButton = document.getElementById('subscribe-submit') as HTMLButtonElement;
+  const messageDiv = document.getElementById('subscribe-message') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'SUBSCRIBING...';
+    messageDiv.textContent = '';
+    messageDiv.className = 'form-message';
+
+    try {
+      const response = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        messageDiv.textContent = data.message || 'Thanks for subscribing! Check your inbox to confirm.';
+        messageDiv.classList.add('form-message--success');
+        emailInput.value = '';
+      } else {
+        messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
+        messageDiv.classList.add('form-message--error');
+      }
+    } catch (error) {
+      messageDiv.textContent = 'Network error. Please try again.';
+      messageDiv.classList.add('form-message--error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'SUBSCRIBE';
+    }
+  });
+</script>
