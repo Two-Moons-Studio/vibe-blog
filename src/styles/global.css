@@ -95,13 +95,42 @@ li {
   margin-bottom: var(--space-2);
 }
 
-/* Code */
-code {
+/* Code Styles - Clean separation of inline vs block */
+
+/* Inline code - used in paragraphs, lists, etc */
+:not(pre) > code {
   font-family: 'Courier New', monospace;
-  font-size: 0.9em;
-  background: var(--color-neutral-20);
-  padding: var(--space-1) var(--space-2);
+  font-size: 0.7em;
+  font-weight: 500;
+  background: rgba(229, 231, 235, 0.5); /* Subtle light gray */
+  padding: 0.15em 0.3em;
   border-radius: 6px;
+  color: var(--color-text-primary);
+  vertical-align: 0.15em; /* Lift to align with text baseline */
+}
+
+/* Code blocks */
+pre {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  background: var(--color-code-bg);
+  padding: var(--space-4);
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: var(--space-4) 0;
+  border: 1px solid var(--color-border);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Code inside pre blocks - no additional styling */
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-size: 1em; /* Use pre's font size */
+  vertical-align: baseline;
 }
 
 /* Context Label - inline callouts in articles */
