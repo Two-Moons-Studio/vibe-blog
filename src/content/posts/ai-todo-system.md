@@ -17,19 +17,10 @@ I want to see everything broken down so I can decide what to work on.
 
 This keeps you in control of the pace and direction.
 
-## WHY AI TODOS ARE DIFFERENT
-
-The main thing about todos with Claude is that they carry over between sessions. Since Claude starts fresh each time, when you come back tomorrow and say "read TODO.md", it can pick up where you left off. The todos tell it what's already built, what you're working on, and what comes next.
-
 ## THE TODOWRITE TOOL
 
-Claude has a built-in todo system. You'll see it automatically create and update todos as you work. But you control when and how:
+Claude has a built-in todo system that automatically tracks what you're working on. You'll see it create and update todos as you build. When Claude breaks down your project, it might look like:
 
-```
-Create a todo list for building this blog based on our TECH-PLAN.md
-```
-
-Claude will break down your project:
 ```
 1. Set up Astro project
 2. Create layout components
@@ -40,11 +31,11 @@ Claude will break down your project:
 7. Deploy to Vercel
 ```
 
-<span class="context-label">HEADS UP</span> <span class="context-text">The TodoWrite tool sometimes overwrites the list. I always keep a TODO.md file as backup.</span>
+The built-in tool is fine for a single session, but todos disappear when you start fresh. That's why I also keep a TODO.md file.
 
-## TODO.MD: YOUR BACKUP
+## KEEPING YOUR OWN TODO.MD
 
-I also create a TODO.md file that mirrors Claude's todos but with more detail:
+While not required, I create my own TODO.md file because it's more reliable across sessions. Claude can read it every time you start, and you control what's in it:
 
 ```markdown
 # TODO - Vibe Blog
@@ -66,9 +57,9 @@ I also create a TODO.md file that mirrors Claude's todos but with more detail:
 - [ ] Custom domain setup
 ```
 
-Claude reads this every session, and I update it as I work. It's more reliable than the built-in todo tool.
+## WORKING ACROSS SESSIONS
 
-## THE CROSS-SESSION WORKFLOW
+The real power comes when you return to your project days later:
 
 **Session 1:**
 ```
@@ -90,16 +81,10 @@ Let's tackle the content collections.
 
 Each session builds on the last without having to re-explain everything.
 
-## BREAKING WORK INTO RESUMABLE CHUNKS
+## HOW I ACTUALLY WORK
 
-I try to work in 30-minute chunks that I could hand off to someone else (or myself next week). Each chunk needs:
+Honestly, I just pick whatever I feel like working on that day. Sometimes it's the next logical todo, sometimes it's something random from the backlog that sounds fun. The todos are there so I don't forget what needs doing, not to dictate what I work on.
 
-1. **Clear starting point** - "Continue building the blog, currently working on homepage"
-2. **Specific outcome** - "Homepage shows 5 recent posts"
-3. **Save point** - Commit before context runs out
-
-For example, "Create the homepage component that displays recent posts" is way better than "Work on the blog" because future-you knows exactly what to do.
-
-With this todo system, you can actually build something across multiple sessions without losing track.
+The key is having everything written down so when you come back a week later, you know what's done and what's left. Whether you work systematically through the list or jump around based on mood doesn't matter - as long as you're making progress.
 
 [Next: Setting Claude Up for Success →](/posts/setting-claude-up-for-success)
