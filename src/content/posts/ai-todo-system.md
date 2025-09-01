@@ -6,27 +6,38 @@ tags: ["workflow", "planning", "ai-tools"]
 draft: false
 ---
 
-The biggest challenge with AI coding is that Claude starts fresh every session. You close your laptop, come back tomorrow, and Claude has no idea what you were building. Todos fix that.
+You just finished your tech plan. Claude's excited - it immediately wants to start building everything right now. "I'll set up the project! Create the components! Configure the deployment!" 
+
+Stop. This is where most people lose control of their project.
+
+Instead, interrupt Claude and say:
+
+```
+Before we build anything, create a todo list based on our TECH-PLAN.md. 
+I want to see everything broken down so I can decide what to work on.
+```
+
+This changes everything. Now you're directing, not just following along.
 
 ## WHY AI TODOS ARE DIFFERENT
 
-AI todos aren't just a task list - they're how you maintain context between sessions. When you start a new Claude session and say "read TODO.md", Claude instantly knows:
+Claude starts fresh every session. Your todos are the bridge. When you come back tomorrow and say "read TODO.md", Claude instantly knows:
 - What's already built
 - What you're working on
 - What comes next
 - Why certain decisions were made
 
-It's basically your project's memory card.
+It's your project's memory card.
 
 ## THE TODOWRITE TOOL
 
-Claude has a built-in todo system. You'll see it automatically create and update todos as you work. But you can also invoke it directly:
+Claude has a built-in todo system. You'll see it automatically create and update todos as you work. But you control when and how:
 
 ```
 Create a todo list for building this blog based on our TECH-PLAN.md
 ```
 
-Claude will break down your project into phases:
+Claude will break down your project:
 ```
 1. Set up Astro project
 2. Create layout components
@@ -37,7 +48,7 @@ Claude will break down your project into phases:
 7. Deploy to Vercel
 ```
 
-<span class="context-label">HEADS UP</span> <span class="context-text">The TodoWrite tool sometimes has issues where it overwrites the list. I always keep a TODO.md file as backup. Better safe than starting over.</span>
+<span class="context-label">HEADS UP</span> <span class="context-text">The TodoWrite tool sometimes overwrites the list. I always keep a TODO.md file as backup.</span>
 
 ## TODO.MD: YOUR BACKUP BRAIN
 
@@ -65,20 +76,7 @@ Create a TODO.md file that mirrors Claude's todos but with more detail:
 
 This becomes your source of truth. Claude reads it every session. You update it as you work.
 
-## BREAKING WORK INTO RESUMABLE CHUNKS
-
-The secret to AI-assisted building: work in 30-minute chunks that could be handed off to someone else (or future you). Each chunk should:
-
-1. **Start with context** - "Continue building the blog, currently working on homepage"
-2. **Have a clear outcome** - "Homepage shows 5 recent posts"
-3. **End with a commit** - Save progress before context runs out
-
-Bad chunk: "Work on the blog"
-Good chunk: "Create the homepage component that displays recent posts"
-
 ## THE CROSS-SESSION WORKFLOW
-
-Here's how todos enable you to build across multiple sessions:
 
 **Session 1:**
 ```
@@ -100,39 +98,16 @@ Let's tackle the content collections.
 
 Each session builds on the last. No repetition. No forgotten work.
 
-## TIME INVESTMENT PAYS OFF
+## BREAKING WORK INTO RESUMABLE CHUNKS
 
-<span class="context-label">CRITICAL INSIGHT</span> <span class="context-text">Spending 10 minutes on todos saves 2 hours of redundant work. Every. Single. Time.</span>
+Work in 30-minute chunks that could be handed off to someone else (or future you). Each chunk should:
 
-Most people want to dive into building immediately. Resist this. The time you spend on todos is like compound interest - it pays off exponentially as your project grows.
+1. **Start with context** - "Continue building the blog, currently working on homepage"
+2. **Have a clear outcome** - "Homepage shows 5 recent posts"
+3. **End with a commit** - Save progress before context runs out
 
-My workflow:
-1. **5 minutes** - Review and update TODO.md
-2. **20 minutes** - Focused building on one todo
-3. **5 minutes** - Update todos, commit changes
-
-This rhythm keeps momentum without overwhelming Claude's context or your attention.
-
-## TODOS AS PROJECT PHASES
-
-Think of your todos like Jira epics or project phases:
-
-**Phase 1: Foundation** (todos 1-3)
-- Project setup
-- Core structure
-- Basic components
-
-**Phase 2: Features** (todos 4-7)
-- Actual functionality
-- Content management
-- User experience
-
-**Phase 3: Polish** (todos 8-10)
-- Styling refinements
-- Performance
-- Deployment
-
-This mental model helps you see progress even when individual todos feel small.
+Bad chunk: "Work on the blog"
+Good chunk: "Create the homepage component that displays recent posts"
 
 You now have a memory system that survives between sessions. Next, let's set up Claude to use this system perfectly.
 
