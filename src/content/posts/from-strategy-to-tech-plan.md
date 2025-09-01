@@ -1,16 +1,20 @@
 ---
 title: "From Strategy to Technical Plan"
 date: 2025-08-31T14:30:00Z
-excerpt: "Turn your PM brain off. Let Claude be the architect."
+excerpt: "The step that separates successful vibe coders from abandoned projects."
 tags: ["strategy", "planning", "technical"]
 draft: false
 ---
 
-You have a strategy doc. Great. Now you need to figure out how to actually build it - what framework, what tools, all that technical stuff. This used to be where I'd get stuck, but Claude is surprisingly good at making these decisions if you ask the right way.
+If you follow successful vibe coders on Reddit, you'll notice a pattern - they all spend time on technical planning before building. It's the difference between shipping something that works and having a folder full of half-finished attempts. I was lucky enough to learn this early from watching others fail without it.
+
+When I built my first editorial site (which I later cloned to start this blog - story for another day), the tech planning step took maybe 30 minutes but saved me literally days of wrong turns. Here's how to do it right.
 
 ## ENTER PLAN MODE
 
 Claude has two modes: planning and building. Planning is where Claude thinks through the approach without writing code. It's basically asking Claude to be your architect before being your builder.
+
+Quick tip: You can toggle between modes with `/mode` or explicitly tell Claude to enter plan mode.
 
 In your project folder with Claude running:
 
@@ -18,10 +22,11 @@ In your project folder with Claude running:
 Can you read my STRATEGY.md and create a technical plan? Put Claude in plan mode.
 
 Requirements:
+- Use vanilla HTML/CSS/JS unless a framework provides massive simplification
 - Simplest solution that works
-- No unnecessary frameworks
-- Can ship in one day
-- Easy to maintain
+- Can ship within a week
+- Easy to maintain (I need to update this myself in 6 months without remembering anything)
+- No unnecessary frameworks or dependencies
 
 Write this as TECH-PLAN.md
 ```
@@ -32,41 +37,11 @@ Claude will think through:
 - Key components needed
 - Deployment approach
 
-## PROMPTS THAT PREVENT OVERENGINEERING
-
-I've noticed Claude sometimes gets excited and suggests a whole tech stack when you just need a simple site. Here are prompts that help keep things manageable:
-
-**The "No Framework" Prompt:**
-```
-Use vanilla HTML/CSS/JS unless a framework provides massive simplification
-```
-
-**The "Ship Today" Prompt:**
-```
-What's the simplest version that could go live today?
-```
-
-**The "Maintenance Reality" Prompt:**
-```
-I need to be able to update this myself in 6 months without remembering anything
-```
-
-<span class="context-label">LEARNED THIS THE HARD WAY</span> <span class="context-text">Every framework you add is something else to debug later. I spent three hours once because a dependency updated and broke everything.</span>
-
-## WHY I USE ASTRO (AND YOU MIGHT TOO)
-
-For this blog, Claude suggested Astro. Here's why it was right:
-
-- **Static sites are unkillable** - No server, no database, nothing to crash
-- **Markdown for content** - Write in any text editor forever
-- **Component-based** - Change header once, updates everywhere
-- **Ships anywhere** - Vercel, Netlify, GitHub Pages, wherever
-
-But Claude might suggest something different for your project. Trust it. The technical plan should match your strategy, not my preferences.
+<span class="context-label">PRO TIP</span> <span class="context-text">If you have Context7 MCP installed (we'll cover this in a future article), Claude can pull in documentation for any framework it suggests, making the plan even more detailed.</span>
 
 ## WHAT A TECH PLAN LOOKS LIKE
 
-Here's the TECH-PLAN.md for this blog (simplified):
+Here's the actual TECH-PLAN.md for this blog (simplified):
 
 ```markdown
 # Technical Plan - Vibe Blog
@@ -76,6 +51,7 @@ Here's the TECH-PLAN.md for this blog (simplified):
 - Markdown content (easy to write)
 - Fast performance (static HTML)
 - Simple deployment
+- Vanilla JS for any interactivity
 
 ## Structure
 /src
@@ -101,27 +77,48 @@ Here's the TECH-PLAN.md for this blog (simplified):
 - Custom domain when ready
 ```
 
-## LET CLAUDE OWN THE ARCHITECTURE
+## OUR PROJECT'S TECH STACK EXPLAINED
 
-This was hard for me to learn as a PM - you have to let go of the technical decisions. You wouldn't tell an architect which specific beams to use in a building. Same principle here.
+For those who've never heard these terms before, here's what Claude chose and why:
 
-Your job:
-- Define constraints ("must work on mobile")
-- Set priorities ("speed over features")
-- Ask questions ("why this over that?")
+**Astro** - Think of it as WordPress but for developers. It turns your writing (in Markdown files) into a website automatically.
 
-Claude's job:
-- Choose the technology
-- Design the architecture
-- Explain trade-offs
+**Markdown** - The simplest way to write formatted text. Like a Word doc but in plain text that never breaks.
+
+**Vanilla JavaScript** - Just regular JavaScript, no fancy frameworks. Like speaking English instead of lawyer-speak.
+
+**GitHub** - Where your code lives online. Like Google Drive but for code. Free backup forever.
+
+**Vercel** - Takes your GitHub code and makes it a real website. Updates automatically when you change things.
+
+The beauty? No database to manage, no server to maintain, no complex setup. Just files that turn into a website.
+
+## WANT TO UNDERSTAND MORE?
+
+If you're curious about the technical choices, here are two prompts that help:
+
+```
+Can you explain this tech plan to me like I'm a PM who's never coded? 
+What are the trade-offs and why these choices?
+```
+
+Or for a sanity check:
+
+```
+Review this tech plan critically. What could go wrong? 
+What am I not thinking about? Be honest.
+```
 
 ## THE PLAN BECOMES REALITY
 
-Your TECH-PLAN.md isn't just documentation - it's Claude's blueprint. Every future session, Claude reads this and knows:
-- What we're building with
-- Why we made these choices
-- What we're NOT doing
+Your TECH-PLAN.md isn't just documentation - it's Claude's blueprint. Every future session, Claude reads this and knows exactly what to build with.
 
-Now you have both a strategy and a technical plan. You still haven't written any code, but you actually know what you're building and how. That's more than most side projects ever figure out.
+Once your tech plan is written and saved as TECH-PLAN.md, tell Claude:
+
+```
+Tech plan looks good. Exit plan mode and let's start building.
+```
+
+Time to make this real.
 
 [Next: The AI Todo System →](/posts/ai-todo-system)
