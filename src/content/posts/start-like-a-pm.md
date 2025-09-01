@@ -1,47 +1,53 @@
 ---
-title: "Start Like a PM: Writing Your Strategy"
+title: "Good Planning is Good Vibe Coding"
 date: 2025-08-31T14:00:00Z
-excerpt: "Every great product starts with a strategy. Yes, even your side project."
-tags: ["strategy", "planning", "pm-skills"]
+excerpt: "The most enjoyable part of vibe coding? Taking fuzzy ideas and building real strategy with Claude."
+tags: ["strategy", "planning", "claude-collaboration"]
 draft: false
 ---
 
-You're not coding yet. You're not even thinking about code. You're doing what every PM does first - figuring out what the hell you're building and why anyone should care.
+I had this fuzzy idea for a blog. Nothing concrete, just vibes. Twenty minutes with Claude later, I had a full strategy doc with actual bones. Not by typing it myself - by having a conversation where Claude pulled structure from my brain dump.
 
-This isn't busy work. This is the difference between shipping something real and abandoning another half-finished project.
+## WHY CLAUDE NEEDS YOUR STRATEGY
 
-## WHAT'S A PRD AND WHY YOU NEED ONE
+Claude Code is a specialized executor - brilliant at building what you describe, but it doesn't come with vision or memory. When you start a new session three days later, Claude doesn't remember your project exists. It needs context to make those magical leaps from "help me fix this" to actually understanding what "this" means in your project.
 
-A PRD (Product Requirements Document) is your north star. It's not a 50-page novel. It's answers to basic questions:
-- What problem are you solving?
-- Who has this problem?
-- What does success look like?
-- What's the simplest solution?
-
-<span class="context-label">REALITY CHECK</span> <span class="context-text">Most abandoned projects die because the builder lost sight of why they started. A PRD keeps you honest when you're tempted to add "just one more feature."</span>
+<span class="context-label">SO WHAT</span> <span class="context-text">Claude without strategy: "Let's add user authentication!" Claude after reading your strategy: "Let's focus on getting your static blog live first." That's the difference.</span>
 
 ## WRITING YOUR STRATEGY WITH CLAUDE
 
 Navigate to your project folder and start Claude:
 
 ```bash
-cd ~/dev/my-blog-project
+cd ~/dev/my-vibe-project
 claude
 ```
 
-Now give Claude this prompt:
+Now here's two ways to get your strategy out:
 
+**Option 1: The Clean Interview**
 ```
-Help me write a STRATEGY.md file for my blog project. Ask me questions about:
-- What I want to build
-- Who my audience is
+Help me write a STRATEGY.md file for my project. Interview me about:
+- What I'm building and why
+- Who will use this
 - What success looks like
-- What features are must-haves vs nice-to-haves
+- What features are essential vs nice-to-have
+- What I explicitly DON'T want to build
 
-Keep it simple, under 200 words. This is my north star, not a novel.
+Turn my answers into a clear strategy doc that future Claude sessions can read to understand this project's vision and constraints.
 ```
 
-Claude will interview you. Answer honestly - this isn't a pitch deck for investors, it's your own clarity.
+**Option 2: The Brain Dump** *(my preferred approach)*
+```
+I want to build [dump everything here - your random thoughts, half-formed ideas, contradictions, everything]. 
+
+Take this mess and:
+1. Ask me clarifying questions to resolve contradictions
+2. Help me identify what's core vs what's feature creep
+3. Turn it into a STRATEGY.md that keeps me and future Claude sessions focused
+```
+
+Claude will pull structure from your chaos. That's literally what it's best at.
 
 ## THE POWER OF .MD FILES
 
@@ -52,56 +58,66 @@ Notice we're creating STRATEGY.md, not keeping this in our heads. These .md (mar
 
 Your project folder will fill with these: STRATEGY.md, TECH-PLAN.md, TODO.md, CLAUDE.md. Each serves a purpose. Each keeps you from starting over.
 
-## WHAT GOES IN YOUR STRATEGY
+## WHAT A REAL STRATEGY LOOKS LIKE
 
-Here's what my STRATEGY.md looked like for this blog:
+Here's a simplified version of the actual strategy doc I wrote for this site:
 
 ```markdown
-# Vibe Blog Strategy
+# Zero to Ship Blog Strategy
 
-## Problem
-Non-technical PMs and designers want to build things but get overwhelmed by dev complexity.
+## Core Concept
+Get non-technical people from zero to shipping. Bite-sized wins, no fluff.
+
+## Scope Decisions
+- Starting with blog, not social platform
+- Static files, not database
+- Public content, not user accounts
+- Ship in days, not months
 
 ## Audience
-- Product managers who prototype
-- Designers who want to ship
-- Anyone tired of waiting for devs
+- PMs who want to prototype without waiting
+- Designers who want to build their ideas
+- Anyone who's tried to learn coding and quit
 
-## Success Metrics
-- 10 people build and ship something
-- Clear path from zero to deployed site
+## Success Looks Like
+- Reader has working local site in 1 hour
+- Reader deploys to real URL in 1 week
+- Reader feels confident to continue
 - No one quits from overwhelm
 
-## Must-Haves
-- Simple blog that works
-- Easy to update
-- Looks professional
-- Ships to real URL
+## Principles
+- One article = one task = one win
+- Copy-paste is fine, understanding comes later
+- Permission to take shortcuts
+- "It's OK to be dumb" energy
 
-## Not Doing
-- Complex features
-- User accounts
-- Comments/social
-- Analytics (yet)
+## NOT Doing (Critical for Claude)
+- React/Vue/complex frameworks
+- Databases or backends
+- User authentication
+- Dev best practices lectures
+- Scalability concerns
+- Testing frameworks
 ```
 
-That's it. 100 words that keep me focused.
+This doc isn't about me staying focused - it's about Claude staying focused across sessions.
 
-## YOUR STRATEGY BECOMES CLAUDE'S STRATEGY
+## MAKING CLAUDE READ YOUR STRATEGY
 
-Here's the magic: every Claude session can start by reading this file. Add this to your future CLAUDE.md:
+Once you have your STRATEGY.md, you need Claude to actually read it. Later we'll optimize our [CLAUDE.md file](/posts/setting-claude-up-for-success) to include:
 
 ```markdown
-## Context Files to Read
-- STRATEGY.md - Read this first always
-- TECH-PLAN.md - Technical approach
-- TODO.md - Current tasks
+## Start Every Session
+Always read these files first:
+1. STRATEGY.md - Project vision and constraints
+2. TECH-PLAN.md - Technical decisions
+3. TODO.md - Current tasks
 ```
 
-Now Claude understands your vision. It won't suggest features you don't need. It won't overengineer. It stays aligned with YOUR goals.
-
-<span class="context-label">PM WISDOM</span> <span class="context-text">Spending 30 minutes on strategy saves 3 hours of building the wrong thing. Every time.</span>
-
-You've just done what most developers skip - you've defined success before writing a single line of code. That's thinking like a PM.
+Now when you start a new Claude session days later, you can just say "read CLAUDE.md" and Claude instantly understands:
+- What you're building (and what you're NOT)
+- Why certain decisions were made
+- What success looks like
+- Where you left off
 
 [Next: From Strategy to Technical Plan →](/posts/from-strategy-to-tech-plan)

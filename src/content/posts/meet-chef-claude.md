@@ -84,4 +84,4 @@ The key is being specific about what you want. "Make me a website" is like askin
 
 Now if you want to build something you can iterate on over multiple sessions, ship live, and continue evolving - keep reading. The next articles cover how to vibe together complex sites and apps, plus the patterns that make you an effective viber.
 
-[Next: Writing Your Recipe File →](/posts/writing-your-recipe-file)
+[Next: Good Planning is Good Vibe Coding →](/posts/start-like-a-pm)

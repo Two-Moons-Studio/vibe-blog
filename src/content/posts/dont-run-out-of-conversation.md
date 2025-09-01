@@ -1,12 +1,12 @@
 ---
-title: "Don't Run Out of Conversation"
+title: "Managing Context Like a Pro"
 date: 2025-08-31T16:30:00Z
-excerpt: "What 'context' means and why you'll learn to fear running out."
+excerpt: "What 'context' means and how to not lose all your work when it runs out."
 tags: ["workflow", "ai-tools", "optimization"]
 draft: false
 ---
 
-You're building momentum. Claude's cranking out code. Then suddenly Claude says "I'm having trouble remembering our earlier conversation" or starts suggesting things you already rejected. You've hit the context limit.
+You're two hours into building, everything's going great, then Claude starts forgetting what you're building or suggesting things you already said no to. You've hit the context limit. Here's how to deal with it.
 
 ## WHAT "CONTEXT" ACTUALLY MEANS
 
@@ -18,7 +18,7 @@ When it fills up:
 - It starts repeating work
 - Quality drops dramatically
 
-<span class="context-label">THE BUDGET</span> <span class="context-text">You get roughly 200K tokens per conversation. That's about 150,000 words. Sounds like a lot until you realize every file Claude reads and writes counts against it.</span>
+<span class="context-label">CONTEXT BUDGET</span> <span class="context-text">You get roughly 200K tokens per conversation. That's about 150,000 words, but every file Claude reads and writes eats into that. Big files burn through it fast.</span>
 
 ## THE /CONTEXT COMMAND
 

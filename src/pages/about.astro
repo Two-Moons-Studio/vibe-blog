@@ -13,42 +13,46 @@ import PageHeader from '../components/PageHeader.astro';
 
       <div class="content">
         <p>
-          Hi, I'm Jess. I spent 12+ years as a Design Director watching developers say 
-          "technically not feasible" to perfectly reasonable ideas. Now I'm a Product Director 
-          who decided to stop waiting for dev resources.
+          A lot of people have been asking me how to get started with AI coding. The honest answer 
+          is that most of the content out there isn't super helpful when you're actually starting 
+          from zero. It either assumes you know what npm is, or it's trying to sell you something.
         </p>
 
         <p>
-          This blog documents my journey from Figma to functional—learning to build 
-          actual products with AI assistance. No prior coding experience, just design 
-          thinking and a lot of curiosity.
+          So I started writing down what actually worked as I learned. Not the theory, just the 
+          practical stuff. How to not be scared of the terminal. What Claude Code actually does. 
+          Why my fonts keep breaking (literally happening as I write this About page with Claude).
         </p>
-
-        <h2>What You'll Find Here</h2>
-        <p>
-          Honest takes on what it's really like to learn AI-assisted development as a designer. 
-          The struggles, the wins, and everything I wish someone had told me when I started.
-        </p>
-
-        <ul>
-          <li><strong>The Setup</strong> - What I was trying to build</li>
-          <li><strong>The Struggle</strong> - What went hilariously wrong</li>
-          <li><strong>The Solution</strong> - What actually worked</li>
-          <li><strong>The Designer Take</strong> - How my design brain processed it</li>
-          <li><strong>The PM Take</strong> - What this means for shipping products</li>
-          <li><strong>Reality Check</strong> - Time, cost, and sanity scores</li>
-        </ul>
 
         <p>
-          If you're a designer, PM, or anyone who's ever wanted to build something 
-          but felt blocked by technical barriers, this journey might resonate.
+          I think the best PMs and designers have always wanted to build things themselves - we 
+          just didn't have the time to learn traditional coding. AI tools change that. You can 
+          go from idea to working prototype in an afternoon if you know how to talk to Claude.
         </p>
 
-        <div class="cta">
-          <a href="/subscribe" class="subscribe-button">
-            Follow Along
-          </a>
-        </div>
+        <p>
+          That's what vibe coding is - learning to collaborate with AI to build real things. 
+          You don't need to understand how JavaScript works. You need to understand how to 
+          describe what you want clearly enough that Claude can help you build it.
+        </p>
+
+        <p>
+          Every post here is something I actually tried to build. Some worked great, some took 
+          forever to debug, most taught me something I didn't expect to learn. It's messier than 
+          a tutorial but probably more useful.
+        </p>
+
+        <p>
+          I'm not pretending to be an expert here - I'm literally learning as I write these posts. 
+          There are probably better ways to do everything I'm showing. But sometimes you just need 
+          to see someone else struggle through the same stuff to know you're not alone in finding 
+          this hard at first.
+        </p>
+
+        <p>
+          If you've been wanting to build something but don't know where to start, hopefully 
+          this helps. We're all just figuring it out as we go.
+        </p>
       </div>
     </article>
   </div>
@@ -74,27 +78,5 @@ import PageHeader from '../components/PageHeader.astro';
 
   .content li {
     margin-bottom: var(--space-3);
-  }
-
-  .cta {
-    text-align: center;
-    margin-top: var(--space-8);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--color-neutral-20);
-  }
-
-  .subscribe-button {
-    background: var(--color-accent-primary);
-    color: white;
-    padding: var(--space-3) var(--space-6);
-    border-radius: 6px;
-    font-family: var(--font-sans);
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-large);
-  }
-
-  .subscribe-button:hover {
-    opacity: 0.9;
-    text-decoration: none;
   }
 </style>

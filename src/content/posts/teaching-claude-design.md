@@ -1,24 +1,18 @@
 ---
-title: "Teaching Claude Your Design Language"
+title: "Teaching Claude Design Consistency"
 date: 2025-08-31T17:00:00Z
-excerpt: "Why every button looks different until you teach Claude to be consistent."
+excerpt: "How to stop Claude from making every button a different color."
 tags: ["design", "building", "workflow"]
 draft: false
 ---
 
-Claude builds like a chef grabbing random ingredients. One button is blue, another is green. Headers are different sizes on every page. Spacing is chaos. This isn't Claude's fault - you haven't taught it your design language.
+My first project with Claude looked like five different people built it. Blue buttons here, green ones there, random fonts everywhere. Turns out Claude needs explicit design instructions or it just makes things up as it goes.
 
 ## THE RANDOM LEGO PROBLEM
 
-Without design guidance, Claude builds functionally but not cohesively. It's like having a box of random Lego pieces instead of a matched set.
+Without design guidance, Claude builds functionally but not cohesively. Each component works, but nothing matches. It's solving each request in isolation without considering the whole.
 
-Every component Claude creates is:
-- Solving the immediate problem
-- Ignoring the bigger picture
-- Creating future inconsistency
-- Making your site look amateur
-
-<span class="context-label">THE REALITY</span> <span class="context-text">Claude will use inline styles, random colors, and arbitrary spacing unless you give it a system. Every. Single. Time.</span>
+<span class="context-label">LEARNED THIS</span> <span class="context-text">Claude will use inline styles, random colors, and make up spacing values on the spot unless you give it a system to follow.</span>
 
 ## DESIGN TOKENS: YOUR LEGO SET
 

@@ -1,12 +1,12 @@
 ---
-title: "Subagents: Your PM Superpowers"
+title: "Subagents: Delegation on Steroids"
 date: 2025-08-31T18:00:00Z
-excerpt: "Deploy an army of Claudes. Each with a specialty. All working for you."
+excerpt: "How to make Claude delegate work to other Claudes while you focus on decisions."
 tags: ["ai-tools", "workflow", "automation"]
 draft: false
 ---
 
-Here's what blew my mind: Claude can spawn other Claudes. Each one specialized. While you're building a homepage, another Claude writes your blog posts. Another researches your market. It's like having a team, except they all work for free at 3am.
+I discovered subagents by accident when Claude asked if it should "use a specialized agent" for research. I said yes, and watched it spawn another Claude to do the work. Now I use them constantly - it's like having a team that never sleeps.
 
 ## WHAT ARE SUBAGENTS?
 
@@ -35,7 +35,7 @@ Claude spawns a research agent that:
 
 You get the insights without the work.
 
-<span class="context-label">GAME CHANGER</span> <span class="context-text">Subagents work in parallel. You can have 5 different research tasks running while you build. It's like having a team of analysts.</span>
+<span class="context-label">THE MAGIC</span> <span class="context-text">Subagents can work in parallel. I've had 5 different research tasks running while building. It feels like cheating.</span>
 
 ## MY THREE FAVORITE SUBAGENT USES
 
