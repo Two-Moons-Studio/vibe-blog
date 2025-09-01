@@ -10,10 +10,7 @@ export default defineConfig({
   adapter: vercel(),
   markdown: {
     shikiConfig: {
-      // Use a theme that matches our dark background
-      theme: 'github-dark',
-      // Wrap code blocks in a div we can target
-      wrap: true
+      theme: 'github-dark'
     }
   },
   integrations: [

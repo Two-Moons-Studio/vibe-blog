@@ -97,13 +97,33 @@ li {
   margin-bottom: var(--space-2);
 }
 
-/* Code */
-code {
+/* Inline code only - not inside pre blocks */
+p > code,
+li > code,
+td > code,
+h1 > code,
+h2 > code,
+h3 > code,
+h4 > code,
+h5 > code,
+h6 > code {
   font-family: 'Courier New', monospace;
   font-size: 0.9em;
   background: var(--color-neutral-20);
   padding: var(--space-1) var(--space-2);
   border-radius: 6px;
+}
+
+/* Code blocks - remove all backgrounds from nested elements */
+pre code,
+pre code *,
+pre code span,
+.astro-code code,
+.astro-code code *,
+.astro-code code span {
+  background: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
 }
 
 /* Context Label - inline callouts in articles */

@@ -68,6 +68,54 @@ const formatDate = (date: Date) => {
 </Layout>
 
 <style is:global>
+  /* Force remove beige backgrounds from all code blocks */
+  .astro-code code,
+  .astro-code code *,
+  .astro-code span,
+  pre.astro-code code,
+  pre.astro-code code *,
+  pre.astro-code code span,
+  pre code,
+  pre code * {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+  
+  /* Style the pre element with padding and dark background */
+  pre.astro-code {
+    background-color: #24292e !important;
+    padding: var(--space-4) !important;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: var(--space-4) 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Fix code block line indentation and spacing */
+  pre.astro-code code {
+    display: block;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    line-height: 1.6;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+  }
+  
+  /* Force font weight on all spans inside code blocks */
+  pre.astro-code span,
+  pre.astro-code code span {
+    font-weight: 600 !important;
+  }
+  
+  pre.astro-code .line {
+    display: inline;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+    margin-left: 0 !important;
+  }
   .post-tags {
     display: flex;
     justify-content: center;
