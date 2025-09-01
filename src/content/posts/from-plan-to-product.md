@@ -1,78 +1,68 @@
 ---
 title: "From Plan to Product: Actually Building"
 date: 2025-08-31T16:00:00Z
-excerpt: "The moment you stop planning and start building with Claude."
+excerpt: "Tips for your first real build sessions with Claude."
 tags: ["building", "execution", "workflow"]
 draft: false
 ---
 
-Okay, you've done all the planning. You have your strategy, tech plan, todos, and CLAUDE.md. Now comes the part where you actually have to type something to Claude and watch it build. This is weirdly nerve-wracking the first time.
+You've got your [todos from breaking down your tech plan](/posts/ai-todo-system). Claude knows [your plan](/posts/from-strategy-to-tech-plan). Time to actually build something. I'll walk through the detailed Astro build in a later post - this one's about the patterns and tips that help during any build session.
 
-## THE MOMENT OF TRUTH
+## STARTING FROM YOUR TODOS
 
-In your project folder, with Claude running:
-
-```
-Let's build this blog. 
-
-Read my STRATEGY.md, TECH-PLAN.md, and TODO.md.
-
-Start with the first todo. Show me what you'll do, then execute.
-```
-
-That's it. Claude will:
-1. Read your files
-2. Understand the context
-3. Show you the plan
-4. Wait for approval
-5. Start building
-
-## YOUR FIRST "GO BUILD THIS" PROMPT
-
-Here's the exact prompt I used to start this blog:
+Remember that [todo list we created](/posts/ai-todo-system)? That's your starting point. In your project folder:
 
 ```
-Based on our strategy and tech plan, let's set up the Astro blog.
+Read my STRATEGY.md, TECH-PLAN.md, TODO.md, and CLAUDE.md.
 
-Requirements:
-- Use Astro's blog template as starting point
-- Keep it minimal
-- Set up the folder structure we planned
-- Get it running locally so I can see it
-
-Walk me through each step before doing it.
+Let's work on the first todo. Show me what you'll do before doing it.
 ```
 
-Claude responded with:
+Claude will read your context and start with whatever's first on the list. Maybe it's "Set up Astro project" or "Create homepage component" - doesn't matter. The point is you're not randomly asking Claude to build things, you're working through a plan.
+
+## WHAT A REAL BUILD LOOKS LIKE
+
+Here's an actual exchange from building this blog:
+
 ```
-I'll set up your Astro blog. Here's what I'll do:
+Me: Let's work on setting up the Astro project from our todos
 
-1. Create a new Astro project with blog template
-2. Clean out example content
-3. Set up our planned structure
-4. Start the dev server
+Claude: I'll set up your Astro blog with the blog template. 
+First I'll create the project, then clean it up...
+[shows a bunch of steps]
 
-Shall I proceed?
-```
+Me: wait that seems like a lot. can we just start with the basic setup first?
 
-I said "yes" and watched it build.
+Claude: You're right. Let me just:
+1. Create new Astro project
+2. Start dev server
+3. Make sure it runs
+Then we can modify from there.
 
-## AUTO-MODE VS REVIEWING EACH STEP
-
-Claude has different execution modes:
-
-**Review Mode** (default, safer):
-- Shows you changes before making them
-- Waits for approval
-- Good for learning what's happening
-
-**Auto Mode** (faster, riskier):
-```
-Go ahead and build the homepage component. 
-Auto-approve file creates and edits.
+Me: yes do that
 ```
 
-<span class="context-label">WHEN TO USE WHICH</span> <span class="context-text">First time building something? Review mode. Rebuilding something that broke? Review mode. Adding content to existing structure? Auto mode is fine.</span>
+Notice how messy that is? I interrupted, changed direction, Claude adjusted. But that's normally how it goes for me and I like it that way.
+
+## REVIEW MODE VS AUTO-APPROVE
+
+Claude can either show you everything before doing it, or just go ahead and build. You control this with how you phrase requests.
+
+I typically turn on review mode when I think there's a good chance I'll want to intervene or if the task could be complex. But more and more, with my continued refined Claude workflows, I leave on auto-approve. Here's how each works:
+
+**Review Each Step** (default):
+```
+"Show me what you'll change before changing it"
+```
+Claude shows code, waits for your "go ahead"
+
+**Auto-Approve** (when you trust the task):
+```
+"Go ahead and create all the component files we discussed"
+```
+Claude just builds without showing each file
+
+<span class="context-label">WHEN TO USE WHICH</span> <span class="context-text">First time building something? Review mode. Something you've built before? Auto-approve is fine. Anything involving deletion? Always review mode.</span>
 
 ## WATCHING CLAUDE WORK
 
@@ -87,6 +77,10 @@ Don't panic if you don't understand the code. Focus on:
 - Do the file names make sense?
 - Is it creating what you expected?
 
+For simple things like blogs, check your localhost frequently. If something looks wrong visually, you can right-click and use "Inspect" to help Claude debug. I'll cover browser debugging tricks in a future article.
+
+<span class="context-label">WHY I USE CLI</span> <span class="context-text">A lot of people don't like working in CLIs because they want to control specific files, tweak this/that, or have complex DB setups they need to reference. If you're a simple vibe coder like me though, it's actually why I prefer CLI over VS Code or Cursor - I just don't care what Claude actually codes most of the time, which makes [terminal optimal for this](/posts/terminal-terror-first-time).</span>
+
 ## WHEN TO INTERVENE
 
 Stop Claude if:
@@ -95,99 +89,77 @@ Stop Claude if:
 - It's installing packages not in the plan
 - You see error messages repeating
 
-Say "stop" or "wait" and Claude pauses. Then:
+<span class="context-label">IMPORTANT</span> <span class="context-text">Hit ESC to interrupt Claude mid-execution. That's totally okay! Better to stop early than waste tokens on something going wrong.</span>
+
+Say "stop" or "wait" or hit ESC and Claude pauses. Then:
 ```
 That seems complex. Can we do something simpler?
 ```
 
-## THE BUILD RHYTHM
+## REAL BUILD EXAMPLE
 
-Building isn't one long session. It's a rhythm:
+Here's a pattern that happens constantly - Claude over-engineers, I simplify:
 
-**Round 1** (30 min):
-- Set up project
-- Basic structure
-- Get it running
+```
+Me: let's create the post preview component
 
-**Break** - Look at what you built
+Claude: [Creates component with title, excerpt, author, date, 
+tags, reading time, share buttons, related posts]
 
-**Round 2** (30 min):
-- Add components
-- Basic styling
-- See it taking shape
+Me: way too much. just title and excerpt. 
+is this too complex? carefully think about it
 
-**Break** - Test everything
+Claude: [Takes time, simplifies to just those two things]
 
-**Round 3** (30 min):
-- Add content
-- Fix issues
-- Polish
+Me: perfect, ship it
+```
 
-This rhythm prevents context overflow and keeps you engaged.
+This back-and-forth is totally normal. Claude defaults to "kitchen sink" implementations. Your job is to keep things simple.
 
-## REAL EXAMPLE: BUILDING THE HOMEPAGE
+<span class="context-label">TIP</span> <span class="context-text">Use phrases like "carefully think", "analyze", "take your time" when you want Claude to slow down and not just rush to the quickest solution.</span>
 
-Here's how my homepage build actually went:
+## THINGS WILL BREAK (THAT'S PART OF THE PROCESS)
 
-**Me:** "Let's build the homepage based on our plan"
-
-**Claude:** Shows the component structure, waits
-
-**Me:** "Looks good, go ahead"
-
-**Claude:** Creates files, writes code
-
-**Me:** "Can we make the posts show excerpts?"
-
-**Claude:** "I'll add excerpt to the frontmatter..." (shows code)
-
-**Me:** "Perfect, do it"
-
-It's a conversation, not a command. You're the product manager, Claude's the developer.
-
-## WHEN THINGS BREAK
-
-They will. Here's the recovery process:
+Breaking things is how you learn. Here's how to handle it:
 
 1. **Don't panic** - Nothing is permanently broken
-2. **Push what works** - Save progress first
-3. **Show Claude the error** - Copy/paste error messages
+2. **Save your work** - If you have working code, commit and push it. Or just hit ESC and ask Claude to revert the last changes
+3. **Show Claude the error** - Copy/paste the full error message
 4. **Let Claude fix it** - It's seen every error before
 
-<span class="context-label">REALITY</span> <span class="context-text">I broke this blog 4 times while building it. Each time took less than 5 minutes to fix because I pushed working code constantly.</span>
+<span class="context-label">PRO TIP</span> <span class="context-text">You can use a different Claude session (multi-clauding) or just use Claude web/desktop to objectively help you debug. Sometimes a fresh Claude without all the context can spot the issue faster.</span>
 
-## THE PERMISSION WORKFLOW IN ACTION
+## CLAUDE'S PERMISSION REQUESTS
 
-Your CLAUDE.md permission rule creates this flow:
+Claude will ask permission for various operations during your session. Here are common ones that are usually safe to auto-accept:
 
-```
-Claude: "I'll create a Header component with navigation. Here's what it will look like: [shows code]"
+**Safe to Auto-Accept:**
+- Reading files in your project directory
+- Creating new files (you specified what to create)
+- Running `ls`, `cat`, `grep` commands
+- Starting dev servers (`npm run dev`, `yarn start`)
+- Installing packages you asked for
+- Navigating to folders in your project
 
-You: "Go ahead"
+**Always Review:**
+- Deleting files (especially multiple at once)
+- Running `rm -rf` or similar destructive commands
+- Installing packages you didn't explicitly request
+- Modifying files outside your project
+- Running scripts you don't recognize
 
-Claude: Creates file, writes code
+After a few sessions, you'll get a feel for what's routine. You can even set up allowed tools in Claude's settings to skip certain permission prompts entirely.
 
-Claude: "Header created. Should I add it to the layout?"
+## TIPS AS YOU BUILD
 
-You: "Yes"
+- Push after every working change - seriously, every single time
+- Keep tasks small - "Build homepage" is too big, "Show list of posts" is right-sized
+- Work in bite-sized sessions (30-45 min) - prevents context overflow and lost work
+- Trust your gut - if something feels too complex, it probably is
+- Use your browser - stop every 20 minutes and actually click around
+- Update todos as you go - mark things complete, add new discoveries
+- Hit ESC when things go wrong - don't wait for Claude to finish
 
-Claude: Updates layout, shows changes
-```
-
-This seems slow but prevents disasters. After a few rounds, you'll trust Claude enough to batch approvals:
-
-```
-"Go ahead and create all the components we discussed"
-```
-
-## FROM ZERO TO RUNNING
-
-By the end of your first session, you'll have:
-- A running local website
-- Basic structure in place
-- Something you can see in your browser
-- Momentum to continue
-
-You just went from idea to working prototype. Most people never get here.
+These patterns work whether you're building with Astro, Next.js, or whatever. The tech doesn't matter as much as the workflow.
 
 [Next: Don't Run Out of Conversation →](/posts/dont-run-out-of-conversation)
