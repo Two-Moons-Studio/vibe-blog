@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/newsletter-subscribe.js": {
+      "runtime": "@vercel/edge"
+    }
+  }
+}
