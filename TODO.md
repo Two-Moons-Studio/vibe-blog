@@ -2,11 +2,8 @@
 
 ## Next Steps - IMMEDIATE
 
-### Module 4: Ship & Iterate Content
-- [ ] Write "Deployment Without Fear" article
-- [ ] Write "GitHub as Product Management" article  
-- [ ] Write "Iterating Live vs Planning Perfect" article
-- [ ] Write "Building Momentum Through Small Wins" article
+### Module 4: Ship & Iterate (needs 4 articles)
+- [ ] See CONTENT-BACKLOG.md for article ideas when ready to write
 
 ### Newsletter Setup
 - [ ] Set up Buttondown account and get embed code
@@ -36,9 +33,6 @@
 - [ ] Simple analytics (Vercel Analytics)
 - [ ] Premium content for supporters (when audience grows)
 - [ ] GitHub template for learner progress tracking
-- [ ] Community features (GitHub Discussions integration)
-- [ ] Progress badges/gamification system
-- [ ] Interactive chapter completion tracking
 
 ## Completed
 
