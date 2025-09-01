@@ -6,9 +6,9 @@ tags: ["strategy", "planning", "technical"]
 draft: false
 ---
 
-If you follow successful vibe coders on Reddit, you'll notice a pattern - they all spend time on technical planning before building. It's the difference between shipping something that works and having a folder full of half-finished attempts. I was lucky enough to learn this early from watching others fail without it.
+If you follow successful vibe coders on Reddit, you'll notice a pattern - they all spend time on technical planning before building. It's the difference between shipping something that works and having a folder full of half-finished attempts. I was lucky enough to learn this from a talented engineering vibe coder who walked me through it.
 
-When I built my first editorial site (which I later cloned to start this blog - story for another day), the tech planning step took maybe 30 minutes but saved me literally days of wrong turns. Here's how to do it right.
+When I built my first editorial site (which I later cloned to start this blog - story for another day), having a proper tech plan made everything else just work. Here's how to do it right.
 
 ## ENTER PLAN MODE
 
