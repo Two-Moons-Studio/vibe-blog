@@ -53,12 +53,12 @@ const sortedTags = Array.from(allTags).sort();
               {post.data.excerpt && (
                 <p class="post-excerpt">{post.data.excerpt}</p>
               )}
-              <div class="post-tags">
-                {post.data.tags?.map(t => (
-                  <Tag tag={t} size="small" />
-                ))}
-              </div>
             </a>
+            <div class="post-tags">
+              {post.data.tags?.map(t => (
+                <Tag tag={t} size="small" />
+              ))}
+            </div>
           </article>
         ))}
       </div>
