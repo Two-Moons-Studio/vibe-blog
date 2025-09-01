@@ -1,10 +1,11 @@
-import type { APIRoute } from 'astro';
+export default async function handler(request) {
+  // Only allow POST requests
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed', { status: 405 });
+  }
 
-export const prerender = false;
-
-export const POST: APIRoute = async ({ request }) => {
   try {
-    const apiKey = import.meta.env.BUTTONDOWN_API_KEY;
+    const apiKey = process.env.BUTTONDOWN_API_KEY;
     
     if (!apiKey) {
       console.error('BUTTONDOWN_API_KEY is not set');
@@ -12,7 +13,10 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({ error: 'Server configuration error' }), 
         { 
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         }
       );
     }
@@ -25,7 +29,10 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({ error: 'Email is required' }), 
         { 
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         }
       );
     }
@@ -69,7 +76,10 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({ error: errorMessage }), 
         { 
           status: response.status,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
         }
       );
     }
@@ -78,7 +88,10 @@ export const POST: APIRoute = async ({ request }) => {
       JSON.stringify({ success: true, message: 'Thanks for subscribing! Check your inbox to confirm.' }), 
       { 
         status: 200,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       }
     );
   } catch (error) {
@@ -87,8 +100,15 @@ export const POST: APIRoute = async ({ request }) => {
       JSON.stringify({ error: 'Something went wrong. Please try again.' }), 
       { 
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       }
     );
   }
+}
+
+export const config = {
+  runtime: 'edge',
 };
