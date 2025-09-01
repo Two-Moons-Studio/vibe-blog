@@ -1,6 +1,6 @@
 ---
 title: "Git: Your Safety Net"
-date: 2025-08-31T17:30:00Z
+date: 2025-09-01T17:30:00Z
 excerpt: "Why pushing to GitHub after every small win saves your sanity."
 tags: ["git", "workflow", "tools"]
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Subagents: Your Content Army"
-date: 2025-08-31T18:00:00Z
+date: 2025-09-01T18:00:00Z
 excerpt: "How to write 10 articles while building your site."
 tags: ["ai-tools", "workflow", "automation"]
 draft: false
@@ -148,4 +148,3 @@ All while I focused on actually building the site. I built this entire blog in *
 
 [Anthropic's multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system) shows this approach can outperform single-agent systems by 90% on complex tasks. The key is parallel exploration - multiple agents tackling different aspects simultaneously.
 
-[Next: Design Tokens: Make Everything Match →](/posts/design-tokens-one-file)

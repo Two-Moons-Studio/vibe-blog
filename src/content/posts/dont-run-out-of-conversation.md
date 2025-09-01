@@ -1,6 +1,6 @@
 ---
 title: "AI Has Limits: Context Windows and Memory"
-date: 2025-08-31T16:30:00Z
+date: 2025-09-01T16:30:00Z
 excerpt: "Why Claude forgets what you're building and how to work around the limits."
 tags: ["workflow", "ai-tools", "optimization"]
 draft: false

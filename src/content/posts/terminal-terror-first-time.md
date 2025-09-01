@@ -1,6 +1,6 @@
 ---
 title: "Terminal Terror to Terminal Courage"
-date: 2025-08-26T10:00:00Z
+date: 2025-08-31T10:00:00Z
 excerpt: "Setting up your vibe coding environment starts with choosing your tool to talk to AI."
 tags: ["getting-started", "foundation"]
 draft: false
