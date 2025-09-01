@@ -6,28 +6,20 @@ tags: ["workflow", "planning", "ai-tools"]
 draft: false
 ---
 
-You just finished your tech plan. Claude's excited - it immediately wants to start building everything right now. "I'll set up the project! Create the components! Configure the deployment!" 
+You just finished your tech plan. At this point, Claude usually gets excited and wants to immediately start building everything - setting up the project, creating components, configuring deployment, all at once.
 
-Stop. This is where most people lose control of their project.
-
-Instead, interrupt Claude and say:
+I've learned to interrupt it here. Instead of letting Claude run ahead, I ask it to break everything down into todos first. That way I can actually see what needs to be done and pick what to work on.
 
 ```
 Before we build anything, create a todo list based on our TECH-PLAN.md. 
 I want to see everything broken down so I can decide what to work on.
 ```
 
-This changes everything. Now you're directing, not just following along.
+This keeps you in control of the pace and direction.
 
 ## WHY AI TODOS ARE DIFFERENT
 
-Claude starts fresh every session. Your todos are the bridge. When you come back tomorrow and say "read TODO.md", Claude instantly knows:
-- What's already built
-- What you're working on
-- What comes next
-- Why certain decisions were made
-
-It's your project's memory card.
+The main thing about todos with Claude is that they carry over between sessions. Since Claude starts fresh each time, when you come back tomorrow and say "read TODO.md", it can pick up where you left off. The todos tell it what's already built, what you're working on, and what comes next.
 
 ## THE TODOWRITE TOOL
 
@@ -50,9 +42,9 @@ Claude will break down your project:
 
 <span class="context-label">HEADS UP</span> <span class="context-text">The TodoWrite tool sometimes overwrites the list. I always keep a TODO.md file as backup.</span>
 
-## TODO.MD: YOUR BACKUP BRAIN
+## TODO.MD: YOUR BACKUP
 
-Create a TODO.md file that mirrors Claude's todos but with more detail:
+I also create a TODO.md file that mirrors Claude's todos but with more detail:
 
 ```markdown
 # TODO - Vibe Blog
@@ -74,7 +66,7 @@ Create a TODO.md file that mirrors Claude's todos but with more detail:
 - [ ] Custom domain setup
 ```
 
-This becomes your source of truth. Claude reads it every session. You update it as you work.
+Claude reads this every session, and I update it as I work. It's more reliable than the built-in todo tool.
 
 ## THE CROSS-SESSION WORKFLOW
 
@@ -96,19 +88,18 @@ Check TODO.md. What's the next priority?
 Let's tackle the content collections.
 ```
 
-Each session builds on the last. No repetition. No forgotten work.
+Each session builds on the last without having to re-explain everything.
 
 ## BREAKING WORK INTO RESUMABLE CHUNKS
 
-Work in 30-minute chunks that could be handed off to someone else (or future you). Each chunk should:
+I try to work in 30-minute chunks that I could hand off to someone else (or myself next week). Each chunk needs:
 
-1. **Start with context** - "Continue building the blog, currently working on homepage"
-2. **Have a clear outcome** - "Homepage shows 5 recent posts"
-3. **End with a commit** - Save progress before context runs out
+1. **Clear starting point** - "Continue building the blog, currently working on homepage"
+2. **Specific outcome** - "Homepage shows 5 recent posts"
+3. **Save point** - Commit before context runs out
 
-Bad chunk: "Work on the blog"
-Good chunk: "Create the homepage component that displays recent posts"
+For example, "Create the homepage component that displays recent posts" is way better than "Work on the blog" because future-you knows exactly what to do.
 
-You now have a memory system that survives between sessions. Next, let's set up Claude to use this system perfectly.
+With this todo system, you can actually build something across multiple sessions without losing track.
 
 [Next: Setting Claude Up for Success →](/posts/setting-claude-up-for-success)
