@@ -68,11 +68,11 @@ Here's a simplified version of the actual strategy doc I wrote for this site:
 ## Core Concept
 Get non-technical people from zero to shipping. Bite-sized wins, no fluff.
 
-## Why Sites Not Apps
-- Apps are soufflés, sites are pasta - hard to mess up pasta
-- See results in 5 minutes vs 5 hours
-- No database drama or auth nightmares
-- Still ship something real
+## Scope Decisions
+- Starting with blog, not social platform
+- Static files, not database
+- Public content, not user accounts
+- Ship in days, not months
 
 ## Audience
 - PMs who want to prototype without waiting
