@@ -32,6 +32,7 @@
   --color-border: var(--color-neutral-20);
   --color-accent-primary: var(--color-accent);
   --color-link: var(--color-neutral-100);  /* Links match text */
+  --color-code-bg: #2D3748;  /* Dark gray for code blocks */
 
   /* Typography Scale - Elegant Editorial */
   --font-size-tiny: 0.75rem;         /* 12px - dates, labels */
