@@ -1,50 +1,53 @@
 ---
-title: "Setting Claude Up for Success"
+title: "CLAUDE.md: Your AI's Brain"
 date: 2025-08-31T15:30:00Z
-excerpt: "How to write a CLAUDE.md that actually prevents problems."
+excerpt: "The file that makes or breaks your vibe coding experience."
 tags: ["workflow", "ai-tools", "configuration"]
 draft: false
 ---
 
-After a few sessions where Claude deleted the wrong files or completely rewrote things I liked, I learned that CLAUDE.md isn't just helpful - it's essential. Here's what actually works.
+CLAUDE.md is literally the most important file in vibe coding. It's Claude's instruction manual for your project. One night, Claude deleted massive amounts of my vibe progress (and I hadn't built the habit of pushing to git yet). Couldn't recover any of it. That's when I learned - a good CLAUDE.md isn't optional.
 
-## THE ULTIMATE CLAUDE.MD
+## WHAT MAKES A GOOD CLAUDE.MD
 
-Here's what most people don't include but should:
+I've studied my own projects, talked to other vibe coders, and honestly - most CLAUDE.md files are too simple. Here's what actually works, pulled from my editorial vibe project that has 150+ successful sessions:
 
 ```markdown
-# Project: My Blog
+# Project Name & One-Line Description
 
-## READ THESE FIRST - ALWAYS
-- STRATEGY.md - Our north star
-- TECH-PLAN.md - Technical decisions  
-- TODO.md - Current progress
+## Commands (Slash Commands)
+/start - Load context, start dev server, show current work
+/deploy - Build, commit, push to main branch
+/article - Guided workflow for creating content
 
-## Critical Rules
-1. NEVER make changes without showing me first
-2. ALWAYS push changes after each task (things break)
-3. Update TODO.md immediately when completing tasks
-4. Explain what you're about to do before doing it
-5. Ask for permission on anything destructive
+## Critical Rules - READ FIRST
+✅ Check existing files before creating new ones
+✅ Use design tokens only (no hardcoded values)
+✅ Update TODO.md immediately when tasks change
+✅ COMMIT AND PUSH after major changes (things break)
+❌ NEVER revert entire files - fix specific errors only
+❌ NEVER use git checkout on uncommitted work
+❌ NEVER add Claude attribution in commits
 
-## How to Work With Me
-- I don't know code. Explain what you're doing
-- Show me what will change before changing it
-- One task at a time, commit often
-- If something might break, warn me
+## Stack & Structure
+- Framework: Astro 5.x (or your stack)
+- Key directories and what they're for
+- Important files (tokens.css, config files)
 
-## What NOT to Do
-- Don't be overly agreeable - push back if I'm wrong
-- Don't add features I didn't ask for
-- Don't optimize prematurely
-- Don't assume I remember our last session
+## Workflow
+1. Explain planned changes before making them
+2. Wait for "go ahead" or similar confirmation
+3. Show options when multiple approaches exist
+4. One task at a time, commit often
 ```
 
-I learned these rules the hard way. Each one prevents a specific thing that went wrong in a past session.
+I learned these rules the hard way. By the way - every single one comes from something Claude broke in a past session. So please learn from my mistakes.
 
-## THE PERMISSION-BASED WORKFLOW
+The sections below are additional patterns I've found useful. Pick what makes sense for your workflow - everyone's CLAUDE.md ends up looking different based on how they like to work.
 
-This one rule changes everything:
+## PERMISSION-BASED WORKFLOW
+
+Add this section and watch your stress levels drop:
 
 ```markdown
 ## Before Making Changes
@@ -55,13 +58,13 @@ ALWAYS show me what you're about to do:
 4. Only then make the change
 ```
 
-Why? Because Claude in auto-mode can destroy hours of work in seconds. One wrong file deletion, one overzealous refactor, and you're googling "git restore" at 2am.
+Why? Because Claude in auto-mode can destroy hours of work in seconds. One wrong file deletion, one overzealous refactor, and everything's broken.
 
-<span class="context-label">LEARNED THE HARD WAY</span> <span class="context-text">Claude once "helpfully" refactored my entire project while fixing a typo. Three hours of work vanished. Now it asks first.</span>
+<span class="context-label">LEARNED THE HARD WAY</span> <span class="context-text">Claude once "helpfully" refactored my entire project while fixing a random syntax error. I was so ridiculously mad I wanted to throw my laptop against a wall.</span>
 
 ## MAKE CLAUDE LESS AGREEABLE
 
-Default Claude is a yes-man. It'll agree with your terrible ideas. Add this:
+Default Claude is a yes-man. It'll agree with your terrible ideas. If you want it to be less sycophantic, try some of these:
 
 ```markdown
 ## Your Personality
@@ -73,9 +76,24 @@ Default Claude is a yes-man. It'll agree with your terrible ideas. Add this:
 
 You want Claude to be your technical advisor, not your echo chamber.
 
-## THE CONTEXT HIERARCHY
+## THE GIT SAFETY NET
 
-Claude should know what to read and in what order:
+Literally the most important thing I do for ALL my Claudes:
+
+```markdown
+## Git Workflow - CRITICAL
+- Commit after EVERY successful change
+- Push immediately after commit
+- If you're about to do something risky, push first
+- Commit message format: "Add [what], Update [what], Fix [what]"
+- NEVER proceed to next task without pushing
+```
+
+Why? Because when Claude breaks something (not if, when), you can just clone your repo fresh and continue. No local recovery gymnastics.
+
+## CONTEXT HIERARCHY
+
+If you want your Claude to always get context first instead of you prompting it, you can do this:
 
 ```markdown
 ## Session Start Routine
@@ -87,21 +105,6 @@ Claude should know what to read and in what order:
 ```
 
 This routine means you can start any session with just "Hi" and Claude knows exactly where you are.
-
-## CRITICAL: THE PUSH RULE
-
-This rule has saved me countless times:
-
-```markdown
-## Git Workflow
-- Commit after EVERY successful change
-- Push immediately after commit
-- If you're about to do something risky, push first
-- Commit message format: "Add [what], Update [what], Fix [what]"
-- NEVER proceed to next task without pushing
-```
-
-Why? Because when Claude breaks something (not if, when), you can just clone your repo fresh and continue. No local recovery gymnastics.
 
 ## LANGUAGE AND EXPLANATION
 
@@ -116,35 +119,44 @@ Why? Because when Claude breaks something (not if, when), you can just clone you
 
 This keeps you engaged and learning instead of just watching text fly by.
 
-## REAL EXAMPLE: MY CLAUDE.MD
+## REAL EXAMPLE FROM THIS BLOG
 
-Here's part of my actual CLAUDE.md for this blog:
+Here's actual working sections from this blog's CLAUDE.md:
 
 ```markdown
-## Project Specific Rules
-- Design is minimal, editorial, lots of whitespace
-- No animations unless specifically requested
-- Copy is direct, no marketing speak
-- Git commits don't mention AI/Claude
-- Everything in CSS variables (tokens.css)
+### /vibe-post 
+Guided post creation workflow:
+1. ASK USER: "What's the post title?"
+2. ASK USER: "Brief excerpt (1-2 sentences)?"
+3. Generate slug from title (lowercase, dash-separated)
+4. Create markdown file in /src/content/posts/
+5. Use today's date automatically
+6. CONFIRM: "Post created at /posts/[slug] - ready to write!"
 
-## When Stuck
-- Don't spiral trying multiple solutions
-- Stop and ask me for direction
-- Show me the error and explain in simple terms
-- Suggest whether to fix or work around
+## Design System
+- Colors: Black text, cream background, sage accent
+- Typography: Lora (serif) + Inter (sans)
+- Spacing: Generous editorial whitespace
+- Components: 4 total (Header, Footer, PostPreview, Layout)
+
+## CRITICAL: Avoid "Claude Voice" in Content
+When writing articles, avoid these patterns:
+- Punchy marketing language ("This is different. PERIOD.")
+- Repetitive structure ("No X. No Y. No Z.")
+- Too many short sentences in a row
+Write naturally, like explaining to a friend.
 ```
 
-## THE EVOLUTION
+## CUSTOM COMMANDS
 
-Your CLAUDE.md grows with your project. Start simple:
-- Week 1: Basic rules
-- Week 2: Add workflow preferences
-- Week 3: Include common tasks
-- Month 2: Full operating system
+I'll share more custom Claude commands in a later post, but for now - here are the ones I use:
 
-<span class="context-label">PRO TIP</span> <span class="context-text">Every time you have to repeat an instruction, add it to CLAUDE.md. Every time Claude does something annoying, add a rule against it.</span>
+```markdown
+## Commands (What to do when typed)
+/start - Check status, start dev server, show current work
+/vibe-post - Guided workflow for creating content
+```
 
-You've now programmed Claude's behavior. It knows your strategy, your plan, your progress, and your preferences. Time to watch it build.
+Type `/start` and Claude runs your whole startup routine.
 
 [Next: From Plan to Product →](/posts/from-plan-to-product)
