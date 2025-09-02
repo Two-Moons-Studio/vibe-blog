@@ -28,6 +28,30 @@ const formatDate = (date: Date) => {
     day: 'numeric'
   });
 };
+
+// Get related posts based on shared tags
+const allPosts = await getCollection('posts');
+const publishedPosts = allPosts.filter(p => !p.data.draft && p.slug !== post.slug);
+
+const relatedPosts = publishedPosts
+  .map(p => {
+    const sharedTags = post.data.tags?.filter(tag => p.data.tags?.includes(tag)) || [];
+    return { post: p, tagOverlap: sharedTags.length };
+  })
+  .filter(item => item.tagOverlap > 0)
+  .sort((a, b) => {
+    if (a.tagOverlap !== b.tagOverlap) return b.tagOverlap - a.tagOverlap;
+    return b.post.data.date.getTime() - a.post.data.date.getTime();
+  })
+  .slice(0, 3)
+  .map(item => item.post);
+
+// Fallback to recent posts if no tag overlap
+const archivePosts = relatedPosts.length > 0 
+  ? relatedPosts 
+  : publishedPosts
+      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+      .slice(0, 3);
 ---
 
 <Layout title={post.data.title} description={post.data.excerpt}>
@@ -52,16 +76,20 @@ const formatDate = (date: Date) => {
     )}
 
     <footer class="post-footer">
-      <div class="footer-divider"></div>
-      <nav class="post-nav">
-        <a href="/archive" class="nav-link">
-          <span class="nav-arrow">←</span>
-          <span class="nav-text">All Posts</span>
+      <section class="archives-section">
+        <a href="/archive" class="archives-title-link">
+          <h3 class="archives-title">More useful stuff</h3>
         </a>
-        <a href="/subscribe" class="subscribe-link">
-          <span class="subscribe-text">Get Updates</span>
-        </a>
-      </nav>
+        <div class="archives-list">
+          {archivePosts.map(archivePost => (
+            <article class="archive-item">
+              <a href={`/posts/${archivePost.slug}`} class="archive-link">
+                {archivePost.data.title}
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
     </footer>
 
   </div>
@@ -89,7 +117,7 @@ const formatDate = (date: Date) => {
     overflow-x: auto;
     margin: var(--space-4) 0;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
-    font-size: 0.78rem !important;
+    font-size: 0.741rem !important;
     font-weight: 600 !important;
   }
   
@@ -120,7 +148,7 @@ const formatDate = (date: Date) => {
     display: flex;
     justify-content: center;
     gap: var(--space-2);
-    margin: var(--space-8) 0;
+    margin: var(--space-8) 0 var(--space-4);
   }
 
   /* Prose Content Styles - Article-specific overrides only */
@@ -134,7 +162,7 @@ const formatDate = (date: Date) => {
   }
 
   .prose p {
-    font-size: 1.15rem; /* ~18.4px - slightly larger for better readability */
+    font-size: 1.092rem; /* ~17.5px - slightly larger for better readability */
     margin-bottom: var(--space-5);
     max-width: none; /* Remove any width constraints */
     width: 100%; /* Use full available width */
@@ -143,7 +171,7 @@ const formatDate = (date: Date) => {
   /* H2 headers in articles */
   .prose h2 {
     font-family: var(--font-sans-geometric);
-    font-size: 0.7rem !important; /* Small uppercase headers - 11.2px */
+    font-size: 0.665rem !important; /* Small uppercase headers - 10.6px */
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.3em;
@@ -184,7 +212,7 @@ const formatDate = (date: Date) => {
   }
   
   .prose pre {
-    font-size: 0.78rem !important;
+    font-size: 0.741rem !important;
   }
   
   .prose pre code {
@@ -194,67 +222,62 @@ const formatDate = (date: Date) => {
   /* Footer */
   .post-footer {
     max-width: var(--content-max-width);
-    margin: var(--space-10) auto 0;
+    margin: var(--space-7) auto 0;
     padding: 0 var(--page-padding);
   }
 
-  .footer-divider {
-    height: 1px;
-    background: var(--color-border);
-    margin-bottom: var(--space-6);
+  /* Archives Section */
+  .archives-section {
+    margin-bottom: var(--space-8);
   }
 
-  .post-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-link {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    color: var(--color-text-secondary);
+  .archives-title-link {
+    display: block;
     text-decoration: none;
-    transition: var(--transition-normal);
+    text-align: center;
+    margin-bottom: var(--space-5);
   }
 
-  .nav-link:hover {
+  .archives-title {
+    font-family: var(--font-sans-geometric);
+    font-size: 0.665rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
     color: var(--color-text-primary);
+    margin: 0;
+    transition: color var(--transition-normal);
   }
 
-  .nav-arrow {
+  .archives-title-link:hover .archives-title {
+    color: var(--color-accent);
+  }
+
+  .archives-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .archive-item {
+    text-align: center;
+  }
+
+  .archive-link {
+    display: block;
+    font-family: var(--font-serif-body);
     font-size: var(--font-size-large);
-  }
-
-  .nav-text {
-    font-family: var(--font-sans-geometric);
-    font-size: 0.78rem;
-    font-weight: var(--font-weight-medium);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-  }
-
-  .subscribe-link {
-    background: var(--color-accent);
-    color: white;
-    padding: var(--space-3) var(--space-5);
-    border-radius: 7.2px;
+    line-height: var(--line-height-relaxed);
+    color: var(--color-accent);
     text-decoration: none;
-    transition: var(--transition-normal);
+    transition: opacity var(--transition-normal);
   }
 
-  .subscribe-link:hover {
-    opacity: 0.85;
+  .archive-link:hover {
+    opacity: 0.8;
   }
 
-  .subscribe-text {
-    font-family: var(--font-sans-geometric);
-    font-size: 0.78rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-  }
+
 
   /* Mobile */
   @media (max-width: 768px) {
@@ -271,7 +294,7 @@ const formatDate = (date: Date) => {
     }
 
     .prose {
-      font-size: 1.05rem; /* Slightly larger than base for better readability */
+      font-size: 0.997rem; /* Slightly larger than base for better readability */
     }
 
     .post-nav {
