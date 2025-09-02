@@ -167,10 +167,6 @@ pre code span,
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  html {
-    font-size: 0.9rem;
-  }
-  
   h1 {
     font-size: var(--font-size-2xl);
   }
