@@ -68,6 +68,10 @@ import PageHeader from '../components/PageHeader.astro';
     margin: 0 auto;
   }
 
+  .content p {
+    max-width: none; /* Override global 65ch limit */
+  }
+
   .content h2 {
     margin-top: var(--space-8);
   }

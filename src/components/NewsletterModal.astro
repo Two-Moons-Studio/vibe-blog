@@ -13,8 +13,8 @@ const { id = 'newsletter-modal' } = Astro.props;
     </button>
     
     <div class="modal-content">
-      <h2 id="modal-title" class="modal-title">Stay in the loop</h2>
-      <p class="modal-subtitle">Weekly-ish updates on the journey from Figma to functional. No BS, just honest documentation.</p>
+      <h2 id="modal-title" class="modal-title">What actually works in AI coding</h2>
+      <p class="modal-subtitle">Real updates from someone figuring it out. No theory, just what I tried and what happened.</p>
       
       <form class="newsletter-form" data-newsletter-form>
         <div class="form-group">
@@ -171,10 +171,10 @@ const { id = 'newsletter-modal' } = Astro.props;
     background: none;
     border: none;
     font-family: var(--font-sans-geometric);
-    font-size: 0.54rem;
+    font-size: 0.6rem;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.27em;
+    letter-spacing: 0.3em;
     color: var(--color-text-secondary);
     cursor: pointer;
     transition: var(--transition-normal);
@@ -190,10 +190,12 @@ const { id = 'newsletter-modal' } = Astro.props;
   }
   
   .modal-title {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-tight);
+    font-family: var(--font-sans-geometric);
+    font-size: var(--font-size-base);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    line-height: var(--line-height-normal);
     color: var(--color-text-primary);
     margin-bottom: var(--space-4);
   }
@@ -215,8 +217,11 @@ const { id = 'newsletter-modal' } = Astro.props;
   
   .form-group {
     display: flex;
-    gap: var(--space-3);
+    gap: 2px;
     margin-bottom: var(--space-4);
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .email-input {
@@ -244,9 +249,9 @@ const { id = 'newsletter-modal' } = Astro.props;
   .submit-button {
     padding: var(--space-3) var(--space-5);
     font-family: var(--font-sans-geometric);
-    font-size: 0.54rem;
+    font-size: 0.6rem;
     font-weight: var(--font-weight-bold);
-    letter-spacing: 0.27em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--color-bg-surface);
     background: var(--color-text-primary);
