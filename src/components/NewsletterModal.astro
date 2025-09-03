@@ -202,9 +202,9 @@ const { id = 'newsletter-modal' } = Astro.props;
   
   .modal-subtitle {
     font-family: var(--font-serif-body);
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-base); /* Smaller, matches page subtitles */
     font-style: italic;
-    line-height: var(--line-height-relaxed);
+    line-height: 1.3; /* Much tighter line height */
     color: var(--color-text-secondary);
     margin-bottom: var(--space-7);
     max-width: 90%;
@@ -312,6 +312,74 @@ const { id = 'newsletter-modal' } = Astro.props;
     .submit-button {
       width: 100%;
       padding: var(--space-4) var(--space-5);
+    }
+  }
+
+  /* ===== MOBILE-ONLY MODAL OPTIMIZATIONS ===== */
+  @media (max-width: 767px) {
+    .modal {
+      padding: var(--space-3); /* Less padding around modal */
+    }
+
+    .modal-container {
+      max-width: 100%; /* Use full width on mobile */
+      width: calc(100% - var(--space-6));
+      padding: var(--space-5);
+      margin: var(--space-3);
+    }
+
+    .close-button {
+      top: var(--space-3);
+      right: var(--space-3);
+      /* Bigger touch target */
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-title {
+      font-size: 1rem; /* ~16px, much smaller */
+      margin-bottom: var(--space-3);
+    }
+
+    .modal-subtitle {
+      font-size: var(--font-size-base); /* Match page subtitle size */
+      line-height: 1.3; /* Tighter line height */
+      margin-bottom: var(--space-5);
+    }
+
+    .email-input {
+      font-size: 16px; /* Prevent zoom on iOS */
+      padding: var(--space-3);
+      height: 44px; /* Back to original height */
+    }
+
+    .submit-button {
+      font-size: 0.625rem; /* Original size */
+      padding: var(--space-3) var(--space-5); /* More horizontal padding */
+      height: 44px; /* Back to original height */
+    }
+
+    /* Make the form narrower - override desktop width */
+    .form-group {
+      max-width: 280px !important; /* Much narrower on mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modal-container {
+      padding: var(--space-4);
+      border-radius: 12px; /* Slightly less rounded on mobile */
+    }
+
+    .modal-title {
+      line-height: 1.2;
+    }
+
+    .form-group {
+      max-width: 100%; /* Full width on small screens */
     }
   }
 </style>

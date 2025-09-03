@@ -77,7 +77,7 @@ const archivePosts = relatedPosts.length > 0
 
     <footer class="post-footer">
       <section class="archives-section">
-        <a href="/archive" class="archives-title-link">
+        <a href="/" class="archives-title-link">
           <h3 class="archives-title">More useful stuff</h3>
         </a>
         <div class="archives-list">
@@ -307,11 +307,11 @@ const archivePosts = relatedPosts.length > 0
   /* Optimized typography for mobile reading experience */
   @media (max-width: 767px) {
     .prose {
-      font-size: 1.125rem; /* 18px - better for mobile reading */
+      font-size: 1.063rem; /* 17px - better for mobile reading */
     }
 
     .prose p {
-      font-size: 1.125rem; /* 18px - editorial standard for mobile */
+      font-size: 1.063rem; /* 17px - good mobile readability */
       line-height: 1.75; /* More generous line spacing */
       margin-bottom: var(--space-4);
     }
@@ -346,10 +346,10 @@ const archivePosts = relatedPosts.length > 0
     }
   }
 
-  /* Small phones get even larger text */
+  /* Small phones get moderately larger text */
   @media (max-width: 480px) {
     .prose p {
-      font-size: 1.188rem; /* 19px - premium editorial size */
+      font-size: 1.063rem; /* 17px - good mobile readability */
       max-width: 100%; /* Use full width on small screens */
     }
 

@@ -681,7 +681,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
 
     .path-selector {
       gap: var(--space-3);
-      padding: var(--space-4) var(--page-padding);
+      padding: var(--space-4) 10px;
       margin: var(--space-3) 0 var(--space-6);
     }
 
@@ -697,7 +697,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     }
 
     .module {
-      padding: 0 var(--space-6) var(--space-4);
+      padding: 0 10px var(--space-4);
       margin-bottom: var(--space-6);
     }
 
@@ -716,6 +716,112 @@ import NewsletterModal from '../components/NewsletterModal.astro';
 
     .cta-text {
       font-size: var(--font-size-xlarge);
+    }
+  }
+
+  /* ===== MOBILE-ONLY ZERO-TO-SHIP OPTIMIZATIONS ===== */
+  @media (max-width: 767px) {
+    /* Make container-medium behave like standard container on mobile */
+    .container-medium {
+      max-width: var(--content-max-width); /* Use same max-width as articles */
+      padding: 0 calc(var(--page-padding) - 10px); /* Reduce padding by 10px each side */
+    }
+
+    /* Better touch targets for path tabs */
+    .path-tab {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      padding: var(--space-3) var(--space-4);
+      font-size: 0.625rem; /* Slightly larger */
+    }
+
+    /* Optimize module spacing - add 10px padding */
+    .module {
+      padding: 0 10px var(--space-3);
+      margin-bottom: var(--space-5);
+    }
+
+    .module-number {
+      font-size: 2.85rem; /* Smaller on mobile */
+      margin-bottom: var(--space-3);
+    }
+
+    .module-title {
+      font-size: var(--font-size-large);
+      line-height: 1.3;
+    }
+
+    /* Better readability for module content */
+    .module-intro p {
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .module-content {
+      font-size: var(--font-size-base);
+    }
+
+    .module-steps li {
+      font-size: var(--font-size-base);
+      margin-bottom: var(--space-3);
+    }
+
+    /* Expand button optimization */
+    .module-expand {
+      min-height: 44px; /* Touch target */
+      padding: var(--space-2) var(--space-3);
+    }
+
+    /* CTA section */
+    .cta-section {
+      padding: var(--space-8) 10px; /* Add 10px horizontal padding */
+    }
+
+    .cta-button {
+      width: 100%; /* Full width on mobile */
+      padding: var(--space-3) var(--space-5);
+      font-size: 0.625rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Make container-medium behave like standard container on mobile */
+    .container-medium {
+      max-width: var(--content-max-width); /* Use same max-width as articles */
+      padding: 0 calc(var(--page-padding) - 10px); /* Reduce padding by 10px each side to make content wider */
+    }
+
+    /* Even tighter on small phones */
+    .hero {
+      padding-top: calc(var(--space-10) + var(--space-4)); /* Match other page headers */
+    }
+
+    .path-selector {
+      padding: var(--space-3) 10px; /* Add 10px padding to match */
+      margin: var(--space-2) 0 var(--space-5);
+    }
+
+    /* Stack tabs if needed on very small screens */
+    .path-tab {
+      font-size: 0.57rem;
+      padding: var(--space-2) var(--space-3);
+    }
+
+    .module {
+      padding: 0 10px var(--space-3); /* Add 10px horizontal padding */
+    }
+
+    .module-number {
+      font-size: 2.137rem; /* Even smaller */
+    }
+
+    .cta-section {
+      padding: var(--space-6) 10px; /* Add 10px horizontal padding */
+    }
+
+    .cta-text {
+      font-size: var(--font-size-large);
     }
   }
 </style>

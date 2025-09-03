@@ -169,9 +169,13 @@ const sortedPosts = allPosts
       padding-top: var(--space-4); /* Slightly less padding */
     }
 
+    .post-title {
+      font-size: 0.75rem; /* Match article H2 size on mobile */
+    }
+
     .post-excerpt {
-      /* Use the larger mobile font size for better readability */
-      font-size: var(--font-size-large);
+      /* Match article body text size */
+      font-size: 1.063rem; /* 17px - consistent with articles */
       line-height: var(--line-height-relaxed);
     }
   }

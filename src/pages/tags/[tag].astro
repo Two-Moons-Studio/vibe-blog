@@ -190,7 +190,14 @@ const sortedTags = Array.from(allTags).sort();
     }
 
     .post-excerpt {
-      font-size: var(--font-size-base);
+      font-size: 1.063rem; /* 17px - consistent with articles */
+    }
+  }
+
+  /* Mobile enhancements */
+  @media (max-width: 480px) {
+    .post-title {
+      font-size: 0.75rem; /* Match article H2 size on mobile */
     }
   }
 </style>

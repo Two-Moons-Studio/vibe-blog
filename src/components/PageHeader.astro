@@ -144,16 +144,23 @@ const {
   /* Better typography and spacing for mobile */
   @media (max-width: 480px) {
     .page-header {
-      padding: calc(var(--space-7) + var(--space-5)) var(--page-padding) var(--space-4);
+      /* Add just 20-30px more padding to top */
+      padding: calc(var(--space-10) + var(--space-4)) var(--page-padding) var(--space-4);
     }
 
     .page-header.hero {
-      padding: calc(var(--space-7) + var(--space-5)) var(--space-3) var(--space-5);
+      /* Less top padding for hero variant */
+      padding: calc(var(--space-10) + var(--space-4)) var(--space-3) var(--space-5);
     }
 
-    /* Better mobile title sizing */
+    .page-header.standard {
+      /* Standard variant with moderate extra top padding */
+      padding-top: calc(var(--space-10) + var(--space-4));
+    }
+
+    /* Reduce header sizes from ~48px to ~38px */
     .page-title {
-      font-size: var(--font-size-2xl);
+      font-size: 2.375rem; /* ~38px instead of 48px */
       line-height: 1.2;
     }
 
@@ -164,9 +171,9 @@ const {
       margin: 0 auto;
     }
 
-    /* Hero title uses CSS variable */
+    /* Hero title also reduced */
     .page-header.hero .page-title {
-      font-size: var(--font-size-3xl);
+      font-size: 2.375rem; /* ~38px, matching other headers */
     }
 
     /* Label size adjustment */
