@@ -41,7 +41,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
   <div class="modules-container">
     
     <!-- Module 1 -->
-    <article class="module" data-module="1">
+    <article class="module" data-module="1" id="module-1">
       <div class="module-number">01</div>
       
       <header class="module-header">
@@ -87,7 +87,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     </article>
 
     <!-- Module 2 -->
-    <article class="module" data-module="2">
+    <article class="module" data-module="2" id="module-2">
       <div class="module-number">02</div>
       
       <header class="module-header">
@@ -133,7 +133,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     </article>
 
     <!-- Module 3 -->
-    <article class="module" data-module="3">
+    <article class="module" data-module="3" id="module-3">
       <div class="module-number">03</div>
       
       <header class="module-header">
@@ -179,7 +179,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     </article>
 
     <!-- Module 4 -->
-    <article class="module" data-module="4">
+    <article class="module" data-module="4" id="module-4">
       <div class="module-number">04</div>
       
       <header class="module-header">
@@ -211,15 +211,6 @@ import NewsletterModal from '../components/NewsletterModal.astro';
 
     </div>
 
-    <!-- Bottom CTA -->
-    <section class="bottom-cta">
-      <p class="cta-text">
-        Learning the vibe code approach by actually building. No weekly emails or scheduled sends. Just <span class="highlight">real lessons when I figure something out</span>.
-      </p>
-      <a href="/subscribe" class="cta-button">
-        Join the Newsletter
-      </a>
-    </section>
 
   </div>
 
@@ -624,50 +615,6 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     color: var(--color-accent);
   }
 
-  /* Bottom CTA */
-  .bottom-cta {
-    text-align: center;
-    padding: calc(var(--space-10) * 2) var(--page-padding);
-    max-width: 630px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-
-  .cta-text {
-    font-family: var(--font-serif-display);
-    font-size: var(--font-size-xlarge);
-    line-height: var(--line-height-tight);
-    color: var(--color-text-primary);
-    margin: 0 0 var(--space-8);
-    letter-spacing: -0.018em;
-  }
-
-  .cta-text .highlight {
-    color: var(--color-accent);
-  }
-
-  .cta-button {
-    display: inline-block;
-    font-family: var(--font-sans-geometric);
-    font-size: 0.57rem;
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--color-neutral-0);
-    background: var(--color-text-primary);
-    padding: var(--space-4) var(--space-6);
-    text-decoration: none;
-    transition: all var(--transition-normal);
-    border: 2px solid var(--color-text-primary);
-    border-radius: 0;
-  }
-
-  .cta-button:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: translateY(-1px);
-  }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
@@ -714,9 +661,6 @@ import NewsletterModal from '../components/NewsletterModal.astro';
       font-size: var(--font-size-base);
     }
 
-    .cta-text {
-      font-size: var(--font-size-xlarge);
-    }
   }
 
   /* ===== MOBILE-ONLY ZERO-TO-SHIP OPTIMIZATIONS ===== */
@@ -773,16 +717,6 @@ import NewsletterModal from '../components/NewsletterModal.astro';
       padding: var(--space-2) 0; /* Remove horizontal padding to align with content */
     }
 
-    /* CTA section */
-    .cta-section {
-      padding: var(--space-8) 10px; /* Add 10px horizontal padding */
-    }
-
-    .cta-button {
-      width: 100%; /* Full width on mobile */
-      padding: var(--space-3) var(--space-5);
-      font-size: 0.625rem;
-    }
   }
 
   @media (max-width: 480px) {
@@ -838,13 +772,6 @@ import NewsletterModal from '../components/NewsletterModal.astro';
       font-size: 2.137rem; /* Even smaller */
     }
 
-    .cta-section {
-      padding: var(--space-6) 10px; /* Add 10px horizontal padding */
-    }
-
-    .cta-text {
-      font-size: var(--font-size-large);
-    }
   }
 
   /* Extra small devices - match articles exactly */
@@ -872,18 +799,41 @@ import NewsletterModal from '../components/NewsletterModal.astro';
       });
     });
     
+    // Handle URL anchors - check if page loaded with anchor
+    const hash = window.location.hash;
+    let targetModule = null;
+    if (hash && hash.startsWith('#module-')) {
+      targetModule = document.querySelector(hash);
+    }
+    
     modules.forEach(module => {
       const expandBtn = module.querySelector('.module-expand');
       const content = module.querySelector('.module-content');
       
       if (expandBtn && content) {
-        // Load saved state from localStorage
         const moduleId = module.dataset.module;
-        const isExpanded = localStorage.getItem(`module-${moduleId}-expanded`) === 'true';
         
-        if (isExpanded) {
+        // Check if this module should be expanded
+        let shouldExpand = false;
+        
+        // Priority 1: URL anchor (overrides localStorage)
+        if (targetModule && targetModule === module) {
+          shouldExpand = true;
+        } else {
+          // Priority 2: localStorage state
+          shouldExpand = localStorage.getItem(`module-${moduleId}-expanded`) === 'true';
+        }
+        
+        if (shouldExpand) {
           expandBtn.setAttribute('aria-expanded', 'true');
           content.hidden = false;
+          
+          // If this was the target module from URL, scroll to it
+          if (targetModule && targetModule === module) {
+            setTimeout(() => {
+              module.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          }
         }
         
         // Handle click
@@ -897,9 +847,13 @@ import NewsletterModal from '../components/NewsletterModal.astro';
           // Save state
           localStorage.setItem(`module-${moduleId}-expanded`, newExpanded);
           
-          // Smooth scroll to module if expanding
+          // Update URL hash when expanding
           if (newExpanded) {
+            history.replaceState(null, null, `#module-${moduleId}`);
             module.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            // Remove hash when collapsing
+            history.replaceState(null, null, window.location.pathname);
           }
         });
       }

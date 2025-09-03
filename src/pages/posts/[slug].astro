@@ -81,6 +81,11 @@ const archivePosts = relatedPosts.length > 0
           <h3 class="archives-title">More useful stuff</h3>
         </a>
         <div class="archives-list">
+          <article class="archive-item">
+            <a href="/zero-to-ship" class="archive-link">
+              Zero to Ship: Vibe Coding Guide
+            </a>
+          </article>
           {archivePosts.map(archivePost => (
             <article class="archive-item">
               <a href={`/posts/${archivePost.slug}`} class="archive-link">

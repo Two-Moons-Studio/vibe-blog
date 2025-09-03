@@ -15,7 +15,10 @@ const season = getCurrentSeason();
 </div>
 <div class="nav-right">
   <a href="/about">About</a>
-  <button class="nav-button" data-newsletter-trigger>Subscribe</button>
+  <button class="nav-button" data-newsletter-trigger>
+    <span class="subscribe-text">Subscribe</span>
+    <span class="subscribe-icon material-symbols-sharp">mail</span>
+  </button>
 </div>
 
 <!-- Mobile Menu Overlay -->
@@ -86,6 +89,15 @@ const season = getCurrentSeason();
   .nav-button:hover {
     color: var(--color-accent);
     text-decoration: none;
+  }
+
+  /* Subscribe button content */
+  .subscribe-icon {
+    display: none;
+  }
+
+  .subscribe-text {
+    display: inline;
   }
 
   /* Special sparkle for Zero to Ship */
@@ -246,6 +258,16 @@ const season = getCurrentSeason();
     .nav-button {
       font-size: 0.57rem !important; /* Just a bit smaller */
     }
+    
+    /* Show icon instead of text on mobile */
+    .subscribe-text {
+      display: none;
+    }
+    
+    .subscribe-icon {
+      display: inline;
+      font-size: 20px; /* Slightly larger than text */
+    }
   }
 
   /* Mobile Menu Overlay */
@@ -301,9 +323,9 @@ const season = getCurrentSeason();
       cursor: pointer;
     }
 
-    /* Move subscribe button more to the right on mobile */
+    /* Move subscribe button farther from edge on mobile */
     .nav-right {
-      right: var(--space-4); /* Balanced position */
+      right: var(--space-5); /* Move farther from edge */
     }
   }
 </style>
