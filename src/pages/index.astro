@@ -17,8 +17,8 @@ const sortedPosts = allPosts
   <div class="container-wide">
     <PageHeader 
       title="Ship real things without the traditional coding path"
-      subtitle="A humble set of bite-sized tips for product and design people who want to build and ship."
-      label="Learning by building, sharing the stumbles"
+      subtitle="A humble set of bite-sized tips for product and design people who want to build and&nbsp;ship."
+      label="Learning by building,<br class='mobile-only'/> sharing the stumbles"
       variant="hero"
     />
 
@@ -154,9 +154,19 @@ const sortedPosts = allPosts
     }
   }
 
+  /* Hide mobile-only break on desktop */
+  .mobile-only {
+    display: none;
+  }
+
   /* ===== MOBILE-ONLY ENHANCEMENTS ===== */
   /* Better spacing and readability on mobile devices */
   @media (max-width: 480px) {
+    /* Show line break on mobile */
+    .mobile-only {
+      display: inline;
+    }
+
     .posts-section {
       margin-top: -30px; /* Reduce negative margin on mobile */
     }

@@ -20,7 +20,7 @@ const {
 
 <header class={`page-header ${align} ${variant} ${showBorder ? 'bordered' : ''}`}>
   {label && (
-    <span class="page-label">{label}</span>
+    <span class="page-label" set:html={label}></span>
   )}
   <h1 class="page-title">{title}</h1>
   {subtitle && (

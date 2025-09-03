@@ -260,7 +260,7 @@ const season = getCurrentSeason();
     z-index: 99;
     padding-top: 60px; /* Space for menu/subscribe buttons */
     transform: translateY(-100%);
-    transition: transform var(--transition-normal);
+    transition: transform 280ms ease; /* Slightly slower animation */
   }
 
   .mobile-menu-overlay.active {
@@ -299,6 +299,11 @@ const season = getCurrentSeason();
     
     .menu-trigger {
       cursor: pointer;
+    }
+
+    /* Move subscribe button more to the right on mobile */
+    .nav-right {
+      right: var(--space-4); /* Balanced position */
     }
   }
 </style>

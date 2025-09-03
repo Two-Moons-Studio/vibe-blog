@@ -748,8 +748,8 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     }
 
     .module-title {
-      font-size: var(--font-size-large);
-      line-height: 1.3;
+      font-size: var(--font-size-2xl); /* Bigger title on mobile */
+      line-height: 1.1; /* Tighter line height */
     }
 
     /* Better readability for module content */
@@ -770,7 +770,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     /* Expand button optimization */
     .module-expand {
       min-height: 44px; /* Touch target */
-      padding: var(--space-2) var(--space-3);
+      padding: var(--space-2) 0; /* Remove horizontal padding to align with content */
     }
 
     /* CTA section */
