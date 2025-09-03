@@ -788,8 +788,8 @@ import NewsletterModal from '../components/NewsletterModal.astro';
   @media (max-width: 480px) {
     /* Force the exact same layout as articles */
     .container-medium {
-      padding-left: 15px !important;
-      padding-right: 15px !important;
+      padding-left: var(--space-3) !important; /* Use same as articles: 11.4px */
+      padding-right: var(--space-3) !important;
     }
     
     /* Remove PageHeader's side padding since container-medium already has padding */
@@ -799,7 +799,7 @@ import NewsletterModal from '../components/NewsletterModal.astro';
     }
     
     .modules-container {
-      padding: 0 !important; /* Remove any container padding */
+      padding: 0 !important; /* Remove any container padding to prevent double padding */
     }
 
     /* Even tighter on small phones */
@@ -818,10 +818,10 @@ import NewsletterModal from '../components/NewsletterModal.astro';
       display: none;
     }
 
-    /* Much less module padding for wider content */
+    /* Remove module horizontal padding - let container handle it */
     .module {
-      padding-left: 12px !important;  /* Force smaller padding */
-      padding-right: 12px !important;
+      padding-left: 0 !important;  /* No horizontal padding */
+      padding-right: 0 !important;
     }
 
     /* Stack tabs if needed on very small screens */
@@ -844,6 +844,14 @@ import NewsletterModal from '../components/NewsletterModal.astro';
 
     .cta-text {
       font-size: var(--font-size-large);
+    }
+  }
+
+  /* Extra small devices - match articles exactly */
+  @media (max-width: 375px) {
+    .container-medium {
+      padding-left: var(--space-2) !important; /* Match articles: 7.6px */
+      padding-right: var(--space-2) !important;
     }
   }
 </style>
