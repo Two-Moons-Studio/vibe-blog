@@ -99,3 +99,28 @@
     --page-padding: var(--page-padding-lg);
   }
 }
+
+/* ===== MOBILE-ONLY ENHANCEMENTS ===== */
+/* These ONLY apply below 768px - desktop completely unaffected */
+
+/* Small phones (iPhone SE, older devices) */
+@media (max-width: 480px) {
+  :root {
+    /* Boost readability on small screens */
+    --font-size-base: 1.063rem;      /* 17px instead of 15.2px */
+    --font-size-large: 1.188rem;     /* 19px for articles */
+    --font-size-small: 0.875rem;     /* 14px for metadata */
+    --page-padding: var(--space-3);  /* Tighter padding on mobile */
+    --line-height-relaxed: 1.8;      /* More generous line height */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+  :root {
+    /* iPhone SE and smaller */
+    --page-padding: var(--space-2);
+    --font-size-3xl: 2.137rem;       /* Scale down hero text */
+    --font-size-2xl: 1.662rem;       /* Scale down h2 */
+  }
+}

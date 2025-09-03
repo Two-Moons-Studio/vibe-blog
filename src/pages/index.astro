@@ -153,4 +153,33 @@ const sortedPosts = allPosts
       gap: var(--space-8);
     }
   }
+
+  /* ===== MOBILE-ONLY ENHANCEMENTS ===== */
+  /* Better spacing and readability on mobile devices */
+  @media (max-width: 480px) {
+    .posts-section {
+      margin-top: -30px; /* Reduce negative margin on mobile */
+    }
+
+    .posts-grid {
+      gap: var(--space-6); /* Tighter spacing for mobile */
+    }
+
+    .post-item {
+      padding-top: var(--space-4); /* Slightly less padding */
+    }
+
+    .post-excerpt {
+      /* Use the larger mobile font size for better readability */
+      font-size: var(--font-size-large);
+      line-height: var(--line-height-relaxed);
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 375px) {
+    .posts-grid {
+      gap: var(--space-5); /* Even tighter on very small screens */
+    }
+  }
 </style>

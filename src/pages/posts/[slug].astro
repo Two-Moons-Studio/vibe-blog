@@ -302,4 +302,68 @@ const archivePosts = relatedPosts.length > 0
       gap: var(--space-4);
     }
   }
+
+  /* ===== MOBILE-ONLY ARTICLE ENHANCEMENTS ===== */
+  /* Optimized typography for mobile reading experience */
+  @media (max-width: 767px) {
+    .prose {
+      font-size: 1.125rem; /* 18px - better for mobile reading */
+    }
+
+    .prose p {
+      font-size: 1.125rem; /* 18px - editorial standard for mobile */
+      line-height: 1.75; /* More generous line spacing */
+      margin-bottom: var(--space-4);
+    }
+
+    /* Tighter spacing for lists on mobile */
+    .prose ul,
+    .prose ol {
+      margin: var(--space-4) 0;
+      padding-left: var(--space-5);
+    }
+
+    .prose li {
+      margin-bottom: 0.375rem;
+    }
+
+    /* Adjust code blocks for mobile */
+    pre.astro-code {
+      font-size: 0.813rem !important; /* Slightly larger on mobile */
+      padding: var(--space-3) !important;
+      margin: var(--space-3) 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* Archives section spacing */
+    .post-footer {
+      padding: 0 var(--space-3);
+    }
+
+    .archives-list {
+      gap: var(--space-3);
+    }
+  }
+
+  /* Small phones get even larger text */
+  @media (max-width: 480px) {
+    .prose p {
+      font-size: 1.188rem; /* 19px - premium editorial size */
+      max-width: 100%; /* Use full width on small screens */
+    }
+
+    /* H2 headers slightly smaller on mobile */
+    .prose h2 {
+      font-size: 0.75rem !important; /* Scale up slightly for mobile */
+      margin: var(--space-6) 0 var(--space-3);
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 375px) {
+    .post-tags {
+      margin: var(--space-6) 0 var(--space-3);
+    }
+  }
 </style>

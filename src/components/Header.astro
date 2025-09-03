@@ -181,6 +181,47 @@ const season = getCurrentSeason();
       font-size: 0.6rem;
     }
   }
+
+  /* ===== MOBILE TOUCH TARGET IMPROVEMENTS ===== */
+  /* Ensuring 44px minimum touch targets for accessibility */
+  @media (max-width: 767px) {
+    .nav-left a,
+    .nav-right a,
+    .nav-button {
+      /* Increase font size for better readability */
+      font-size: 0.7rem !important;
+      /* Add padding for larger touch area */
+      padding: var(--space-2);
+      /* Ensure minimum touch target height */
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      /* Negative margin to keep visual spacing tight */
+      margin: calc(var(--space-2) * -0.5) 0;
+    }
+
+    /* Adjust gap to account for padding */
+    .nav-left,
+    .nav-right {
+      gap: 0;
+    }
+  }
+
+  /* Small phones need even more consideration */
+  @media (max-width: 480px) {
+    .nav-left,
+    .nav-right {
+      top: var(--space-3);
+    }
+    
+    .nav-left {
+      left: var(--space-3);
+    }
+    
+    .nav-right {
+      right: var(--space-3);
+    }
+  }
 </style>
 
 <script>

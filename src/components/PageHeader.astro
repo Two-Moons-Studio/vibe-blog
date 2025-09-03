@@ -139,4 +139,45 @@ const {
       font-size: clamp(1.662rem, 5vw, 2.375rem);
     }
   }
+
+  /* ===== MOBILE-ONLY HEADER ENHANCEMENTS ===== */
+  /* Better typography and spacing for mobile */
+  @media (max-width: 480px) {
+    .page-header {
+      padding: calc(var(--space-7) + var(--space-5)) var(--page-padding) var(--space-4);
+    }
+
+    .page-header.hero {
+      padding: calc(var(--space-7) + var(--space-5)) var(--space-3) var(--space-5);
+    }
+
+    /* Better mobile title sizing */
+    .page-title {
+      font-size: var(--font-size-2xl);
+      line-height: 1.2;
+    }
+
+    /* Larger subtitle for readability */
+    .page-subtitle {
+      font-size: var(--font-size-base);
+      max-width: 90%; /* Slightly narrower on mobile */
+      margin: 0 auto;
+    }
+
+    /* Hero title uses CSS variable */
+    .page-header.hero .page-title {
+      font-size: var(--font-size-3xl);
+    }
+
+    /* Label size adjustment */
+    .page-label {
+      font-size: 0.625rem; /* Slightly larger on mobile */
+    }
+  }
+
+  @media (max-width: 375px) {
+    .page-header.hero {
+      padding: calc(var(--space-6) + var(--space-5)) var(--space-2) var(--space-5);
+    }
+  }
 </style>
