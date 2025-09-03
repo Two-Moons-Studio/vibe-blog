@@ -159,12 +159,21 @@ const sortedTags = Array.from(allTags).sort();
       font-size: var(--font-size-xlarge);
     }
 
-    .post-title {
-      font-size: var(--font-size-large);
-    }
+    /* Don't change post-title size at 768px - let it stay at base size */
 
     .post-excerpt {
       font-size: var(--font-size-base);
+    }
+  }
+
+  /* Mobile enhancements */
+  @media (max-width: 480px) {
+    .post-title {
+      font-size: 0.75rem; /* Match article H2 size on mobile */
+    }
+
+    .post-excerpt {
+      font-size: 1.063rem; /* 17px - consistent with articles */
     }
   }
 </style>

@@ -185,9 +185,8 @@ const sortedTags = Array.from(allTags).sort();
       font-size: var(--font-size-xlarge);
     }
 
-    .post-title {
-      font-size: var(--font-size-large);
-    }
+    /* Don't change post-title size at 768px - let it stay at base size */
+    /* Only change it at 480px for mobile */
 
     .post-excerpt {
       font-size: 1.063rem; /* 17px - consistent with articles */
