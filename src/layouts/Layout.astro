@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import NewsletterModal from '../components/NewsletterModal.astro';
 import { getSeasonalColor, getCurrentSeason } from '../utils/season';
+import { Analytics } from '@vercel/analytics/astro';
 
 export interface Props {
   title: string;
@@ -70,6 +71,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
       <Footer />
     </div>
     <NewsletterModal />
+    <Analytics />
   </body>
 </html>
 
