@@ -11,7 +11,10 @@ const posts = await getCollection('posts');
 const post = posts.find(p => p.slug === slug && !p.data.draft);
 
 if (!post) {
-  return Astro.redirect('/404');
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not found'
+  });
 }
 const { Content } = await post.render();
 
