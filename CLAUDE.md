@@ -25,7 +25,7 @@ Guided post creation workflow:
 3. ASK USER: "Any tags for this post?"
 4. Generate slug from title (lowercase, dash-separated)
 5. Create markdown file in `/src/content/posts/`
-6. Use today's date automatically
+6. Use today's date in ISO format: `YYYY-MM-DDTHH:MM:SSZ` (e.g., 2025-09-10T12:00:00Z)
 7. Set up frontmatter with 6-part structure template
 8. CONFIRM: "Post created at /posts/[slug] - ready to write!"
 
@@ -106,6 +106,7 @@ Key points:
 ### Adding New Posts
 1. Create markdown file in `/src/content/posts/[slug].md`
 2. Add frontmatter (title, date, excerpt, tags, draft: false)
+   - **CRITICAL**: Date must be ISO format: `YYYY-MM-DDTHH:MM:SSZ` (e.g., 2025-09-10T12:00:00Z)
 3. Follow voice guidelines in CONTENT-GUIDE.md
 4. Commit and push to deploy
 
