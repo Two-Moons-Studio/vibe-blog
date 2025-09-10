@@ -1,0 +1,48 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": ""
+        },
+        {
+          "key": "Accept-Ranges",
+          "value": ""
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "source": "/posts/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/newsletter-subscribe",
+      "destination": "/api/newsletter-subscribe.js"
+    }
+  ]
+}
