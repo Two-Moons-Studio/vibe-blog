@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://vibecodemoonlighter.com',
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel(),
   markdown: {
     shikiConfig: {

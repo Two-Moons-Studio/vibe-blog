@@ -1,24 +1,18 @@
 ---
+export const prerender = false;
+
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import Tag from '../../components/Tag.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  return posts
-    .filter(post => !post.data.draft)
-    .map((post) => ({
-      params: { slug: post.slug },
-      props: { post },
-    }));
+const { slug } = Astro.params;
+const posts = await getCollection('posts');
+const post = posts.find(p => p.slug === slug && !p.data.draft);
+
+if (!post) {
+  return Astro.redirect('/404');
 }
-
-type Props = {
-  post: CollectionEntry<'posts'>;
-};
-
-const { post } = Astro.props;
 const { Content } = await post.render();
 
 const formatDate = (date: Date) => {
