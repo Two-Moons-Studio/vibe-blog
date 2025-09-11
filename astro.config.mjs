@@ -1,16 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://vibecodemoonlighter.com',
-  output: 'static',
-  adapter: vercel({
-    imageService: false,
-    devImageService: 'sharp'
-  }),
+  output: 'hybrid',
+  adapter: vercel(),
   markdown: {
     shikiConfig: {
       theme: 'github-dark'
