@@ -94,6 +94,18 @@ const season = getCurrentSeason();
   /* Subscribe button content */
   .subscribe-icon {
     display: none;
+    font-family: 'Material Symbols Sharp';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
   }
 
   .subscribe-text {
@@ -265,8 +277,9 @@ const season = getCurrentSeason();
     }
     
     .subscribe-icon {
-      display: inline;
+      display: inline-block;
       font-size: 20px; /* Slightly larger than text */
+      vertical-align: middle;
     }
   }
 
