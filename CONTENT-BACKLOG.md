@@ -86,12 +86,13 @@
 - The 6-Project Assembly Line
 - Assembly Line Beats Superhero Claude
 
-### 💡 Module 6: Design & Content Systems (7 articles)
-**Design System Thinking (4)**
+### 💡 Module 6: Design & Content Systems (8 articles)
+**Design System Thinking (5)**
 - The Editorial System: Making Templates Invisible
 - From Fix This to Fix the System
 - Preference Optimization: Less is More
 - The Flickering Nav That Taught Tool Selection
+- Semantic Tokens for Design Systems (Trust Color, Action Color, etc.)
 
 **Content & Research Systems (3)**
 - The DNA Extraction Method
